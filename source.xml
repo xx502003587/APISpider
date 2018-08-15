@@ -1,0 +1,61 @@
+<data>
+	<!-- 爬虫爬取的资源存取位置xxx：当前项目工程路径/resource/xxx/ -->
+	<srcPath>help_document_test</srcPath>
+
+	<!-- 爬虫程序入口url -->
+	<rootUrl>https://developer.mozilla.org/en-US/docs/Archive/Marketplace/API</rootUrl>
+
+	 
+	 <!-- 待爬取的页面中的指定元素：如<article id="wikiArticle"></article> 则需填写article和wikiArticle -->
+	 <htmlModule>
+	 	<tag>article</tag>
+	 	<id>wikiArticle</id>
+	 </htmlModule>
+	 
+	 <!-- 待爬取URL的正则表达式，用于限制URL格式 -->
+	 <urlFormat>r"^/en-US/docs/.*$"</urlFormat>
+	 
+	 <!-- 指定待爬取的URL应该屏蔽的关键字: 
+	 		urlname属性为rooturl的别名，即：在xxx网页下应该屏蔽哪些关键字
+	 		required属性为是否选择此标签作为抓取标签：即此处可以存在多个keywordScan标签，而真正要被程序抓取选择的需为required
+	  -->
+	 
+	 <keywordScan urlname="Monetization" required="not">
+	 	<keyword>DOMRequest</keyword>
+	 	<keyword>/DOMError</keyword>
+	 	<keyword>API</keyword>
+	 	<keyword>Firefox_OS</keyword>
+	 	<keyword>Web</keyword>
+	 </keywordScan>
+	 
+	 <keywordScan urlname="API" required="required">
+	 	<keyword>Firefox_OS</keyword>
+	 	<keyword>Web/Apps</keyword>
+	 	<keyword>DOMRequest</keyword>
+	 	<keyword>Packaged_apps</keyword>
+	 	<keyword>/JavaScript/</keyword>
+	 	<keyword>/DOMError</keyword>
+	 	<keyword>/Web/Events/statechange</keyword>
+	 	<!-- /DOMString Web/Apps/Manifest-->
+	 	<!-- Web/Apps/JavaScript_API-->
+	 </keywordScan>
+	 
+	 <keywordScan urlname="Option" required="not">
+	 	<keyword>API</keyword>
+	 	<keyword>Web</keyword>
+	 	<keyword>Glossary</keyword>
+	 </keywordScan>
+	 
+	 <keywordScan urlname="Publish" required="not">
+	 	<keyword>Gecko</keyword>
+	 	<keyword>Web</keyword>
+	 	<keyword>API</keyword>
+	 </keywordScan>
+	 
+	 <!-- css路径名补全:如  源码中css路径为/en-US/docs/Archive$styles 需加上网页前缀 -->
+	 <cssNamePath>https://developer.mozilla.org</cssNamePath>
+	 
+	   
+	 
+	 
+</data>

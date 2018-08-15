@@ -1,0 +1,172 @@
+/* Sets the zone header colour for both landing page and article subpages */
+/* .zone .zone-landing-header, .zone #main-header, .zone .zone-article-header { background-color: rgb(0, 149, 221) } */
+/*
+.redesign body {
+background-color: rgb(0, 149, 221);
+}
+*/
+ 
+/* Sets the image for landing and article subpages.  You may want to use different images so separate the selectors as needed */
+.zone-landing-header .zone-image, .zone-article-header .zone-image {
+  background: url(https://mdn.mozillademos.org/files/12628/progressive-hq-blue.svg) 90% 70% no-repeat; 
+  background-size: 30%;
+}
+
+.text-content table {
+  border: 0;
+}
+
+.text-content td {
+  border: 0;
+  vertical-align: middle;
+}
+
+
+div.center {
+  padding-top: 0;
+}
+
+div.zone-callout {
+  margin-bottom: 10px;
+}
+
+div.zone-callout ul, div.zone-callout ol  {
+  margin: 0 0 10px 10px;
+}
+
+div.zone-callout li {
+  padding: 5px;
+}
+
+hr {
+  border-style: solid;
+  border-bottom-width: 1px;
+  color: #5E88B0;
+  margin: 1em auto 2em auto;
+  width: 90%;
+}
+
+/* what follows is CSS for the initial steps diagram at the top of the screen */
+
+.initial-steps {
+	  background-image: -webkit-linear-gradient(top,#FFF,#EEE);
+	  background-image: -moz-linear-gradient(top,#FFF,#EEE);
+	  background-image: -ms-linear-gradient(top,#FFF,#EEE);
+	  background-image: linear-gradient(to bottom,#FFF,#EEE);
+      padding-top: 0px;
+      border-radius: 3px;
+      box-shadow: 0px 2px 2px #CCC;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto 20px;
+    }
+    
+    .initial-steps .panel {
+      float: left;
+      width: 33%;
+      margin: 0px;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    
+    .initial-steps .panel:nth-of-type(1) {
+      padding: 10px 60px 10px 20px;
+    }
+    
+    .initial-steps .panel:nth-of-type(2) {
+      padding: 10px 70px 10px 20px;
+    }
+    
+    .initial-steps .panel:nth-of-type(3) {
+      padding: 10px 10px 10px 20px;
+    }
+    
+    .initial-steps .panel:nth-of-type(1), .initial-steps .panel:nth-of-type(2) {
+      /*background: url(https://mdn.mozillademos.org/files/6251/chevron.png) no-repeat 105% 100px;*/
+    }
+    
+    
+    .initial-steps .panel:nth-of-type(1) h2 {
+      background: url(https://mdn.mozillademos.org/files/6243/eye-icon.png) no-repeat left center;
+      padding-left: 40px;
+    }
+    
+    .initial-steps .panel:nth-of-type(2) h2 {
+      background: url(https://mdn.mozillademos.org/files/6247/tool-icon.png) no-repeat left center;
+      padding-left: 40px;
+    }
+    
+    .initial-steps .panel:nth-of-type(3) h2 {
+      background: url(https://mdn.mozillademos.org/files/6245/cloud-icon.png) no-repeat left center;
+      padding-left: 40px;
+    }
+    
+    
+    
+    .initial-steps .link-wrapper {
+      position: absolute;
+      bottom: 0;
+    } 
+    
+    @media (max-width: 880px) {
+      .initial-steps {
+        min-height: 540px;
+      }
+      
+      .initial-steps .panel {
+        width: 50%;
+        min-height: 270px;
+      }
+      
+      .initial-steps .panel:nth-of-type(1), .initial-steps .panel:nth-of-type(2), .initial-steps .panel:nth-of-type(3) {
+        background: none;
+        padding: 10px;
+      }
+
+      
+      .initial-steps .panel:nth-of-type(3) {
+        float: none;
+        width: 50%;
+        margin: 20px auto;
+        top: 20px;
+      }
+      
+      .initial-steps .panel:nth-of-type(3) h2 {
+        background-position: left 98%;
+        padding-left: 50px;
+      }
+      
+      .initial-steps .panel:nth-of-type(3) .link-wrapper {
+        position: static;
+      }
+      
+    }
+    
+    @media (max-width: 600px) {
+    
+      .initial-steps {
+        height: auto;
+      }
+      
+      .initial-steps .panel, .initial-steps .panel:nth-of-type(3) {
+        float: none;
+        width: 100%;
+        top: 0;
+      }
+      
+      
+      .initial-steps .panel:nth-of-type(1), .initial-steps .panel:nth-of-type(2) {
+        /*background: url(https://mdn.mozillademos.org/files/6273/chevron_down.png) no-repeat 85% 85%;*/
+        margin: 0 auto;
+      }
+    
+    }   
+
+/*overriding the column-5 width, to make the two column section columns wide enough to span the whole width of the main content area.*/
+
+.column-5 {
+  width: 45%;
+}

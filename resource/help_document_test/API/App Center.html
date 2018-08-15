@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>App Center | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+      
+        <link rel="stylesheet" type="text/css" href="css/Apps$styles">
+      
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/Apps$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/Apps" >
+
+  
+    
+      <link rel="alternate" hreflang="ar" href="/ar/docs/Web/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA" title="تطبيقات">
+    
+      <link rel="alternate" hreflang="bn-BD" href="/bn-BD/docs/Apps" title="অ্যাপ সেন্টার">
+    
+      <link rel="alternate" hreflang="bn-IN" href="/bn-IN/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="ca" href="/ca/docs/Web/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="cs" href="/cs/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="de" href="/de/docs/Apps" title="App-Center">
+    
+      <link rel="alternate" hreflang="el" href="/el/docs/%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AD%CF%82" title="Κέντρο Εφαρμογών">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/Web/Aplicaciones" title="Centro de Aplicaciones">
+    
+      <link rel="alternate" hreflang="fa" href="/fa/docs/Web/Apps" title="مرکز برنامه">
+    
+      <link rel="alternate" hreflang="fi" href="/fi/docs/Web/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/Apps" title="Applications">
+    
+      <link rel="alternate" hreflang="hi-IN" href="/hi-IN/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="hu" href="/hu/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="id" href="/id/docs/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="it" href="/it/docs/Apps" title="Centro App">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Web/Apps" title="アプリセンター">
+    
+      <link rel="alternate" hreflang="kab" href="/kab/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="ko" href="/ko/docs/Apps" title="앱 소개">
+    
+      <link rel="alternate" hreflang="ml" href="/ml/docs/Web/%E0%B4%86%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8D%E0%B4%B8%E0%B5%8D" title="ആപ്പ് സെന്റര്‍">
+    
+      <link rel="alternate" hreflang="ms" href="/ms/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="nl" href="/nl/docs/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="pl" href="/pl/docs/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Apps" title="Central de Aplicativos">
+    
+      <link rel="alternate" hreflang="pt-PT" href="/pt-PT/docs/Apps" title="Centro de Aplicações">
+    
+      <link rel="alternate" hreflang="ro" href="/ro/docs/Web/Apps" title="Open Web apps">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Apps" title="Центр приложений">
+    
+      <link rel="alternate" hreflang="sq" href="/sq/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="ta" href="/ta/docs/Web/Apps" title="பயன்பாடுகள் மையம்">
+    
+      <link rel="alternate" hreflang="th" href="/th/docs/Web/Apps" title="App Center">
+    
+      <link rel="alternate" hreflang="tr" href="/tr/docs/Web/Apps" title="Uygulamalar">
+    
+      <link rel="alternate" hreflang="vi" href="/vi/docs/Web/Apps" title="Apps">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/Apps" title="应用中心">
+    
+      <link rel="alternate" hreflang="zh-TW" href="/zh-TW/docs/Web/Apps" title="應用程式中心">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="App Center">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/Apps">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/Apps">
+  <meta name="twitter:title" content="App Center">
+  
+  <meta property="og:description" content="Learn how to create modern web apps using the latest web technologies and ideas — web apps that will have super powers in the latest modern browsers, but still provide an acceptable user experience in less able browsers.">
+  <meta name="description" content="Learn how to create modern web apps using the latest web technologies and ideas — web apps that will have super powers in the latest modern browsers, but still provide an acceptable user experience in less able browsers.">
+  <meta name="twitter:description" content="Learn how to create modern web apps using the latest web technologies and ideas — web apps that will have super powers in the latest modern browsers, but still provide an acceptable user experience in less able browsers.">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        ga('set', 'dimension9', 'Enabled');
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1183939');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/Apps" contextmenu="edit-history-menu" data-search-url="" class="document zone zone-landing">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': true,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2FApps" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/Apps">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+  
+      
+
+        <div class="zone-landing-header" id="document-main"><div class="center">
+          <!-- edit, settings buttons -->
+          
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/ar/docs/Web/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA" title="Arabic">عربي (ar)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/bn-BD/docs/Apps" title="Bengali (Bangladesh)">বাংলা (বাংলাদেশ) (bn-BD)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/bn-IN/docs/Web/Apps" title="Bengali (India)">বাংলা (ভারত) (bn-IN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ca/docs/Web/Apps" title="Catalan">Català (ca)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/cs/docs/Web/Apps" title="Czech">Čeština (cs)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/de/docs/Apps" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/el/docs/%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AD%CF%82" title="Greek">Ελληνικά (el)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/Web/Aplicaciones" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fa/docs/Web/Apps" title="Persian">فارسی (fa)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fi/docs/Web/Apps" title="Finnish">suomi (fi)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/Apps" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/hi-IN/docs/Web/Apps" title="Hindi (India)">हिन्दी (भारत) (hi-IN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/hu/docs/Web/Apps" title="Hungarian">magyar (hu)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/id/docs/Apps" title="Indonesian">Bahasa Indonesia (id)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/it/docs/Apps" title="Italian">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Web/Apps" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/kab/docs/Web/Apps" title="Kabyle">Taqbaylit (kab)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ko/docs/Apps" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ml/docs/Web/%E0%B4%86%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8D%E0%B4%B8%E0%B5%8D" title="Malayalam">മലയാളം (ml)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ms/docs/Web/Apps" title="Malay">Melayu (ms)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/nl/docs/Apps" title="Dutch">Nederlands (nl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pl/docs/Apps" title="Polish">Polski (pl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Apps" title="Portuguese (Brazilian)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-PT/docs/Apps" title="Portuguese (Portugal)">Português (Europeu) (pt-PT)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ro/docs/Web/Apps" title="Romanian">Română (ro)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Apps" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/sq/docs/Web/Apps" title="Albanian">Shqip (sq)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ta/docs/Web/Apps" title="Tamil">தமிழ் (ta)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/th/docs/Web/Apps" title="Thai">ไทย (th)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/tr/docs/Web/Apps" title="Turkish">Türkçe (tr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/vi/docs/Web/Apps" title="Vietnamese">Tiếng Việt (vi)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/Apps" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-TW/docs/Web/Apps" title="Chinese (Traditional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/Apps$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/Apps$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Web/Apps$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+          <!-- crumbs -->
+          
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">App Center</li>
+  </ol></nav>
+
+          <h1>App Center</h1>
+
+          
+          
+            <div class="column-5 masthead-text"><p>Learn how to create modern web apps using the latest web technologies and ideas — web apps that will have super powers in the latest modern browsers, but still provide an acceptable user experience in less able browsers.</p></div>
+          
+
+          <div class="zone-image"></div>
+        </div></div>
+      
+
+     <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" ><div class="center">
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-closed wiki-right-none wiki-left-closed wiki-left-none">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-all wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                  <div class="warning warning-review">
+                    <p>
+                      This article needs a technical review. <a href="/docs/MDN/Contribute/HowTo/Do_a_technical_review">How you can help.</a>
+                    </p>
+                  </div>
+                
+                
+                  <div class="warning warning-review">
+                    <p>
+                      This article needs an editorial review. <a href="/docs/MDN/Contribute/Howto/Do_an_editorial_review">How you can help.</a>
+                    </p>
+                  </div>
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <p class="summary">Learn how to create modern web apps using the latest web technologies and ideas — web apps that will have super powers in the latest modern browsers, but still provide an acceptable user experience in less able browsers.</p>
+
+<h2 id="Modern_app_techniques">Modern app techniques</h2>
+
+<div class="column-container">
+<div class="column-half">
+<dl>
+ <dt><a href="/en-US/docs/Web/Apps/Progressive">Progressive web apps</a></dt>
+ <dd>Progressive web apps involve taking standard web sites/apps that enjoy all the best parts of the Web — such as discoverability via search engines, being linkable via <a href="/en-US/docs/Glossary/URL" class="glossaryLink" title="URL: Uniform Resource Locator (URL) is a text string specifying where a resource can be found on the Internet.">URL</a>s, and working across multiple form factors — and supercharging them with modern APIs (such as <a href="/en-US/docs/Web/API/Service_Worker_API">Service Workers</a> and <a href="/en-US/docs/Web/API/Push_API">Push</a>) and features that confer other benefits more commonly attributed to native apps.</dd>
+</dl>
+</div>
+
+<div class="column-half"> </div>
+</div>
+
+<h2 id="App_fundamentals">App fundamentals</h2>
+
+<p>The guides listed below cover common areas of functionality that you'll want to cover/implement in web apps. Each page includes workflows, tutorials, references, examples, and other useful information.</p>
+
+<div class="column-container">
+<div class="column-half">
+<dl>
+ <dt><a href="/en-US/docs/Web/Apps/Fundamentals/Quickstart">Quickstart</a></dt>
+ <dd>This Quick Start guide introduces a recommended tool chain for creating web apps, and outlines the specific requirements for building Firefox OS applications.</dd>
+ <dt><a href="/en-US/Apps/Build/Basic_data_flow">Basic data flow</a></dt>
+ <dd>Setting up the data flow through your application, HTTP basics, Ajax.</dd>
+ <dt><a href="/en-US/Apps/Build/Modern_web_app_architecture">Modern web app architecture</a></dt>
+ <dd>A basic introduction to modern web app architecture and development: MVC, frameworks, etc.</dd>
+ <dt><a href="/en-US/Apps/Build/gather_and_modify_data">Gather and modify data</a></dt>
+ <dd>Retrieving data from files, device hardware (e.g., battery, proximity, light sensor), and key services (e.g., camera, contacts).</dd>
+ <dt><a href="/en-US/Apps/Build/User_notifications">User notifications</a></dt>
+ <dd>System notifications, alarms, vibration.</dd>
+</dl>
+</div>
+
+<div class="column-half">
+<dl>
+ <dt><a href="/en-US/Apps/Build/User_input_methods">Implement user input and control mechanisms</a></dt>
+ <dd>Mouse, keyboard, pointer lock, touch inputs, drag and drop, and more.</dd>
+ <dt><a href="/en-US/Apps/Build/offline">Work offline</a></dt>
+ <dd>appCache, service workers, localStorage, and IndexedDB.</dd>
+ <dt><a href="/en-US/Apps/Build/Audio_and_video_delivery">Audio and video delivery</a></dt>
+ <dd>Delivery of video and audio onto a web document.</dd>
+ <dt><a href="/en-US/Apps/Build/Audio_and_video_manipulation">Audio and video manipulation</a></dt>
+ <dd>How to manipulate audio and video using <a href="/en-US/docs/Web/HTML/Element/canvas" title="Use the HTML &lt;canvas> element with the canvas scripting API to draw graphics and animations."><code>&lt;canvas&gt;</code></a>, <a href="/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a>, and so on.</dd>
+ <dt><a href="/en-US/Apps/Build/Performance">Performance</a></dt>
+ <dd>Articles about making your web apps perform better.</dd>
+</dl>
+</div>
+</div>
+
+<h2 id="See_also">See also</h2>
+
+<ul>
+ <li><a href="/en-US/docs/Tools">Mozilla developer tools</a></li>
+ <li><a href="/en-US/docs/Web/API">API reference index</a></li>
+</ul>
+
+<p></p><div dir="ltr" class="overheadIndicator communitybox">
+
+    <div class="column-container">
+        <h2 id="Join_the_Web_Apps_community">Join the Web Apps community</h2>
+        <div class="column-half">
+            <div class="communitysubhead">Choose your preferred method for joining the discussion:</div>
+            <ul class="communitymailinglist">
+  <li><a href="https://lists.mozilla.org/listinfo/dev-webapps" class="external">Mailing list</a></li>
+  
+  
+  <li><a href="http://groups.google.com/group/mozilla.dev.webapps" class="external">Google Group</a></li>
+  <li><a href="http://groups.google.com/group/mozilla.dev.webapps/feeds" class="external">RSS feed</a></li>
+</ul>
+        </div>
+        <div class="column-half">
+            <ul class="communitycontact"><li><strong>IRC: </strong><a href="irc://irc.mozilla.org/apps">#apps</a> <span class="smaller">(<a href="https://wiki.mozilla.org/IRC" class="external">learn more</a>)</span></li></ul>
+        </div>
+    </div>
+</div><p></p>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/Apps$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/Apps$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/Apps" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="Arabic" value="/ar/docs/Web/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA">
+            عربي (ar)
+          </option>
+          <option title="Bengali (Bangladesh)" value="/bn-BD/docs/Apps">
+            বাংলা (বাংলাদেশ) (bn-BD)
+          </option>
+          <option title="Bengali (India)" value="/bn-IN/docs/Web/Apps">
+            বাংলা (ভারত) (bn-IN)
+          </option>
+          <option title="Catalan" value="/ca/docs/Web/Apps">
+            Català (ca)
+          </option>
+          <option title="Czech" value="/cs/docs/Web/Apps">
+            Čeština (cs)
+          </option>
+          <option title="German" value="/de/docs/Apps">
+            Deutsch (de)
+          </option>
+          <option title="Greek" value="/el/docs/%CE%95%CF%86%CE%B1%CF%81%CE%BC%CE%BF%CE%B3%CE%AD%CF%82">
+            Ελληνικά (el)
+          </option>
+          <option title="Spanish" value="/es/docs/Web/Aplicaciones">
+            Español (es)
+          </option>
+          <option title="Persian" value="/fa/docs/Web/Apps">
+            فارسی (fa)
+          </option>
+          <option title="Finnish" value="/fi/docs/Web/Apps">
+            suomi (fi)
+          </option>
+          <option title="French" value="/fr/docs/Web/Apps">
+            Français (fr)
+          </option>
+          <option title="Hindi (India)" value="/hi-IN/docs/Web/Apps">
+            हिन्दी (भारत) (hi-IN)
+          </option>
+          <option title="Hungarian" value="/hu/docs/Web/Apps">
+            magyar (hu)
+          </option>
+          <option title="Indonesian" value="/id/docs/Apps">
+            Bahasa Indonesia (id)
+          </option>
+          <option title="Italian" value="/it/docs/Apps">
+            Italiano (it)
+          </option>
+          <option title="Japanese" value="/ja/docs/Web/Apps">
+            日本語 (ja)
+          </option>
+          <option title="Kabyle" value="/kab/docs/Web/Apps">
+            Taqbaylit (kab)
+          </option>
+          <option title="Korean" value="/ko/docs/Apps">
+            한국어 (ko)
+          </option>
+          <option title="Malayalam" value="/ml/docs/Web/%E0%B4%86%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8D%E0%B4%B8%E0%B5%8D">
+            മലയാളം (ml)
+          </option>
+          <option title="Malay" value="/ms/docs/Web/Apps">
+            Melayu (ms)
+          </option>
+          <option title="Dutch" value="/nl/docs/Apps">
+            Nederlands (nl)
+          </option>
+          <option title="Polish" value="/pl/docs/Apps">
+            Polski (pl)
+          </option>
+          <option title="Portuguese (Brazilian)" value="/pt-BR/docs/Apps">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Portuguese (Portugal)" value="/pt-PT/docs/Apps">
+            Português (Europeu) (pt-PT)
+          </option>
+          <option title="Romanian" value="/ro/docs/Web/Apps">
+            Română (ro)
+          </option>
+          <option title="Russian" value="/ru/docs/Apps">
+            Русский (ru)
+          </option>
+          <option title="Albanian" value="/sq/docs/Web/Apps">
+            Shqip (sq)
+          </option>
+          <option title="Tamil" value="/ta/docs/Web/Apps">
+            தமிழ் (ta)
+          </option>
+          <option title="Thai" value="/th/docs/Web/Apps">
+            ไทย (th)
+          </option>
+          <option title="Turkish" value="/tr/docs/Web/Apps">
+            Türkçe (tr)
+          </option>
+          <option title="Vietnamese" value="/vi/docs/Web/Apps">
+            Tiếng Việt (vi)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Web/Apps">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chinese (Traditional)" value="/zh-TW/docs/Web/Apps">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+    <script type="text/javascript">
+        (function($) {
+            $('#wikiArticle').children('h2[id]').each(function() {
+                var id = $(this).attr('id');
+                var href = '/en-US/docs/Web/Apps$edit#' + id;
+
+                $('<a>').attr({
+                    href: href,
+                    'class': 'button section-edit only-icon',
+                    'rel': 'nofollow, noindex'
+                })
+                .append($('<i aria-hidden="true" class="icon-pencil"></i>'))
+                .append($('<span>'))
+                .find('span')
+                .text(gettext('Edit'))
+                .end()
+                .on('click', function(e) {
+                    e.preventDefault();
+
+                    mdn.analytics.trackEvent({
+                        category: 'Section Edit',
+                        action: id
+                    }, function() {
+                        window.location = href;
+                    });
+                })
+                .appendTo(this);
+            });
+        })(jQuery);
+    </script>
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

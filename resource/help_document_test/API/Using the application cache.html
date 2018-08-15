@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Using the application cache - HTML | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/HTML/Using_the_application_cache$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache" >
+
+  
+    
+      <link rel="alternate" hreflang="de" href="/de/docs/Web/HTML/Using_the_application_cache" title="Benutzung des Application Cache">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/Web/HTML/Recursos_offline_en_firefox" title="Usar el caché de aplicaciones">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/HTML/Utiliser_Application_Cache" title="Utiliser Application Cache">
+    
+      <link rel="alternate" hreflang="it" href="/it/docs/Web/HTML/utilizzare_application_cache" title="Utilizzare l&#39;application cache">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Offline_resources_in_Firefox" title="Offline resources in Firefox">
+    
+      <link rel="alternate" hreflang="ko" href="/ko/docs/Web/HTML/Using_the_application_cache" title="Using the application cache">
+    
+      <link rel="alternate" hreflang="nl" href="/nl/docs/Web/HTML/Applicatie_cache_gebruiken" title="Using the application cache">
+    
+      <link rel="alternate" hreflang="pl" href="/pl/docs/Web/HTML/Zasoby_offline_w_Firefoksie" title="Zasoby offline w Firefoksie">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Web/HTML/Using_the_application_cache" title="Usando cache de aplicação">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Web/HTML/%25D0%2598%25D1%2581%25D0%25BF%25D0%25BE%25D0%25BB%25D1%258C%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B5_%25D0%25BA%25D1%258D%25D1%2588%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F_%25D0%25BF%25D1%2580%25D0%25B8%25D0%25BB%25D0%25BE%25D0%25B6%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B9" title="Использование кэширования приложений">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/HTML/Using_the_application_cache" title="使用应用缓存">
+    
+      <link rel="alternate" hreflang="zh-TW" href="/zh-TW/docs/Web/HTML/Offline_resources_on_Firefox" title="Offline resources on Firefox">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Using the application cache">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">
+  <meta name="twitter:title" content="Using the application cache">
+  
+  <meta property="og:description" content="HTML5 provides an application caching mechanism that lets web-based applications run offline. Developers can use the Application Cache (AppCache) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.">
+  <meta name="description" content="HTML5 provides an application caching mechanism that lets web-based applications run offline. Developers can use the Application Cache (AppCache) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.">
+  <meta name="twitter:description" content="HTML5 provides an application caching mechanism that lets web-based applications run offline. Developers can use the Application Cache (AppCache) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1145578');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/HTML/Using_the_application_cache" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FHTML%2FUsing_the_application_cache" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      
+      <div class="article-meta">
+        <!-- action buttons -->
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/de/docs/Web/HTML/Using_the_application_cache" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/Web/HTML/Recursos_offline_en_firefox" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/HTML/Utiliser_Application_Cache" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/it/docs/Web/HTML/utilizzare_application_cache" title="Italian">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Offline_resources_in_Firefox" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ko/docs/Web/HTML/Using_the_application_cache" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/nl/docs/Web/HTML/Applicatie_cache_gebruiken" title="Dutch">Nederlands (nl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pl/docs/Web/HTML/Zasoby_offline_w_Firefoksie" title="Polish">Polski (pl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Web/HTML/Using_the_application_cache" title="Portuguese (Brazilian)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Web/HTML/%25D0%2598%25D1%2581%25D0%25BF%25D0%25BE%25D0%25BB%25D1%258C%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B5_%25D0%25BA%25D1%258D%25D1%2588%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F_%25D0%25BF%25D1%2580%25D0%25B8%25D0%25BB%25D0%25BE%25D0%25B6%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B9" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/HTML/Using_the_application_cache" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-TW/docs/Web/HTML/Offline_resources_on_Firefox" title="Chinese (Traditional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/HTML/Using_the_application_cache$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/HTML/Using_the_application_cache$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Web/HTML/Using_the_application_cache$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/HTML" rel="v:url" property="v:title">HTML</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Using the application cache</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc submenu">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
+            <ul>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/erikadoyle" title="View profile: erikadoyle">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="erikadoyle" data-src="https://secure.gravatar.com/avatar/0f2324340bc4d49b1c17e82a643d387b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">erikadoyle</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/SphinxKnight" title="View profile: SphinxKnight">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="SphinxKnight" data-src="https://secure.gravatar.com/avatar/8fb358ea9b7af22f5021a29e122ea069?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">SphinxKnight</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/reach-star" title="View profile: reach-star">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="reach-star" data-src="https://secure.gravatar.com/avatar/539129fe32a891530a6757636dc6217a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">reach-star</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/Sebastianz" title="View profile: Sebastianz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sebastianz" data-src="https://secure.gravatar.com/avatar/337fa9c543a4f881977b6d2fbbd2dea8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sebastianz</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/chrisdavidmills" title="View profile: chrisdavidmills">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills" data-src="https://secure.gravatar.com/avatar/deeea0ba82390bd5acc539703c4b0cfb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/sideshowbarker" title="View profile: sideshowbarker">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sideshowbarker" data-src="https://secure.gravatar.com/avatar/4548360c563737339825a6735bbb47b3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sideshowbarker</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Haroenv" title="View profile: Haroenv">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Haroenv" data-src="https://secure.gravatar.com/avatar/0d3812ec645d7ac1d342dd9add1805c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Haroenv</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/MDNion" title="View profile: MDNion">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="MDNion" data-src="https://secure.gravatar.com/avatar/d885039ba3e714599636888c9734d384?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">MDNion</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kscarfone" title="View profile: kscarfone">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kscarfone" data-src="https://secure.gravatar.com/avatar/89c1e54a9703125168e40d22316d2b49?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kscarfone</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/madarche" title="View profile: madarche">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="madarche" data-src="https://secure.gravatar.com/avatar/a15ce308d52c691ba765d0ac972aac87?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">madarche</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/wizzard0" title="View profile: wizzard0">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="wizzard0" data-src="https://secure.gravatar.com/avatar/23b7064431b837702fcfe637aa097d3d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">wizzard0</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/HTMLValidator" title="View profile: HTMLValidator">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="HTMLValidator" data-src="https://secure.gravatar.com/avatar/962f5bb741e2d81ff804a0debebdb4f8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">HTMLValidator</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/demands" title="View profile: demands">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="demands" data-src="https://secure.gravatar.com/avatar/8a17013c62e82b26ffc5476dca2c9076?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">demands</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Jeremie" title="View profile: Jeremie">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Jeremie" data-src="https://secure.gravatar.com/avatar/ea74cf7f528273838138e9ae407cd8ef?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Jeremie</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Timmi" title="View profile: Timmi">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Timmi" data-src="https://secure.gravatar.com/avatar/1e4b3c365cc4c56d641806f8f37451d4?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Timmi</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jsx" title="View profile: jsx">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jsx" data-src="https://secure.gravatar.com/avatar/8cc61d4e2dc63e75976a334348d473bc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jsx</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/maybe" title="View profile: maybe">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="maybe" data-src="https://secure.gravatar.com/avatar/042d8ebd24bf86bd98a76a8233f275e9?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">maybe</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Nickolay" title="View profile: Nickolay">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Nickolay" data-src="https://secure.gravatar.com/avatar/ea331e778d54effc15b5fbc694bc8232?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Nickolay</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/parthiv" title="View profile: parthiv">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="parthiv" data-src="https://secure.gravatar.com/avatar/6759e8d340a25614cb6506d55f030631?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">parthiv</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/rillian" title="View profile: rillian">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rillian" data-src="https://secure.gravatar.com/avatar/d870da2bf1ce9a44504fba4010c26d8f?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rillian</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/honzabambas" title="View profile: honzabambas">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="honzabambas" data-src="https://secure.gravatar.com/avatar/2de41c3340c5ebb9519fda874ceebfde?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">honzabambas</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ethertank" title="View profile: ethertank">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ethertank" data-src="https://secure.gravatar.com/avatar/abac73ba2093b500bf7599c76d80280c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ethertank</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/trevorh" title="View profile: trevorh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trevorh" data-src="https://secure.gravatar.com/avatar/1638bc67341673005fa05e5def8f3c4d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trevorh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/fhemberger" title="View profile: fhemberger">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fhemberger" data-src="https://secure.gravatar.com/avatar/4e23e5b3a8269eb14637cce06e5a5928?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fhemberger</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/allergic" title="View profile: allergic">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="allergic" data-src="https://secure.gravatar.com/avatar/9505940d7e0d420de2d813171091f392?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">allergic</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/scootergrisen" title="View profile: scootergrisen">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="scootergrisen" data-src="https://secure.gravatar.com/avatar/b65cbb2e31e40cc867d7435b2cec8c03?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">scootergrisen</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/robhawkes" title="View profile: robhawkes">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="robhawkes" data-src="https://secure.gravatar.com/avatar/95846ee13c32628b0eee4ef1fd2409fe?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">robhawkes</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Tyson" title="View profile: Tyson">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Tyson" data-src="https://secure.gravatar.com/avatar/bb91c84d976452e4848d432c0593d1f7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Tyson</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ismaail" title="View profile: ismaail">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ismaail" data-src="https://secure.gravatar.com/avatar/6713c86dc110647d90f5fafaeba2dbed?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ismaail</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sonnyp" title="View profile: Sonnyp">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sonnyp" data-src="https://secure.gravatar.com/avatar/fdf5f0b24d670ca6067d06657799d9d0?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sonnyp</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/eccenux" title="View profile: eccenux">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="eccenux" data-src="https://secure.gravatar.com/avatar/37e41b18d16b51c1dfc8feb352969af3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">eccenux</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/awatson" title="View profile: awatson">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="awatson" data-src="https://secure.gravatar.com/avatar/14d47383e6dcfde31ec726f8ffeacca0?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">awatson</noscript></a>
+                </li>
+            
+            </ul>
+        </div>
+        
+
+        <h1>Using the application cache</h1>
+
+      </div>
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Introduction" rel="internal">Introduction</a><li><a href="#How_the_application_cache_works" rel="internal">How the application cache works</a><ol><li><a href="#Enabling_the_application_cache" rel="internal">Enabling the application cache</a><li><a href="#Loading_documents" rel="internal">Loading documents</a></ol></li><li><a href="#Storage_location_and_clearing_the_offline_cache" rel="internal">Storage location and clearing the offline cache</a><li><a href="#The_cache_manifest_file" rel="internal">The cache manifest file</a><ol><li><a href="#Referencing_a_cache_manifest_file" rel="internal">Referencing a cache manifest file</a><li><a href="#Entries_in_a_cache_manifest_file" rel="internal">Entries in a cache manifest file</a><li><a href="#Example_1_a_simple_cache_manifest_file" rel="internal">Example 1: a simple cache manifest file</a><li><a href="#Sections_in_a_cache_manifest_file_CACHE_NETWORK_and_FALLBACK" rel="internal">Sections in a cache manifest file: <code>CACHE</code>, <code>NETWORK</code>, and <code>FALLBACK</code></a><li><a href="#Example_2_a_more_complete_cache_manifest_file" rel="internal">Example 2: a more complete cache manifest file</a><li><a href="#Structure_of_a_cache_manifest_file" rel="internal">Structure of a cache manifest file</a></ol></li><li><a href="#Resources_in_an_application_cache" rel="internal">Resources in an application cache</a><ol><li><a href="#Master_entries" rel="internal">Master entries</a><li><a href="#Explicit_entries" rel="internal">Explicit entries</a><li><a href="#Network_entries" rel="internal">Network entries</a><li><a href="#Fallback_entries" rel="internal">Fallback entries</a></ol></li><li><a href="#Cache_states" rel="internal">Cache states</a><li><a href="#Testing_for_updates_to_the_cache_manifest" rel="internal">Testing for updates to the cache manifest</a><li><a href="#Gotchas" rel="internal">Gotchas</a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#See_also" rel="internal">See also</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div><section class="Quick_links" id="Quick_Links"><!-- --></section><div class="overheadIndicator deprecated deprecatedHeader"> 
+            <p><strong><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span> Deprecated</strong><br>This feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Avoid using it and update existing code if possible; see the <a href="#Browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p> 
+        </div></div>
+
+<div class="warning">
+<p>Using the <em>application caching</em> feature described here is at this point highly discouraged; it’s <a href="https://html.spec.whatwg.org/multipage/browsers.html#offline" class="external">in the process of being removed from the Web platform</a>. Use <a href="/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers">Service Workers</a> instead. In fact as of Firefox 44, when <a href="/en-US/docs/Web/HTML/Using_the_application_cache">AppCache</a> is used to provide offline support for a page a warning message is now displayed in the console advising developers to use <a href="/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers">Service workers</a> instead (<a title="FIXED: Add a deprecation notice for AppCache if service worker fetch interception is enabled" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1204581" class="external">bug 1204581</a>).</p>
+</div>
+
+<h2 id="Introduction">Introduction</h2>
+
+<p><a href="/en-US/docs/HTML/HTML5">HTML5</a> provides an <em>application caching</em> mechanism that lets web-based applications run offline. Developers can use the <strong>Application Cache</strong> (<em>AppCache</em>) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.</p>
+
+<p>Using an application cache gives an application the following benefits:</p>
+
+<ul>
+ <li>Offline browsing: users can navigate a site even when they are offline.</li>
+ <li>Speed: cached resources are local, and therefore load faster.</li>
+ <li>Reduced server load: the browser only downloads resources that have changed from the server.</li>
+</ul>
+
+<h2 id="How_the_application_cache_works">How the application cache works</h2>
+
+<h3 id="Enabling_the_application_cache">Enabling the application cache</h3>
+
+<p>To enable the application cache for an application, you must include the <code><a href="/en-US/docs/Web/HTML/Element/html#attr-manifest">manifest</a></code> attribute in the <a title="The HTML &lt;html> element (or HTML root element) represents the root of an HTML document. All other elements must be descendants of this element." href="/en-US/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a> element in your application's pages, as shown in the following example:</p>
+
+<pre class="brush: html">&lt;html manifest="example.appcache"&gt;
+  ...
+&lt;/html&gt;
+</pre>
+
+<p>The manifest attribute references a <strong>cache manifest</strong> file, which is a text file that lists resources (files) that the browser should cache for your application.</p>
+
+<p>You should include the <code>manifest</code> attribute on every page of your application that you want cached. The browser does not cache pages that do not contain the <code>manifest</code> attribute, unless such pages are explicitly listed in the manifest file itself. You do not need to list all the pages you want cached in the manifest file, the browser implicitly adds every page that the user visits and that has the <code>manifest</code> attribute set to the application cache.</p>
+
+<p>Some browsers (e.g., Firefox) display a notification bar the first time a user loads an application that uses the application cache. The notification bar displays a message such as:</p>
+
+<p style="margin-left: 40px;">This website (<code>www.example.com</code>) is asking to store data on your computer for offline use. [Allow] [Never for This Site] [Not Now]</p>
+
+<p>The term "offline(-enabled) applications" sometimes refers specifically to applications that the user has allowed to use offline capabilities.</p>
+
+<h3 id="Loading_documents">Loading documents</h3>
+
+<p>The use of an application cache modifies the normal process of loading a document:</p>
+
+<ul>
+ <li>If an application cache exists, the browser loads the document and its associated resources directly from the cache, without accessing the network. This speeds up the document load time.</li>
+ <li>The browser then checks to see if the cache manifest has been updated on the server.</li>
+ <li>If the cache manifest has been updated, the browser downloads a new version of the manifest and the resources listed in the manifest. This is done in the background and does not affect performance significantly.</li>
+</ul>
+
+<p>The process for loading documents and updating the application cache is specified in greater detail below:</p>
+
+<ol>
+ <li>When the browser visits a document that includes the <code>manifest</code> attribute, if no application cache exists, the browser loads the document and then fetches all the entries listed in the manifest file, creating the first version of the application cache.</li>
+ <li>Subsequent visits to that document cause the browser to load the document and other assets specified in the manifest file from the application cache (not from the server). In addition, the browser also sends a <code>checking</code> event to the <code><a href="/en-US/docs/DOM/window.applicationCache">window.applicationCache</a></code> object, and fetches the manifest file, following the appropriate HTTP caching rules.</li>
+ <li>If the currently-cached copy of the manifest is up-to-date, the browser sends a <code>noupdate</code> event to the <code>applicationCache</code> object, and the update process is complete. Note that if you change any cached resources on the server, you must also change the manifest file itself, so that the browser knows it needs to fetch all the resources again.</li>
+ <li>If the manifest file <em>has</em> changed, all the files listed in the manifest—as well as those added to the cache by calling <code><a href="/en-US/docs/nsIDOMOfflineResourceList#add.28.29">applicationCache.add()</a></code>—are fetched into a temporary cache, following the appropriate HTTP caching rules. For each file fetched into this temporary cache, the browser sends a <code>progress</code> event to the <code>applicationCache</code> object. If any errors occur, the browser sends an <code>error</code> event, and the update halts.</li>
+ <li>Once all the files have been successfully retrieved, they are moved into the real offline cache automatically, and a <code>cached</code> event is sent to the <code>applicationCache</code> object. Since the document has already been loaded into the browser from the cache, the updated document will not be rendered until the document is reloaded (either manually or programatically).</li>
+</ol>
+
+<h2 id="Storage_location_and_clearing_the_offline_cache">Storage location and clearing the offline cache</h2>
+
+<p>In Chrome you can clear the offline cache by selecting "Clear browsing data..." in the preferences or by visiting <a>chrome://appcache-internals/</a>. Safari has a similar "Empty cache" setting in its preferences but a browser restart may also be required.</p>
+
+<p>In Firefox, the offline cache data is stored separately from the Firefox profile—next to the regular disk cache:</p>
+
+<ul>
+ <li>Windows Vista/7: <code>C:\Users\&lt;username&gt;\AppData\<strong>Local</strong>\Mozilla\Firefox\Profiles\&lt;salt&gt;.&lt;profile name&gt;\OfflineCache</code></li>
+ <li>Mac/Linux: <code>/Users/&lt;username&gt;/Library/Caches/Firefox/Profiles/&lt;salt&gt;.&lt;profile name&gt;/OfflineCache</code></li>
+</ul>
+
+<p>In Firefox the current status of the offline cache can be inspected on the <code>about:cache</code> page (under the "Offline cache device" heading). The offline cache can be cleared for each site separately using the "Remove..." button in Tools -&gt; Options -&gt; Advanced -&gt; Network -&gt; Offline data.</p>
+
+<p>Prior to Firefox 11, neither Tools -&gt; Clear Recent History nor Tools -&gt; Options -&gt; Advanced -&gt; Network -&gt; Offline data -&gt; Clear Now cleared the offline cache. This has been fixed.</p>
+
+<p>On Linux, you can find the setting at Edit &gt; Preferences &gt; Advanced &gt; Network &gt; Offline Web Content and User Data</p>
+
+<p>See also <a href="/en-US/docs/DOM/Storage#Storage_location_and_clearing_the_data">clearing the DOM Storage data</a>.</p>
+
+<p>Application caches can also become obsolete. If an application's manifest file is removed from the server, the browser removes all application caches that use that manifest, and sends an "obsoleted" event to the <code>applicationCache</code> object. This sets the application cache's state to <code>OBSOLETE</code>.</p>
+
+<h2 id="The_cache_manifest_file">The cache manifest file</h2>
+
+<h3 id="Referencing_a_cache_manifest_file">Referencing a cache manifest file</h3>
+
+<p>The <code>manifest</code> attribute in a web application can specify either the relative path of a cache manifest file or an absolute URL. (Absolute URLs must be from the same origin as the application). A cache manifest file can have any file extension, but it must be served with the MIME type <code>text/cache-manifest</code>.</p>
+
+<div class="note"><strong>Note: </strong>On Apache servers, the MIME type for manifest (.appcache) files can be set by adding <code>AddType text/cache-manifest .appcache</code> to a .htaccess file within either the root directory, or the same directory as the application.</div>
+
+<h3 id="Entries_in_a_cache_manifest_file">Entries in a cache manifest file</h3>
+
+<p>The cache manifest file is a simple text file that lists the resources the browser should cache for offline access. Resources are identified by URI. Entries listed in the cache manifest must have the same scheme, host, and port as the manifest.</p>
+
+<h3 id="Example_1_a_simple_cache_manifest_file">Example 1: a simple cache manifest file</h3>
+
+<p>The following is a simple cache manifest file, <code>example.appcache</code>, for an imaginary web site at <span class="nowiki">www.example.com</span>.</p>
+
+<pre class="eval">CACHE MANIFEST
+# v1 - 2011-08-13
+# This is a comment.
+<span class="nowiki">http://www.example.com/index.html</span>
+<span class="nowiki">http://www.example.com/header.png</span>
+<span class="nowiki">http://www.example.com/blah/blah</span>
+</pre>
+
+<p>A cache manifest file can include three sections (<code>CACHE</code>, <code>NETWORK</code>, and <code>FALLBACK</code>, discussed below). In the example above, there is no section header, so all data lines are assumed to be in the explicit (<code>CACHE</code>) section, meaning that the browser should cache all the listed resources in the application cache. Resources can be specified using either absolute or relative URLs (e.g., <code>index.html</code>).</p>
+
+<p>The "v1" comment in the example above is there for a good reason. Browsers only update an application cache when the manifest file changes, byte for byte. If you change a cached resource (for example, you update the <code>header.png</code> image with new content), you must also change the content of the manifest file in order to let browsers know that they need to refresh the cache. You can make any change you want to the manifest file, but revising a version number is the recommended best practice.</p>
+
+<div class="warning"><strong>Important:</strong> Do not specify the manifest itself in the cache manifest file, otherwise it will be nearly impossible to inform the browser a new manifest is available.</div>
+
+<h3 id="Sections_in_a_cache_manifest_file_CACHE_NETWORK_and_FALLBACK">Sections in a cache manifest file: <code>CACHE</code>, <code>NETWORK</code>, and <code>FALLBACK</code></h3>
+
+<p>A manifest can have three distinct sections: <code>CACHE</code>, <code>NETWORK</code>, and <code>FALLBACK</code>.</p>
+
+<dl>
+ <dt><code>CACHE:</code></dt>
+ <dd>This is the default section for entries in a cache manifest file. Files listed under the <code>CACHE:</code> section header (or immediately after the <code>CACHE MANIFEST</code> line) are explicitly cached after they're downloaded for the first time.</dd>
+ <dt><code>NETWORK:</code></dt>
+ <dd>Files listed under the <code>NETWORK:</code> section header in the cache manifest file are white-listed resources that require a connection to the server. All requests to such resources bypass the cache, even if the user is offline. The wildcard character <code>*</code> can be used once. Most sites need <code>*</code>.</dd>
+ <dt><code>FALLBACK:</code></dt>
+ <dd>The <code>FALLBACK:</code> section specifies fallback pages the browser should use if a resource is inaccessible. Each entry in this section lists two URIs—the first is the resource, the second is the fallback. Both URIs must be relative and from the same origin as the manifest file. Wildcards may be used.</dd>
+</dl>
+
+<p>The <code>CACHE</code>, <code>NETWORK</code>, and <code>FALLBACK </code>sections can be listed in any order in a cache manifest file, and each section can appear more than once in a single manifest.</p>
+
+<h3 id="Example_2_a_more_complete_cache_manifest_file">Example 2: a more complete cache manifest file</h3>
+
+<p>The following is a more complete cache manifest file for the imaginary web site at <span class="nowiki">www.example.com</span>:</p>
+
+<pre class="eval">CACHE MANIFEST
+# v1 2011-08-14
+# This is another comment
+index.html
+cache.html
+style.css
+image1.png
+
+# Use from network if available
+NETWORK:
+network.html
+
+# Fallback content
+FALLBACK:
+/ fallback.html
+</pre>
+
+<p>This example uses <code>NETWORK</code> and <code>FALLBACK</code> sections to specify that the <code>network.html</code> page must always be retrieved from the network, and that the <code>fallback.html</code> page should be served as a fallback resource (e.g., in case a connection to the server cannot be established).</p>
+
+<h3 id="Structure_of_a_cache_manifest_file">Structure of a cache manifest file</h3>
+
+<p>Cache manifest files must be served with the <code>text/cache-manifest</code> MIME type. All resources served using this MIME type must follow the syntax for an application cache manifest, as defined in this section.</p>
+
+<p>Cache manifests are UTF-8 format text files, and may optionally include a BOM character. Newlines may be represented by line feed (<code>U+000A</code>), carriage return (<code>U+000D</code>), or carriage return and line feed both.</p>
+
+<p>The first line of the cache manifest must consist of the string <code>CACHE MANIFEST</code> (with a single <code>U+0020</code> space between the two words), followed by zero or more space or tab characters. Any other text on the line is ignored.</p>
+
+<p>The remainder of the cache manifest must be comprised of zero or more of the following lines:</p>
+
+<dl>
+ <dt>Blank line</dt>
+ <dd>You may use blank lines comprised of zero or more space and tab characters.</dd>
+ <dt>Comment</dt>
+ <dd>Comments consist of zero or more tabs or spaces followed by a single <code>#</code> character, followed by zero or more characters of comment text. Comments may only be used on their own lines (after the initial <code>CACHE MANIFEST</code> line), and cannot be appended to other lines. This means that you cannot specify fragment identifiers.</dd>
+ <dt>Section header</dt>
+ <dd>Section headers specify which section of the cache manifest is being manipulated. There are three possible section headers:</dd>
+</dl>
+
+<blockquote>
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Section header</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>CACHE:</code></td>
+   <td>Switches to the explicit section of the cache manifest (this is the default section).</td>
+  </tr>
+  <tr>
+   <td><code>NETWORK:</code></td>
+   <td>Switches to the online whitelist section of the cache manifest.</td>
+  </tr>
+  <tr>
+   <td><code>FALLBACK:</code></td>
+   <td>Switches to the fallback section of the cache manifest.</td>
+  </tr>
+ </tbody>
+</table>
+</blockquote>
+
+<dl>
+ <dd>The section header line may include whitespaces, but must include the colon (<code>:</code>) in the section name.</dd>
+ <dt>Section data</dt>
+ <dd>The format for lines of data varies from section to section. In the explicit (<code>CACHE:</code>) section, each line is a valid URI or IRI reference to a resource to cache (no wildcard characters are allowed in this sections). Whitespace is allowed before and after the URI or IRI on each line. In the Fallback section each line is a valid URI or IRI reference to a resource, followed by a fallback resource that is to be served up when a connection with the server cannot be made. In the network section, each line is a valid URI or IRI reference to a resource to fetch from the network (or the wildcard character <code>*</code> can be used in this section).
+ <div class="note"><strong>Note: </strong>Relative URIs are relative to the cache manifest's URI, not to the URI of the document referencing the manifest.</div>
+ </dd>
+</dl>
+
+<p>Cache manifest files can switch from section to section at will (each section header can be used more than once), and sections are allowed to be empty.</p>
+
+<h2 id="Resources_in_an_application_cache">Resources in an application cache</h2>
+
+<p>An application cache always includes at least one resource, identified by URI. All resources fit into one of the following categories:</p>
+
+<dl>
+ <dt>Master entries</dt>
+ <dd>These are resources added to the cache because a browsing context visited by the user included a document that indicated that it was in this cache using its <code>manifest</code> attribute.</dd>
+ <dt>Explicit entries</dt>
+ <dd>These are resources explicitly listed in the application's cache manifest file.</dd>
+ <dt>Network entries</dt>
+ <dd>These are resources listed in the application's cache manifest files as network entries.</dd>
+ <dt>Fallback entries</dt>
+ <dd>These are resources listed in the application's cache manifest files as fallback entries.</dd>
+</dl>
+
+<div class="note"><strong>Note:</strong> Resources can be tagged with multiple categories, and can therefore be categorized as multiple entries. For example, an entry can be both an explicit entry and a fallback entry.</div>
+
+<p>Resource categories are described in greater detail below.</p>
+
+<h3 id="Master_entries">Master entries</h3>
+
+<p>Master entries are any HTML files that include a <code><a href="/en-US/docs/Web/HTML/Element/html#attr-manifest">manifest</a></code> attribute in their <a title="The HTML &lt;html> element (or HTML root element) represents the root of an HTML document. All other elements must be descendants of this element." href="/en-US/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a> element. For example, let's say we have the HTML file <a href="http://www.example.com/entry.html" class="external">http://www.example.com/entry.html</a>, which looks like this:</p>
+
+<pre class="brush: html">&lt;html manifest="example.appcache"&gt;
+  &lt;h1&gt;Application Cache Example&lt;/h1&gt;
+&lt;/html&gt;
+</pre>
+
+<p>If <code>entry.html</code> is not listed in the <code>example.appcache</code> cache manifest file, visiting the <code>entry.html</code> page causes <code>entry.html</code> to be added to the application cache as a master entry.</p>
+
+<h3 id="Explicit_entries">Explicit entries</h3>
+
+<p>Explicit entries are resources that are explicitly listed in the <code>CACHE </code>section of a cache manifest file.</p>
+
+<h3 id="Network_entries">Network entries</h3>
+
+<p>The <code>NETWORK</code> section of a cache manifest file specifies resources for which a web application requires online access. Network entries in an application cache are essentially an "online whitelist"—URIs specified in the <code>NETWORK</code> section are loaded from the server instead of the cache. This lets the browser's security model protect the user from potential security breaches by limiting access to approved resources.</p>
+
+<p>As an example, you can use network entries to load and execute scripts and other code from the server instead of the cache:</p>
+
+<pre class="eval">CACHE MANIFEST
+NETWORK:
+/api
+</pre>
+
+<p>The cache manifest section listed above ensures that requests to load resources contained in the <code><a href="http://www.example.com/api/" rel="freelink" class="external">http://www.example.com/api/</a></code> subtree always go to the network without attempting to access the cache.</p>
+
+<div class="note"><strong>Note</strong>: Simply omitting master entries (files that have the <code>manifest</code> attribute set in the <code>html</code> element) from the manifest file would not have the same result, because master entries will be added—and subsequently served from—the application cache.</div>
+
+<h3 id="Fallback_entries">Fallback entries</h3>
+
+<p>Fallback entries are used when an attempt to load a resource fails. For example, let's say the cache manifest file <code><a href="http://www.example.com/example.appcache" rel="freelink" class="external">http://www.example.com/example.appcache</a></code> includes the following content:</p>
+
+<pre class="eval">CACHE MANIFEST
+FALLBACK:
+example/bar/ example.html
+</pre>
+
+<p>Any request to <code><a href="http://www.example.com/example/bar/" rel="freelink" class="external">http://www.example.com/example/bar/</a></code> or any of its subdirectories and their content cause the browser to issue a network request to attempt to load the requested resource. If the attempt fails, due to either a network failure or a server error of some kind, the browser loads the file <code>example.html</code> instead.</p>
+
+<h2 id="Cache_states">Cache states</h2>
+
+<p>Each application cache has a <strong>state</strong>, which indicates the current condition of the cache. Caches that share the same manifest URI share the same cache state, which can be one of the following:</p>
+
+<dl>
+ <dt><code>UNCACHED</code></dt>
+ <dd>A special value that indicates that an application cache object is not fully initialized.</dd>
+ <dt><code>IDLE</code></dt>
+ <dd>The application cache is not currently in the process of being updated.</dd>
+ <dt><code>CHECKING</code></dt>
+ <dd>The manifest is being fetched and checked for updates.</dd>
+ <dt><code>DOWNLOADING</code></dt>
+ <dd>Resources are being downloaded to be added to the cache, due to a changed resource manifest.</dd>
+ <dt><code>UPDATEREADY</code></dt>
+ <dd>There is a new version of the application cache available. There is a corresponding <code>updateready</code> event, which is fired instead of the <code>cached</code> event when a new update has been downloaded but not yet activated using the <code>swapCache()</code> method.</dd>
+ <dt><code>OBSOLETE</code></dt>
+ <dd>The application cache group is now obsolete.</dd>
+</dl>
+
+<h2 id="Testing_for_updates_to_the_cache_manifest">Testing for updates to the cache manifest</h2>
+
+<p>You can programmatically test to see if an application has an updated cache manifest file, using JavaScript. Since a cache manifest file may have been updated before a script attaches event listeners to test for updates, scripts should always test <code>window.applicationCache.status</code>.</p>
+
+<pre class="brush: js">function onUpdateReady() {
+  console.log('found new version!');
+}
+window.applicationCache.addEventListener('updateready', onUpdateReady);
+if(window.applicationCache.status === window.applicationCache.UPDATEREADY) {
+  onUpdateReady();
+}</pre>
+
+<p>To manually start testing for a new manifest file, you can use <code>window.applicationCache.update()</code>.</p>
+
+<h2 id="Gotchas">Gotchas</h2>
+
+<ul>
+ <li>Never access cached files by using traditional GET parameters (like <code>other-cached-page.html?parameterName=value</code>). This will make the browser bypass the cache and attempt to get it from network. To link to cached resources that have parameters parsed in JavaScript use parameters in the hash part of the link, such as <code>other-cached-page.html#whatever?parameterName=value</code>.</li>
+ <li>When applications are cached, simply updating the resources (files) that are used in a web page is not enough to update the files that have been cached. You must update the cache manifest file itself before the browser retrieves and uses the updated files. You can do this programmatically using <code>window.applicationCache.swapCache()</code>, though resources that have already been loaded will not be affected. To make sure that resources are loaded from a new version of the application cache, refreshing the page is ideal.</li>
+ <li>It's a good idea to set expires headers on your web server for <code>*.appcache</code> files to expire immediately. This avoids the risk of caching manifest files. For example, in Apache you can specify such a configuration as follows:<br>
+  <code>ExpiresByType text/cache-manifest "access plus 0 seconds"</code></li>
+</ul>
+
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+
+<p></p><div class="htab"> 
+    <a name="AutoCompatibilityTable" id="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li class="selected"><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div id="compat-desktop">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Edge</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>4.0</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td><a title="Released on 2009-06-30." href="/en-US/Firefox/Releases/3.5">3.5</a> (1.9.1)<sup>[1]</sup></td>
+   <td>10.0</td>
+   <td>10.6</td>
+   <td>4.0</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div id="compat-mobile">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Edge</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>Firefox OS</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td>1.0.1<sup>[2]</sup></td>
+   <td>11.0<sup>[3]</sup></td>
+   <td>11.0</td>
+   <td>3.2</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] Versions of Firefox prior to 3.5 ignore the <code>NETWORK</code> and <code>FALLBACK</code> sections of the cache manifest file.</p>
+
+<p>[2] When using AppCache to provide Firefox OS hosted apps with offline capabilities, you need to declare the AppCache manifest inside your Firefox OS manifest.webapp file's <a href="/en-US/Apps/Build/Manifest#appcache_path">appcache_path field</a>.</p>
+
+<p>[3] Reloading the page in IE Mobile will clear the application cache, so the webpage will fail to load. However, closing the page and opening via bookmark again works fine.</p>
+
+<h2 id="See_also">See also</h2>
+
+<ul>
+ <li><a href="http://manifest-validator.com" class="external">Cache Manifest Validator</a></li>
+ <li><a href="//www.onlinewebcheck.com/check.php?adv=1">OnlineWebCheck.com - Check cache manifest file syntax</a></li>
+ <li><a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/" class="external">HTML5Rocks - A Beginner's Guide to Using the Application Cache</a></li>
+ <li><a href="http://appcache.offline.technology/" class="external">Appcache Facts</a> - detailed information on AppCache idiosyncrasies</li>
+ <li><a href="http://alistapart.com/article/application-cache-is-a-douchebag" class="external">A List Apart: Application Cache is a Douchebag</a>
+  <ul>
+   <li><a href="http://flailingmonkey.com/application-cache-not-a-douchebag" class="external">The Application Cache is no longer a Douchebag</a> - an overview of the app cache debugging tools added in Firefox 23.</li>
+  </ul>
+ </li>
+ <li><a href="http://hacks.mozilla.org/2010/01/offline-web-applications/" class="external">offline web applications</a> at hacks.mozilla.org - showcases an offline app demo and explains how it works.</li>
+ <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline" class="external">HTML 5 working draft: Offline web applications</a></li>
+ <li><a href="http://www.w3.org/TR/offline-webapps/" class="external">W3C Working Group Note: Offline Web Applications</a></li>
+ <li><a href="http://developer.teradata.com/blog/js186040/2011/11/html5-cache-manifest-an-off-label-usage" class="external">HTML5 Cache Manifest: An Off-label Usage</a></li>
+ <li><a href="http://www.ibm.com/developerworks/web/library/wa-ffox3/" class="external">Get ready for Firefox 3.0 - A Web developer's guide to the many new features in this popular browser, especially the offline application features</a> (IBM developerWorks)</li>
+ <li><a href="/en-US/docs/Application_cache_implementation_overview">Application cache implementation overview</a></li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/Advanced" rel="nofollow, noindex">Advanced</a></li>
+      
+        <li><a href="/en-US/docs/tag/App" rel="nofollow, noindex">App</a></li>
+      
+        <li><a href="/en-US/docs/tag/appcache" rel="nofollow, noindex">appcache</a></li>
+      
+        <li><a href="/en-US/docs/tag/application%20cache" rel="nofollow, noindex">application cache</a></li>
+      
+        <li><a href="/en-US/docs/tag/Cache" rel="nofollow, noindex">Cache</a></li>
+      
+        <li><a href="/en-US/docs/tag/Guide" rel="nofollow, noindex">Guide</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTML" rel="nofollow, noindex">HTML</a></li>
+      
+        <li><a href="/en-US/docs/tag/web%20cache" rel="nofollow, noindex">web cache</a></li>
+      
+    </ul>
+  </div>
+
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/erikadoyle">erikadoyle</a>, 
+    
+        <a href="/en-US/profiles/SphinxKnight">SphinxKnight</a>, 
+    
+        <a href="/en-US/profiles/reach-star">reach-star</a>, 
+    
+        <a href="/en-US/profiles/Sebastianz">Sebastianz</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/sideshowbarker">sideshowbarker</a>, 
+    
+        <a href="/en-US/profiles/Haroenv">Haroenv</a>, 
+    
+        <a href="/en-US/profiles/MDNion">MDNion</a>, 
+    
+        <a href="/en-US/profiles/kscarfone">kscarfone</a>, 
+    
+        <a href="/en-US/profiles/madarche">madarche</a>, 
+    
+        <a href="/en-US/profiles/wizzard0">wizzard0</a>, 
+    
+        <a href="/en-US/profiles/HTMLValidator">HTMLValidator</a>, 
+    
+        <a href="/en-US/profiles/demands">demands</a>, 
+    
+        <a href="/en-US/profiles/Jeremie">Jeremie</a>, 
+    
+        <a href="/en-US/profiles/Timmi">Timmi</a>, 
+    
+        <a href="/en-US/profiles/jsx">jsx</a>, 
+    
+        <a href="/en-US/profiles/maybe">maybe</a>, 
+    
+        <a href="/en-US/profiles/Nickolay">Nickolay</a>, 
+    
+        <a href="/en-US/profiles/parthiv">parthiv</a>, 
+    
+        <a href="/en-US/profiles/rillian">rillian</a>, 
+    
+        <a href="/en-US/profiles/honzabambas">honzabambas</a>, 
+    
+        <a href="/en-US/profiles/ethertank">ethertank</a>, 
+    
+        <a href="/en-US/profiles/trevorh">trevorh</a>, 
+    
+        <a href="/en-US/profiles/fhemberger">fhemberger</a>, 
+    
+        <a href="/en-US/profiles/allergic">allergic</a>, 
+    
+        <a href="/en-US/profiles/scootergrisen">scootergrisen</a>, 
+    
+        <a href="/en-US/profiles/robhawkes">robhawkes</a>, 
+    
+        <a href="/en-US/profiles/Tyson">Tyson</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/ismaail">ismaail</a>, 
+    
+        <a href="/en-US/profiles/Sonnyp">Sonnyp</a>, 
+    
+        <a href="/en-US/profiles/eccenux">eccenux</a>, 
+    
+        <a href="/en-US/profiles/awatson">awatson</a>
+    
+                    </div>
+                  
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/erikadoyle">erikadoyle</a>,
+                      <time datetime="2016-11-21T14:45:49-08:00">Nov 21, 2016, 2:45:49 PM</time>
+                    </div>
+                  
+                </div>
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+    <ol><li data-default-state="open"><a href="#"><strong>Events</strong></a><ol><li><a href="/en-US/docs/Web/Events/cached"><code>cached</code></a></li><li><a href="/en-US/docs/Web/Events/checking"><code>checking</code></a></li><li><a href="/en-US/docs/Web/Events/downloading"><code>downloading</code></a></li><li><a href="/en-US/docs/Web/Events/noupdate"><code>noupdate</code></a></li><li><a href="/en-US/docs/Web/Events/obsolete"><code>obsolete</code></a></li><li><a href="/en-US/docs/Web/Events/updateready"><code>updateready</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/HTML/Using_the_application_cache$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/HTML/Using_the_application_cache$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/HTML/Using_the_application_cache" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="German" value="/de/docs/Web/HTML/Using_the_application_cache">
+            Deutsch (de)
+          </option>
+          <option title="Spanish" value="/es/docs/Web/HTML/Recursos_offline_en_firefox">
+            Español (es)
+          </option>
+          <option title="French" value="/fr/docs/Web/HTML/Utiliser_Application_Cache">
+            Français (fr)
+          </option>
+          <option title="Italian" value="/it/docs/Web/HTML/utilizzare_application_cache">
+            Italiano (it)
+          </option>
+          <option title="Japanese" value="/ja/docs/Offline_resources_in_Firefox">
+            日本語 (ja)
+          </option>
+          <option title="Korean" value="/ko/docs/Web/HTML/Using_the_application_cache">
+            한국어 (ko)
+          </option>
+          <option title="Dutch" value="/nl/docs/Web/HTML/Applicatie_cache_gebruiken">
+            Nederlands (nl)
+          </option>
+          <option title="Polish" value="/pl/docs/Web/HTML/Zasoby_offline_w_Firefoksie">
+            Polski (pl)
+          </option>
+          <option title="Portuguese (Brazilian)" value="/pt-BR/docs/Web/HTML/Using_the_application_cache">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Russian" value="/ru/docs/Web/HTML/%25D0%2598%25D1%2581%25D0%25BF%25D0%25BE%25D0%25BB%25D1%258C%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B5_%25D0%25BA%25D1%258D%25D1%2588%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F_%25D0%25BF%25D1%2580%25D0%25B8%25D0%25BB%25D0%25BE%25D0%25B6%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B9">
+            Русский (ru)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Web/HTML/Using_the_application_cache">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chinese (Traditional)" value="/zh-TW/docs/Web/HTML/Offline_resources_on_Firefox">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

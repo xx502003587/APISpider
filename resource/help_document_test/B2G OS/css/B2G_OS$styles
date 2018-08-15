@@ -1,0 +1,70 @@
+/* Sets the zone header colour for both landing page and article subpages */
+/* .zone .zone-landing-header, .zone #main-header, .zone .zone-article-header { background-color: #ff4e00 } */
+/* .redesign body { background-color: #ff4e00; } */
+ 
+/* Sets the image for landing and article subpages.  You may want to use different images so separate the selectors as needed */
+.zone-landing-header .zone-image, .zone-article-header .zone-image { background-image: url(); background-position: top center;}
+
+.zone-landing-header .zone-image {
+  background-size: 224px;
+  background-position: 230px top;
+}
+
+.text-content table {
+  border: 0;
+}
+
+.text-content td {
+  border: 0;
+  vertical-align: middle;
+}
+
+
+div.center {
+  padding-top: 0;
+}
+
+div.zone-callout {
+  margin-bottom: 10px;
+}
+
+div.zone-callout ul {
+  margin: 0 0 10px 10px;
+}
+
+div.zone-callout li {
+  padding: 5px;
+}
+
+hr {
+  border-style: solid;
+  border-bottom-width: 1px;
+  color: #5E88B0;
+  margin: 1em auto 2em auto;
+  width: 90%;
+}
+
+/* custom CSS for the apps zone feature box thingy  */
+
+.outer-apps-box {
+	  background: url(https://mdn.mozillademos.org/files/6257/posh-app-image.png) no-repeat 12% center,
+	              -webkit-linear-gradient(to bottom,#FFF,#EEE);
+      background: url(https://mdn.mozillademos.org/files/6257/posh-app-image.png) no-repeat 12% center,
+	              -moz-linear-gradient(to bottom,#FFF,#EEE);
+      background: url(https://mdn.mozillademos.org/files/6257/posh-app-image.png) no-repeat 12% center,
+	              -ms-linear-gradient(to bottom,#FFF,#EEE);
+	  background: url(https://mdn.mozillademos.org/files/6257/posh-app-image.png) no-repeat 12% center,
+	              linear-gradient(to bottom,#FFF,#EEE);
+      margin: 0 auto 40px;
+      padding: 4% 6% 4% 30%;
+      border-radius: 3px;
+      box-shadow: 0px 2px 2px #CCC;
+      height: auto;
+      width: 26%;
+    }
+
+/*overriding the column-5 width, to make the two column section columns wide enough to span the whole width of the main content area.*/
+
+.column-5 {
+  width: 48.5%;
+}

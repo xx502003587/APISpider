@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Platform-specific details of app installation - App Center | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+      
+        <link rel="stylesheet" type="text/css" href="css/Apps$styles">
+      
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details" >
+
+  
+    
+      <link rel="alternate" hreflang="bn-BD" href="/bn-BD/docs/Web/Apps/Developing/Platform-specific_details" title="Platform-specific details of app installation">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/Web/Aplicaciones/Detalles_especificos_de_plataforma" title="Detalles específicos de cada plataforma en la instalación de aplicaciones">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/Apps/D%C3%A9tails_sp%C3%A9cifiques_%C3%A0_la_plateforme" title="Détails spécifiques aux plateformes sur l&#39;installation d&#39;une application">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Web/Apps/Platform-specific_details" title="アプリのインストールに関するプラットフォーム固有の詳細">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Apps/Platform-specific_details" title="Plataforma-detalhes específicos da instalação de aplicativo">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Web/Apps/Build/Platform-specific_details" title="Platform-specific details of app installation">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Platform-specific details of app installation">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details">
+  <meta name="twitter:title" content="Platform-specific details of app installation">
+  
+  <meta property="og:description" content="Gaia (the Firefox OS user interface) includes a marketplace link on the second homepage, and apps can be installed in this way. Default apps included with Gaia are stored in the Gecko profile on the device as an offline cache of the Web app at /data/local/OfflineCache/*.">
+  <meta name="description" content="Gaia (the Firefox OS user interface) includes a marketplace link on the second homepage, and apps can be installed in this way. Default apps included with Gaia are stored in the Gecko profile on the device as an offline cache of the Web app at /data/local/OfflineCache/*.">
+  <meta name="twitter:description" content="Gaia (the Firefox OS user interface) includes a marketplace link on the second homepage, and apps can be installed in this way. Default apps included with Gaia are stored in the Gecko profile on the device as an offline cache of the Web app at /data/local/OfflineCache/*.">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1022578');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/Apps/Fundamentals/Platform-specific_details" contextmenu="edit-history-menu" data-search-url="" class="document zone ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2FApps%2FFundamentals%2FPlatform-specific_details" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/Apps/Fundamentals/Platform-specific_details">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+  
+      
+        <div class="zone-article-header" id="document-main"><div class="center">
+          <!-- zone title -->
+          <div class="zone-title"><a href="/en-US/docs/Web/Apps">App Center</a></div>
+          <!-- zone image -->
+          <div class="zone-image"></div>
+        </div></div>
+      
+
+     <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" ><div class="center">
+      
+      <div class="article-meta">
+        <!-- action buttons -->
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/bn-BD/docs/Web/Apps/Developing/Platform-specific_details" title="Bengali (Bangladesh)">বাংলা (বাংলাদেশ) (bn-BD)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/Web/Aplicaciones/Detalles_especificos_de_plataforma" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/Apps/D%C3%A9tails_sp%C3%A9cifiques_%C3%A0_la_plateforme" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Web/Apps/Platform-specific_details" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Apps/Platform-specific_details" title="Portuguese (Brazilian)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Web/Apps/Build/Platform-specific_details" title="Russian">Русский (ru)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/Apps" rel="v:url" property="v:title">App Center</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/Apps/Fundamentals" rel="v:url" property="v:title">Web app fundamentals</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Platform-specific details of app installation</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc submenu">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
+            <ul>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/chrisdavidmills" title="View profile: chrisdavidmills">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills" data-src="https://secure.gravatar.com/avatar/deeea0ba82390bd5acc539703c4b0cfb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/kohei.yoshino" title="View profile: kohei.yoshino">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kohei.yoshino" data-src="https://secure.gravatar.com/avatar/f84bbc6968ecda0a64ab50d1060c320e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kohei.yoshino</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/chrisdavidmills-github" title="View profile: chrisdavidmills-github">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills-github" data-src="https://secure.gravatar.com/avatar/92e050ed8794e2c76842f59f83d8a7bc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills-github</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/eiblem" title="View profile: eiblem">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="eiblem" data-src="https://secure.gravatar.com/avatar/5350d8d6b2b4bce0d8c8091df09f7311?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">eiblem</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/markg" title="View profile: markg">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="markg" data-src="https://secure.gravatar.com/avatar/a6bdd84b4732a2c3c7ecadd886b3c64a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">markg</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/madarche" title="View profile: madarche">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="madarche" data-src="https://secure.gravatar.com/avatar/a15ce308d52c691ba765d0ac972aac87?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">madarche</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/tabraldes" title="View profile: tabraldes">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tabraldes" data-src="https://secure.gravatar.com/avatar/db860ccc5a17d54e2de3cfe91e1ac772?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tabraldes</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/fabrice.desre" title="View profile: fabrice.desre">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fabrice.desre" data-src="https://secure.gravatar.com/avatar/bc49a1bf10e676d3040252dedf2bacc3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fabrice.desre</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/mnoorenberghe" title="View profile: mnoorenberghe">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mnoorenberghe" data-src="https://secure.gravatar.com/avatar/b7e928b14ef7e22c266206f5852cc6b6?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mnoorenberghe</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jswisher" title="View profile: jswisher">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jswisher" data-src="https://secure.gravatar.com/avatar/38185c2812cbcae186ebbe4a82910661?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jswisher</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Canuckistani" title="View profile: Canuckistani">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Canuckistani" data-src="https://secure.gravatar.com/avatar/b07ae75dd1a5414bf30d7f773ccfc894?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Canuckistani</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/abstract" title="View profile: abstract">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="abstract" data-src="https://secure.gravatar.com/avatar/713e4fc3f5f14aa9112ceb7c7ee0a471?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">abstract</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Graydon" title="View profile: Graydon">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Graydon" data-src="https://secure.gravatar.com/avatar/f1bc67b53f1a5512d778426cf447c5ab?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Graydon</noscript></a>
+                </li>
+            
+            </ul>
+        </div>
+        
+
+        <h1>Platform-specific details of app installation</h1>
+
+      </div>
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-closed wiki-left-none">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Firefox_OS_(Boot_to_Gecko)" rel="internal">Firefox OS (Boot to Gecko)</a><li><a href="#Desktop_platforms" rel="internal">Desktop platforms</a><ol><li><a href="#Windows" rel="internal">Windows</a><li><a href="#Mac_OS_X" rel="internal">Mac OS X</a><li><a href="#Linux" rel="internal">Linux</a></ol></li><li><a href="#Android" rel="internal">Android</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div class="summary">
+ <p>You don't have to do anything special to install apps on different platforms. All the information you need to provide, such as the app name, is contained in the <a href="/en-US/docs/Web/Apps/Manifest">app manifest</a>. Here are some platform-specific details about how apps are installed on each platform. These details assume that Firefox has been installed on the platform.</p>
+</div>
+<h2 id="Firefox_OS_(Boot_to_Gecko)">Firefox OS (Boot to Gecko)</h2>
+<p>Gaia (the <a href="/en-US/docs/Mozilla/Firefox_OS">Firefox OS</a> user interface) includes a marketplace link on the second homepage, and apps can be installed in this way. Default apps included with Gaia are stored in the Gecko profile on the device as an offline cache of the Web app at <code>/data/local/OfflineCache/*</code>.</p>
+<p>If you want to browse this folder to look at the contents, you can do so using the <code>adb</code> tool:</p>
+<pre><code>$ adb shell ls -la /data/local/OfflineCache/</code>
+</pre>
+<p>All other installed apps are stored in the DOM Registry component (you can find this file at <code>/data/local/webapps</code>). If they use appcache, the appcache will be populated at install time.</p>
+<h2 id="Desktop_platforms">Desktop platforms</h2>
+<p>The sections that follow explain where the files for installable web apps are located when installed on desktop platforms. But this doesn't tell the whole story. Since Firefox 29, Firefox Desktop has had a component called Web Runtime for Desktop. This enables free Marketplace apps to be installed by Firefox Desktop into a user's Windows, Mac, or Linux computer. Once installed on a desktop computer, these apps run similarly to any other desktop app, in terms of installation, etc.</p>
+<p>To find out more, read <a href="/en-US/Marketplace/Options/Open_web_apps_for_desktop">Open Web Apps for Desktop</a>.</p>
+<h3 id="Windows">Windows</h3>
+<p>The following are created upon installation. All of these will be removed by the uninstaller (find it in the Windows Control Panel).</p>
+<ul>
+ <li>Shortcut on the current user's desktop.</li>
+ <li>Shortcut in Start menu &gt; Programs for the current user.</li>
+ <li>Registry entries to make the app appear in the Control Panel's "uninstall a program" menu.</li>
+ <li>Folders for the app under <code>%APPDATA%\<em>scheme</em>;<em>domain[;port]</em></code>
+  <ul>
+   <li>Where <code><em>scheme</em></code> is <code>http</code> or <code>https</code>, <code><em>domain</em></code> is the app's domain name, and <code><em>port</em></code> is a port number, used only if the default port number is not used.</li>
+   <li>Example folder name: <code>C:\Users\myuser\AppData\Roaming\https;mozqa.com;115</code></li>
+   <li>The folders contain a stub executable (<code>exe</code>), configuration files, and an uninstaller.</li>
+  </ul>
+ </li>
+</ul>
+<p>When launched, each app has its own window with the following attributes:</p>
+<ul>
+ <li>A native menu bar (currently with File and Edit menus).</li>
+ <li>The title of the window is the name of the app.</li>
+ <li>System menu icon (in the upper left corner of the window) is specified by the app manifest.</li>
+ <li>The displayed Taskbar icon is also specified by the app manifest.</li>
+</ul>
+<p>Each app runs in a separate process, and the app appears under its own name on the Applications tab of Task Manager. The executable name of the app (for example, "<code>Mozilla QA WebRT Tester.exe</code>") is the app name with illegal Windows filename characters removed.</p>
+<p>Each app has its own profile with separate preferences, cookies, history, certificate authority settings, proxy settings, etc. Upon first run, profile data is created in the directory mentioned above, and in an equivalent directory in <code>%LOCALAPPDATA%</code>. Profile data is <em>not</em> removed by the uninstaller.</p>
+<h3 id="Mac_OS_X">Mac OS X</h3>
+<p>Apps are installed into <code>/Applications</code>.</p>
+<p>Opening the app launches the app in its own window minus the browser window frame. Apps execute using the Firefox binary. Each app runs in a separate process. Each app has its own profile, with separate preferences, cookies, certificate authority settings, proxy settings, etc.</p>
+<h3 id="Linux">Linux</h3>
+<p>Apps are installed directly in the <code>$HOME</code> of the user. For example if an app comes from http://areatweet.com/ it will get installed in <code>$HOME/.http\;areatweet.com/</code>.</p>
+<p>The installation creates also a new entry in the desktop menu according to the <a href="http://standards.freedesktop.org/desktop-entry-spec/1.1/apa.html" class="external">Freedesktop specifications</a>. It works on every desktop following the Freedesktop specifications such as KDE and Gnome.</p>
+<p>The new entry is located in the <code>$HOME/.local/share/applications/</code> directory of the user.</p>
+<p>In KDE the new entry appears in an "Found Objects" menu group of the "Application" menu.</p>
+<p>In Gnome the new entry appears in an "Others" menu group of the "Application" menu, see the <a href="/files/4571/installed_app_example_on_linux_gnome.png">screenshot</a>.</p>
+<h2 id="Android">Android</h2>
+<p>If you install a web app from outside of the Firefox Marketplace, the installation creates an icon on the home screen, but the app will not be added to the application list that is available from the Settings menu on the Android device.</p>
+<p>However, the Marketplace has a tool available called the APK factory that will generate an APK version of your app (the same, but packaged in a Java wrapper with some API code for accessing native APIs), as long as you select Android as a distribution target when uploading your app. When such apps are installed on an Android device, they are passed the APK version of the app, which has all the installation advantages of regular Android apps, but can still be run via the Web Runtime for Android contained within Firefox for Android.</p>
+<p>Find out more:</p>
+<ul>
+ <li><a href="https://hacks.mozilla.org/2014/03/better-integration-for-open-web-apps-on-android/" class="external">Better integration for open web apps on Android</a>: A fairly visual overview of how this all works.</li>
+ <li><a href="/en-US/Marketplace/Options/Open_web_apps_for_android">Open Web Apps for Android</a>: A more in depth explanation of how Open Web Apps for Android work.</li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/Apps" rel="nofollow, noindex">Apps</a></li>
+      
+        <li><a href="/en-US/docs/tag/p%C3%A1ginas_a_traducir" rel="nofollow, noindex">páginas_a_traducir</a></li>
+      
+    </ul>
+  </div>
+
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/kohei.yoshino">kohei.yoshino</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills-github">chrisdavidmills-github</a>, 
+    
+        <a href="/en-US/profiles/eiblem">eiblem</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/markg">markg</a>, 
+    
+        <a href="/en-US/profiles/madarche">madarche</a>, 
+    
+        <a href="/en-US/profiles/tabraldes">tabraldes</a>, 
+    
+        <a href="/en-US/profiles/fabrice.desre">fabrice.desre</a>, 
+    
+        <a href="/en-US/profiles/mnoorenberghe">mnoorenberghe</a>, 
+    
+        <a href="/en-US/profiles/jswisher">jswisher</a>, 
+    
+        <a href="/en-US/profiles/Canuckistani">Canuckistani</a>, 
+    
+        <a href="/en-US/profiles/abstract">abstract</a>, 
+    
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/Graydon">Graydon</a>
+    
+                    </div>
+                  
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>,
+                      <time datetime="2016-02-29T03:32:05-08:00">Feb 29, 2016, 3:32:05 AM</time>
+                    </div>
+                  
+                </div>
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/Apps/Fundamentals/Platform-specific_details" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="Bengali (Bangladesh)" value="/bn-BD/docs/Web/Apps/Developing/Platform-specific_details">
+            বাংলা (বাংলাদেশ) (bn-BD)
+          </option>
+          <option title="Spanish" value="/es/docs/Web/Aplicaciones/Detalles_especificos_de_plataforma">
+            Español (es)
+          </option>
+          <option title="French" value="/fr/docs/Web/Apps/D%C3%A9tails_sp%C3%A9cifiques_%C3%A0_la_plateforme">
+            Français (fr)
+          </option>
+          <option title="Japanese" value="/ja/docs/Web/Apps/Platform-specific_details">
+            日本語 (ja)
+          </option>
+          <option title="Portuguese (Brazilian)" value="/pt-BR/docs/Apps/Platform-specific_details">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Russian" value="/ru/docs/Web/Apps/Build/Platform-specific_details">
+            Русский (ru)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

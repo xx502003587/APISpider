@@ -1,0 +1,41 @@
+/* Sets the zone header colour for both landing page and article subpages */
+/* .zone .zone-landing-header, .zone #main-header, .zone .zone-article-header { background-color: #5E88B0 } */
+/* .redesign body { background-color: #5E88B0 } */
+
+div.center {
+  padding-top: 0;
+}
+
+div.zone-callout {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+div.zone-callout ul {
+  margin-bottom: 0;
+  padding-top:5px;
+}
+
+div.zone-callout li {
+  padding: 5px;
+}
+
+hr {
+  border-style: solid;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  color: #5E88B0;
+  margin: 1em auto 2em auto;
+  width: 90%;
+}
+
+.articulated-diagram-component {
+  margin: 0;
+  transition: transform 1s, box-shadow 1s;
+  max-width: 90%;
+}
+
+.articulated-diagram-container:hover .articulated-diagram-component{
+  transform: scale(0.9);
+  box-shadow: 3px 3px 4px 5px #ccc;
+}

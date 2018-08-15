@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Application security - Mozilla | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+      
+        <link rel="stylesheet" type="text/css" href="css/B2G_OS$styles">
+      
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Security/Application_security" >
+
+  
+    
+      <link rel="alternate" hreflang="bn-BD" href="/bn-BD/docs/Mozilla/B2G_OS/Security/Application_security" title="অ্যাপ্লিকেশনের নিরাপত্তা">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/Mozilla/B2G_OS/Security/Application_security" title="Seguridad en aplicaciones">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/B2G_OS/securite/Application_security" title="La sécurité des applications">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Mozilla/B2G_OS/Security/Application_security" title="アプリケーションセキュリティ">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Mozilla/B2G_OS/Security/Seguranca_de_aplicacao" title="Segurança de Aplicativos">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Mozilla/B2G_OS/Security/Application_security" title="应用安全">
+    
+      <link rel="alternate" hreflang="zh-TW" href="/zh-TW/docs/Mozilla/B2G_OS/Security/Application_security" title="應用程式安全">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Application security">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Security/Application_security">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Security/Application_security">
+  <meta name="twitter:title" content="Application security">
+  
+  <meta property="og:description" content="The key Web app security controls introduced by Firefox OS are:">
+  <meta name="description" content="The key Web app security controls introduced by Firefox OS are:">
+  <meta name="twitter:description" content="The key Web app security controls introduced by Firefox OS are:">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1104533');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Mozilla/B2G_OS/Security/Application_security" contextmenu="edit-history-menu" data-search-url="" class="document zone ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FMozilla%2FB2G_OS%2FSecurity%2FApplication_security" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Security/Application_security">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+  
+      
+        <div class="zone-article-header" id="document-main"><div class="center">
+          <!-- zone title -->
+          <div class="zone-title"><a href="/en-US/docs/Mozilla/B2G_OS">B2G OS</a></div>
+          <!-- zone image -->
+          <div class="zone-image"></div>
+        </div></div>
+      
+
+     <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" ><div class="center">
+      
+      <div class="article-meta">
+        <!-- action buttons -->
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/bn-BD/docs/Mozilla/B2G_OS/Security/Application_security" title="Bengali (Bangladesh)">বাংলা (বাংলাদেশ) (bn-BD)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/Mozilla/B2G_OS/Security/Application_security" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/B2G_OS/securite/Application_security" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Mozilla/B2G_OS/Security/Application_security" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Mozilla/B2G_OS/Security/Seguranca_de_aplicacao" title="Portuguese (Brazilian)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Mozilla/B2G_OS/Security/Application_security" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-TW/docs/Mozilla/B2G_OS/Security/Application_security" title="Chinese (Traditional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Mozilla" rel="v:url" property="v:title">Mozilla</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Mozilla/B2G_OS" rel="v:url" property="v:title">B2G OS</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Mozilla/B2G_OS/Security" rel="v:url" property="v:title">Firefox OS security</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Application security</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc submenu">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
+            <ul>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/chrisdavidmills" title="View profile: chrisdavidmills">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills" data-src="https://secure.gravatar.com/avatar/deeea0ba82390bd5acc539703c4b0cfb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/jswisher" title="View profile: jswisher">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jswisher" data-src="https://secure.gravatar.com/avatar/38185c2812cbcae186ebbe4a82910661?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jswisher</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/sayalaba" title="View profile: sayalaba">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sayalaba" data-src="https://secure.gravatar.com/avatar/0e223f22b1c90c11b8cf4a6e42cdc0ad?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sayalaba</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/stephaniehobson" title="View profile: stephaniehobson">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="stephaniehobson" data-src="https://secure.gravatar.com/avatar/d70bd194080649fe6fac9c012d4de39c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">stephaniehobson</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/foxbrush" title="View profile: foxbrush">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="foxbrush" data-src="https://secure.gravatar.com/avatar/b063a6f85624957642860a0c6aab47aa?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">foxbrush</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ptheriault" title="View profile: ptheriault">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ptheriault" data-src="https://secure.gravatar.com/avatar/9a0a16bc1cb5b0144e373deb8e357804?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ptheriault</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/rodrigowaters" title="View profile: rodrigowaters">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rodrigowaters" data-src="https://secure.gravatar.com/avatar/f3d8e2182ad1f7d897cf1f0abea0418e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rodrigowaters</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/nasrulsyahrul" title="View profile: nasrulsyahrul">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="nasrulsyahrul" data-src="https://secure.gravatar.com/avatar/6e484f38d80c52d1b9335b2194cf6d6d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">nasrulsyahrul</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kscarfone" title="View profile: kscarfone">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kscarfone" data-src="https://secure.gravatar.com/avatar/89c1e54a9703125168e40d22316d2b49?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kscarfone</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/crcr" title="View profile: crcr">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="crcr" data-src="https://secure.gravatar.com/avatar/53109391fab4917418886daa163a6b41?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">crcr</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/markg" title="View profile: markg">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="markg" data-src="https://secure.gravatar.com/avatar/a6bdd84b4732a2c3c7ecadd886b3c64a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">markg</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/dchan" title="View profile: dchan">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="dchan" data-src="https://secure.gravatar.com/avatar/b1b5bf39be6b2587d2c6aa00aecec381?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">dchan</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ethertank" title="View profile: ethertank">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ethertank" data-src="https://secure.gravatar.com/avatar/abac73ba2093b500bf7599c76d80280c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ethertank</noscript></a>
+                </li>
+            
+            </ul>
+        </div>
+        
+
+        <h1>Application security</h1>
+
+      </div>
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><ol><li><a href="#App_Types" rel="internal">App Types</a><li><a href="#App_Delivery" rel="internal">App Delivery</a><ol><li><a href="#Hosted_apps_2" rel="internal">Hosted apps </a><li><a href="#Packaged_apps_2" rel="internal">Packaged apps</a></ol></li><li><a href="#App_Origin" rel="internal">App Origin</a><li><a href="#App_Installation" rel="internal">App Installation</a><li><a href="#Updates_2" rel="internal">Updates</a></ol></li><li><a href="#Permissions" rel="internal">Permissions</a><ol><li><a href="#Manifest_Declaration" rel="internal">Manifest Declaration</a><li><a href="#Granting_Permissions" rel="internal">Granting Permissions</a><li><a href="#Revoking_Permissions" rel="internal">Revoking Permissions</a></ol></li><li><a href="#Web_App_Sandbox" rel="internal">Web App Sandbox</a><ol><li><a href="#Data_stored_per_app_2" rel="internal">Data stored per app </a><li><a href="#Apps_can't_open_each_other" rel="internal">Apps can't open each other </a><li><a href="#Motivation_2" rel="internal">Motivation</a><li><a href="#Sandboxed_Permissions_2" rel="internal">Sandboxed Permissions</a><li><a href="#Browser_API_Sandbox" rel="internal">Browser API Sandbox</a></ol></li><li><a href="#App_Security_Summary" rel="internal">App Security Summary</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <p></p><section id="Quick_Links" class="Quick_links"><!-- --></section><p></p>
+
+<div class="summary">
+<p>This article covers the Firefox OS application security model in detail.</p>
+</div>
+
+<p>The key Web app security controls introduced by Firefox OS are:</p>
+
+<ul>
+ <li>Web apps are explicitly installed and launched, rather than being casually navigated to in a browser. Apps must be installed prior to use, and security controls govern the update and removal of apps to protect the user.</li>
+ <li>Access to new web APIs is controlled by a permissions system, where an app must declare the permissions it intends to use prior to installation. In order to gain access to more powerful APIs, the apps meet certain requirements, and be reviewed, approved, and signed by a Marketplace.</li>
+ <li>Web apps are sandboxed so they can only see their own resources (cookies, offline storage IndexedDB databases, and so on). Even if two apps happen to both load a page with the same URL, these two pages are not considered same-origin as they are running inside separate apps.</li>
+</ul>
+
+<h3 id="App_Types">App Types</h3>
+
+<p>FirefoxOS supports three types of web apps: "<strong>web</strong>", "<strong>privileged</strong>" and <strong>internal</strong> ("<strong>certified</strong>"). An app's type is declared in its <a href="/en-US/docs/Apps/Manifest" title="/en-US/docs/Apps/Manifest">manifest</a>, and determines the list of permissions it may request.</p>
+
+<ul>
+ <li><strong>Web Apps:</strong> Most third-party apps will be "web" apps, which is the default type, and doesn't grant the app any additional permissions besides those already exposed to the Web. Web apps can be installed from any website, without any further verification. They can also be <a href="/en-US/docs/Web/Apps/Packaged_apps" title="/en-US/docs/Web/Apps/Packaged_apps">packaged</a> but this does not allow any additional permissions.</li>
+ <li><strong>Privileged Apps</strong>: These apps are allowed to request increased permissions, and as such <em>privileged</em> apps must be verified and signed by a Marketplace.</li>
+ <li><strong>Internal/Certified Apps: </strong>Such apps can currently only be pre-installed on the device, as chosen by the OEM.</li>
+</ul>
+
+<p>You also might occasionally see reference to <strong>Installed Apps</strong>: This isn't really a separate app type as such, but this refers to APIs that require an app to be installed on the device to work.</p>
+
+<div class="note">
+<p><strong>Note</strong>: For further details of the three types, see the <a href="/en-US/docs/Apps/Manifest#type" title="/en-US/docs/Apps/Manifest#type">App Manifest</a> documentation.</p>
+</div>
+
+<h3 id="App_Delivery">App Delivery</h3>
+
+<p>Apps can be delivered by two different mechanisms in Firefox OS: hosted or packaged. Regular web apps can be delivered via either mechanism, whereas privileged and certified apps must be packaged.</p>
+
+<h4 id="Hosted_apps_2"><span id="Hosted_apps" class="mw-headline">Hosted apps </span></h4>
+
+<p>A hosted app consists solely of an <a href="/en-US/docs/Apps/Manifest" rel="nofollow" class="text external">application manifest</a> file on the developer's web server, which contains a <a href="/en-US/Apps/Build/Manifest#launch_path">launch_path</a> for what page should be shown when the app is launched. From a security point of view, hosted apps work very much like normal web sites. When a hosted app is loaded, the URL of the loaded pages are the normal URLs that those pages have on their web server, or loaded from the device if they have be previously stored in an appcache.</p>
+
+<h4 id="Packaged_apps_2"><span id="Packaged_apps" class="mw-headline">Packaged apps</span></h4>
+
+<p><strong>A packaged app</strong> is an Open Web App that has all of its resources (HTML, CSS, JavaScript, app manifest, and so on) contained in a zip file, instead of having its resources on a web server. For details of this format, see<a href="/en-US/docs/Apps/Packaged_apps" title="Apps/Packaged_apps"> Packaged apps</a>. </p>
+
+<h3 id="App_Origin">App Origin</h3>
+
+<p>For hosted apps, the origin of the app is the origin where the <a href="/en-US/docs/Apps/Manifest" rel="nofollow" class="text external">application manifest</a> is located.</p>
+
+<p>For packaged apps, the origin is unique application identified assigned upon installation. <a href="/en-US/Apps/Publishing/Packaged_Apps#Types_of_packaged_apps">Privileged &amp; Internal apps </a>can also request a specific origin by specifying the <a href="/en-US/Apps/Build/Manifest#origin">origin</a> parameter in the applications manifest.</p>
+
+<h3 id="App_Installation"><strong>App Installation</strong></h3>
+
+<p>Apps are installed via the <a href="/en-US/docs/JavaScript_API" title="/en-US/docs/JavaScript_API">Apps JavaScript API</a>:</p>
+
+<ul>
+ <li>Hosted Apps: Hosted apps are installed by calling <code>navigator.mozApps.<a href="/en-US/docs/Web/API/Apps.install" title="/en-US/docs/Web/API/Apps.install">install</a>(manifestURL)</code>, where manifestURL is a URL which specifies the location of the app. For further details, see <a href="/en-US/docs/DOM/Apps.install">Installing Apps</a>.</li>
+ <li>Packaged Apps: Packaged apps are installed by calling <code>navigator.mozApps.<a href="/en-US/docs/Web/API/Apps.installPackage" title="/en-US/docs/Web/API/Apps.installPackage">installPackage</a>(packageURL)</code>. For the Packaged apps, the main application manifest is stored inside the package itself, so that it is signed. There is a second "mini-manifest", which is used to start the install process. See <a href="/en-US/docs/DOM/Apps.installPackage">Installing Packaged Apps</a> and<a href="/en-US/docs/Apps/Packaged_apps" title="Apps/Packaged_apps"> Packaged apps</a> for more information.</li>
+</ul>
+
+<p>In order to secure that an app really wants to be installed as a web app we have to ensure that it's not possible to trick a web site into hosting an application manifest. This is done by requiring that the manifest is served with a specific MIME type, <code>application/x-web-app-manifest+json</code>. This restriction is relaxed when the manifest app, and thus the app manifest, is same-origin with the page that requested the app to be installed.</p>
+
+<h3 id="Updates_2"><span id="Updates" class="mw-headline">Updates</span></h3>
+
+<p>The update process for apps is described at <a href="/en-US/docs/Apps/Updating_apps" title="Apps/Updating_apps">Updating apps</a>.</p>
+
+<h2 id="Permissions">Permissions</h2>
+
+<p>Apps can be granted additional privileges on top of the ones granted to normal web sites. By default an app has the same permissions as normal web pages. In order to get additional permissions, the first step is for the app to enumerate the additional permissions it wants in the application manifest.</p>
+
+<h3 id="Manifest_Declaration">Manifest Declaration</h3>
+
+<p>For each additional permission that an app wants, the manifest must enumerate that permission in their manifest along with a human-readable description of why the app wants access to that permission. For example, if an app wants to use the <a href="/en-US/docs/Web/API/window.navigator.geolocation" title="/en-US/docs/Web/API/window.navigator.geolocation">navigator.geolocation</a> API, it must include the following in its manifest:</p>
+
+<pre class="brush: html">"permissions": {
+  "geolocation":{ 
+     "description":"Required for autocompletion in the share screen",
+  }
+},
+</pre>
+
+<p>This allows the app to then prompt for the geolocation permission, in the same way that a web page normally would. For further detail on manifests, see <a href="/en-US/docs/Apps/Manifest" title="Apps/Manifest">App manifest</a>.</p>
+
+<div class="note">
+<p><strong>Note</strong>: Currently permissions usage intentions are not exposed to the user — see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=823385" class="external" title="https://bugzilla.mozilla.org/show_bug.cgi?id=823385">bug 823385</a>.</p>
+</div>
+
+<h3 id="Granting_Permissions">Granting Permissions</h3>
+
+<p>When permissions are requested in the manifest, the permission is either set to <em>allow</em> or <em>prompt</em>, depending on the permissions. Allow permissions are granted by virtue of being declared in the manifest with no further approval needed. For prompt permissions, the user is prompted the first time the user accesses the related API, and has to make a choice prior to the API being granted. In general, Firefox OS only prompts users for permissions that have a privacy impact, and it is reasonable for the user to understand what they are being asked. For example, access to contacts is prompted, but access to make a raw TCP connection is implicitly granted since it is not reasonable for a user to understand the security implications of allowing this permission. Use of allow permissions is reviewed as part of Marketplace security review processes to ensure users are protected.</p>
+
+<h3 id="Revoking_Permissions">Revoking Permissions</h3>
+
+<p>Users are allowed to change their mind about prompt permissions at any time, and can revoke these permissions via the Firefox OS settings app. Allow permissions are not user configurable, however.</p>
+
+<h2 id="Web_App_Sandbox">Web App Sandbox</h2>
+
+<h3 id="Data_stored_per_app_2"><span id="Data_stored_per_app" class="mw-headline">Data stored per app </span></h3>
+
+<p>Each app runs in as a separate sandbox, meaning that all data stored by an app is separate from all data stored by another app. This includes things like cookie data, localStorage data, indexedDB data, and site permissions.</p>
+
+<p><img src="https://mdn.mozillademos.org/files/7091/sandbox.png" style="display: block; height: 437px; margin: 0px auto; width: 1040px;" alt="A diagram showing three Firefox OS apps all open is separate sandboxes, so none of them can affect each other."></p>
+
+<p>This means that if the user has two apps installed, App A and App B, these apps will have a completely different set of cookies, different local data, and different permissions. This even applies if both of these apps open an <a href="/en-US/docs/Web/HTML/Element/iframe" title="The HTML Inline Frame Element (&lt;iframe>) represents a nested browsing context, effectively embedding another HTML page into the current page. In HTML 4.01, a document may contain a head and a body or a head and a frameset, but not both a body and a frameset. However, an &lt;iframe> can be used within a normal document body. Each browsing context has its own session history and active document. The browsing context that contains the embedded content is called the parent browsing context. The top-level browsing context (which has no parent) is typically the browser window."><code>&lt;iframe&gt;</code></a> that points to the same origin. i.e. if both App A and App B open an <code>&lt;iframe&gt;</code> pointing to "<a href="http://www.mozilla.org" rel="nofollow" class="external free">http://www.mozilla.org</a>", they will both render the website, however the website will be fetched and rendered with different cookies in the two apps.</p>
+
+<p>A result of this is that if the user logs in to, for example, Facebook while using App A, this in no way affects App B's ability to interact with the user's account on Facebook. The login cookie that Facebook sets when the user logs in using App A is only available in App A. If App B opens an <code>&lt;iframe&gt;</code> to Facebook, the cookie wouldn't be there and so when App B opens Facebook, it receives the Facebook login page rather than the user's account.</p>
+
+<h3 id="Apps_can't_open_each_other"><span id="Apps_can.27t_open_each_other" class="mw-headline">Apps can't open each other </span></h3>
+
+<p>This means that apps can't open other apps by using iframes. If App A creates an <code>&lt;iframe&gt;</code> with the <code>src</code> set to the URL of App B, this won't actually open App B in the <code>&lt;iframe&gt;</code>. It will simply open the website located at that URL. It will not use any of App B's cookies and so it will behave no differently than if App B wasn't installed on the user's device.</p>
+
+<p>This applies even for packaged apps (more about them below). If App A tries to open the packaged App B using an <code>&lt;iframe&gt;</code> pointing to the <code>app://</code> URL of App B, this will simply fail to load. If this results in a 404 or some other type of error is still to be determined, but it will definitely fail to load. And it will fail in the same way no matter if App B is installed on the user's device or not, as to make it impossible for App A to determine if App B is installed.</p>
+
+<p>The same thing happens if the top-level frame of App A is navigated to a URL for App B. We always know for a given frame which app is opened in it, therefore when attempting to load the App B URL in the App A frame, this will behave exactly like the two situations described above, i.e. in no way will App B's resources, like cookies or other local data, be used.</p>
+
+<h3 id="Motivation_2"><span id="Motivation" class="mw-headline">Motivation</span></h3>
+
+<p>There are both benefits and downsides to this approach. The downside is that if the user interacts with the same web site through several apps, he/she will have to log in to every app. Likewise, if a web site wants to store data locally, and the user interacts with this web site in several apps, the data will end up getting duplicated in each app, which could be a problem if it's a large amount of data.</p>
+
+<p>The main benefit of this approach is that it's a more stable model. There is no way that several apps could interact with each other through a third-party website in unexpected ways such that installing an app causes another app to stop working. When an app is uninstalled there is no way that data for another app could be lost, or that another app will stop working due to functional dependence on the uninstalled app.</p>
+
+<p>There are also large security benefits. A user can safely use his AwesomeSocial app to log in to Facebook without having to worry that the SketchGame app can mount any type of attack for getting at the user's Facebook data by exploiting bugs or other shortcomings in the Facebook web site.</p>
+
+<p>There are also good privacy benefits. The user can safely install the PoliticalPartyPlus app without having to worry that MegaCorpEmployeeApp will be able to detect that the app was installed or what data it has created.</p>
+
+<h3 id="Sandboxed_Permissions_2"><span id="Sandboxed_Permissions" class="mw-headline">Sandboxed Permissions</span></h3>
+
+<p>In the same way that web site data is sandboxed per app, so is permission data. If App A loads a page from <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a> and that page requests to use geolocation and the user says "yes, and remember this decision for all times", this only means that <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a> has access to geolocation within App A. If App B then opens <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a>, that page won't have access to geolocation unless the user grants that permission again.</p>
+
+<p>And just like in the normal browser, permissions are separated by origin. If App A is granted permission to use Geolocation, this does not mean that all origins running in App A have the permission to use Geolocation. If App A opens an <code>&lt;iframe&gt;</code> to <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a>, then <a href="http://docs.google.com" class="external"><span class="external free">http://docs.google.com</span></a> still has to ask the user for permission before geolocation access is granted.</p>
+
+<h3 id="Browser_API_Sandbox">Browser API Sandbox</h3>
+
+<p>To additionally secure applications that open a large set of URLs, such as browsers, we have added a <em>browserContent flag</em>. The browserContent flag allows each app to have not one, but two sandboxes: one for the app itself, and one for any "web content" that it opens. For example:</p>
+
+<p>Say that the MyBrowser app is loaded from the <a href="https://mybrowser.com" rel="nofollow" class="external free">https://mybrowser.com</a> domain. This is the domain the scripts and resources are loaded within. The scripts and resources<em>belong</em> to this domain.</p>
+
+<p>Now, if a page in this app creates an <code>&lt;iframe mozbrowser&gt;</code>, a different sandbox is created and used for this <code>&lt;iframe&gt;</code>, which is different from the sandbox used by the app. So for example if this <code>&lt;iframe&gt;</code> is navigated to <a href="https://mybrowser.com" rel="nofollow" class="external free">https://mybrowser.com</a>, it will result in different cookies being used inside the <code>&lt;iframe mozbrowser&gt;</code>. Likewise, the contents inside the <code>&lt;iframe mozbrowser&gt;</code> will see different IndexedDB and localStorage databases from the ones opened by the app.</p>
+
+<p>This also applies if the MyBrowser app wants to create integration with, for example, Google Maps to implement location-based browsing. If the app opens an <code>&lt;iframe&gt;</code> to <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a>, it will receive a set of cookies for the <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a> website. If the user then navigates inside the <code>&lt;iframe mozbrowser&gt;</code> containing <a href="http://maps.google.com" rel="nofollow" class="external free">http://maps.google.com</a>, this will use different cookies and different permissions to the top level app.</p>
+
+<p>Another example where this is useful is in a Yelp-like app. Yelp has the ability to visit a restaurant's website directly in the app. By using <code>&lt;iframe mozbrowser&gt;</code> to open the restaurant website, the Yelp app ensures that the restaurant website can't contain an <code>&lt;iframe&gt;</code> pointing back to Yelp's app (which points to <a href="http://yelp.com" rel="nofollow" class="external free">http://yelp.com</a>). If it does, the website will only receive the Yelp website, rather than the Yelp app. So there is no way that the restaurant website can mount an attack against the app since the contained Yelp website won't share any permissions or data with the Yelp app.</p>
+
+<h2 id="App_Security_Summary">App Security Summary</h2>
+
+<p>The table below summarizes the different types of Firefox OS apps, and describes the format, installation, and update processes for open web apps running on Firefox OS.</p>
+
+<table>
+ <caption>Web App Types</caption>
+ <thead>
+  <tr>
+   <th scope="col">Type</th>
+   <th scope="col">Delivery</th>
+   <th scope="col">Permission Model</th>
+   <th scope="col">Installation</th>
+   <th scope="col">Updates</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>Web</td>
+   <td>Hosted or Packaged</td>
+   <td>Less sensitive permissions, which are not dangerous to expose to unvalidated web content.</td>
+   <td>Installed from anywhere</td>
+   <td>Can be updated transparently to user or explicitly via a marketplace, depending on where the app was installed from, and the delivery mechanism.</td>
+  </tr>
+  <tr>
+   <td>Privileged</td>
+   <td>Packaged &amp; Signed</td>
+   <td>Privileged APIs requiring validation and authentication of the app.</td>
+   <td>Installed from a trusted marketplace</td>
+   <td>Updated via a trusted marketplace, user prompted to approve download and installation of updates.</td>
+  </tr>
+  <tr>
+   <td>Internal</td>
+   <td>Packaged</td>
+   <td>Powerful and dangerous APIs not available to third-party apps.</td>
+   <td>Pre-installed on the device</td>
+   <td>Updated only as part of system level updates.</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="note">
+<p><strong>Note</strong>: For version 1.0 of Firefox OS, although web apps can be installed from any website/marketplace, privileged apps can only be installed from the Mozilla Marketplace, as support for multiple trusted marketplaces is not yet complete.</p>
+</div>
+
+<p> </p>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/Apps" rel="nofollow, noindex">Apps</a></li>
+      
+        <li><a href="/en-US/docs/tag/Firefox%20OS" rel="nofollow, noindex">Firefox OS</a></li>
+      
+        <li><a href="/en-US/docs/tag/Guide" rel="nofollow, noindex">Guide</a></li>
+      
+        <li><a href="/en-US/docs/tag/Mobile" rel="nofollow, noindex">Mobile</a></li>
+      
+        <li><a href="/en-US/docs/tag/Security" rel="nofollow, noindex">Security</a></li>
+      
+    </ul>
+  </div>
+
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/jswisher">jswisher</a>, 
+    
+        <a href="/en-US/profiles/sayalaba">sayalaba</a>, 
+    
+        <a href="/en-US/profiles/stephaniehobson">stephaniehobson</a>, 
+    
+        <a href="/en-US/profiles/foxbrush">foxbrush</a>, 
+    
+        <a href="/en-US/profiles/ptheriault">ptheriault</a>, 
+    
+        <a href="/en-US/profiles/rodrigowaters">rodrigowaters</a>, 
+    
+        <a href="/en-US/profiles/nasrulsyahrul">nasrulsyahrul</a>, 
+    
+        <a href="/en-US/profiles/kscarfone">kscarfone</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/crcr">crcr</a>, 
+    
+        <a href="/en-US/profiles/markg">markg</a>, 
+    
+        <a href="/en-US/profiles/dchan">dchan</a>, 
+    
+        <a href="/en-US/profiles/ethertank">ethertank</a>
+    
+                    </div>
+                  
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/teoli">teoli</a>,
+                      <time datetime="2016-08-12T07:08:59-07:00">Aug 12, 2016, 7:08:59 AM</time>
+                    </div>
+                  
+                </div>
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+
+                
+                  <!-- zone subnav -->
+                  
+  <nav class="zone-subnav-container" role="navigation">
+    <div class="subnav" id="Subnav">
+      
+
+<ol>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/B2G_OS_Architecture">B2G OS Architecture</a>
+
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/B2G_OS_Architecture">B2G OS Architecture</a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/API">B2G OS APIs</a></li>
+  </ol>
+ </li>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia" class="toggler">Gaia</a>
+  <ol>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Developing_Gaia">Gaia overview</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Different_ways_to_run_Gaia">Different ways to run Gaia</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Running_the_Gaia_codebase">Running the Gaia codebase</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Understanding_the_Gaia_codebase">Developing Gaia</a>
+    <ol>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Understanding_the_Gaia_codebase">Understanding the Gaia codebase</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Making_Gaia_code_changes">Making Gaia code changes</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Testing_Gaia_code_changes">Testing Gaia code changes</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Submitting_a_Gaia_patch">Submitting a Gaia patch</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Build_System_Primer">Gaia build system primer</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/make_options_reference">Make options reference</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Gaia_tools_reference">Gaia tools reference</a></li>
+    </ol>
+   </li>
+  </ol>
+ </li>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS">Build B2G OS</a>
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS">Build overview</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_OS_build_process_summary">B2G OS build process summary</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/B2G_OS_build_prerequisites">Build prerequisites</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Preparing_for_your_first_B2G_build">Preparing for your first build</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building">Building B2G OS</a>
+    <ol>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Building">Building B2G OS</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/Building_for_Flame_on_OS_X">Building B2G OS for Flame on Mac OS X</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Building/Building_for_Fairphone">Building for Fairphone</a></li>
+     <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_Build_Variables_Reference_Sheet">B2G build variables reference sheet</a></li>
+    </ol>
+   </li>
+  </ol>
+ </li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Choosing_how_to_run_Gaia_or_B2G">Run B2G OS on Desktop</a>
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Choosing_how_to_run_Gaia_or_B2G">Choosing how to run Gaia or B2G OS</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Mulet">Run B2G OS on desktop using Mulet</a></li>
+  </ol>
+ </li>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/Installing_on_a_mobile_device">Install B2G OS on mobile</a>
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Installing_on_a_mobile_device">Installing B2G OS on a mobile device</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_installer_add-on">B2G installer add-on</a></li>
+  </ol>
+ </li>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/Compatible_Devices">Compatible Devices</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_OS_update_packages">Create updates for B2G OS</a>
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_OS_update_packages">Creating and applying B2G OS update packages</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building/FOTA_community_builds">Building and installing FOTA community build</a></li>
+  </ol>
+ </li>
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS" class="toggler">Porting B2G OS</a>
+  <ol>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS">Porting overview</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS/basics">Porting basics</a></li>
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS/Porting_on_CyanogenMod">Porting on CyanogenMod</a></li>
+  </ol>
+ </li>
+</ol>
+    </div>
+  </nav>&nbsp;
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+     
+ 
+<ol> 
+ <li data-default-state="closed"><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS">Build and install</a> 
+  <ol> 
+   <li><strong><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS">Build and install overview</a></strong></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_OS_build_process_summary">B2G OS build process summary</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/B2G_OS_build_prerequisites">Build prerequisites</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Preparing_for_your_first_B2G_build">Preparing for your first build</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building">Building B2G OS</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_installer_add-on">B2G installer add-on</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/Building_for_Flame_on_OS_X">Building B2G OS for Flame on Mac OS X</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Choosing_how_to_run_Gaia_or_B2G">Choosing how to run Gaia or B2G OS</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/Compatible_Devices">Compatible Devices</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_the_B2G_OS_simulator">Building the B2G OS simulator</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Using_the_B2G_emulators">Using the B2G OS emulators</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Installing_on_a_mobile_device">Installing B2G OS on a mobile device</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_OS_update_packages">Creating and applying B2G OS update packages</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building/FOTA_community_builds">Building and installing FOTA community builds</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Building_and_installing_B2G_OS/B2G_Build_Variables_Reference_Sheet">B2G build variables reference sheet</a></li> 
+  </ol> 
+ </li> 
+ <li data-default-state="closed"><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS">Porting B2G OS</a> 
+  <ol> 
+   <li><strong><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS">Porting overview</a></strong></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS/basics">Porting basics</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS/Porting_on_CyanogenMod">Porting on CyanogenMod</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Porting_B2G_OS/B2G_Nexus_Player">Porting B2G onto Nexus Player (Lollipop)</a></li> 
+  </ol> 
+ </li> 
+ <li data-default-state="closed"><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia">Developing Gaia</a> 
+  <ol> 
+   <li><strong><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia">Developing Gaia overview</a></strong></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Running_the_Gaia_codebase">Running the Gaia codebase</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Understanding_the_Gaia_codebase">Understanding the Gaia codebase</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Making_Gaia_code_changes">Making Gaia code changes</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Testing_Gaia_code_changes">Testing Gaia code changes</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Submitting_a_Gaia_patch">Submitting a Gaia patch</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Raptor">Raptor: Performance Tools for Gaia</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Build_System_Primer">Gaia build system primer</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Different_ways_to_run_Gaia">Different ways to run Gaia</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Customizing_build-time_apps">Customizing build-time apps</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Market_customizations_guide">Market customizations guide</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Customizing_the_keyboard">Customizing the keyboard in B2G OS apps</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Localizing_B2G_OS">Localizing B2G OS</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/make_options_reference">Make options reference</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Developing_Gaia/Gaia_tools_reference">Gaia tools reference</a></li> 
+  </ol> 
+ </li> 
+ <li data-default-state="closed"><a href="/en-US/docs/Mozilla/B2G_OS/Add-ons">B2G OS add-ons</a> 
+  <ol> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Add-ons">B2G OS add-ons overview</a></li> 
+   <li><a href="/en-US/docs/Mozilla/B2G_OS/Add-ons/Developing_B2G_OS_add-ons">Developing B2G OS add-ons</a></li> 
+  </ol> 
+ </li> 
+ <li><a href="/en-US/docs/Mozilla/B2G_OS/API">B2G OS APIs</a></li> 
+</ol> 
+
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Mozilla/B2G_OS/Security/Application_security$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Mozilla/B2G_OS/Security/Application_security" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="Bengali (Bangladesh)" value="/bn-BD/docs/Mozilla/B2G_OS/Security/Application_security">
+            বাংলা (বাংলাদেশ) (bn-BD)
+          </option>
+          <option title="Spanish" value="/es/docs/Mozilla/B2G_OS/Security/Application_security">
+            Español (es)
+          </option>
+          <option title="French" value="/fr/docs/B2G_OS/securite/Application_security">
+            Français (fr)
+          </option>
+          <option title="Japanese" value="/ja/docs/Mozilla/B2G_OS/Security/Application_security">
+            日本語 (ja)
+          </option>
+          <option title="Portuguese (Brazilian)" value="/pt-BR/docs/Mozilla/B2G_OS/Security/Seguranca_de_aplicacao">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Mozilla/B2G_OS/Security/Application_security">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chinese (Traditional)" value="/zh-TW/docs/Mozilla/B2G_OS/Security/Application_security">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

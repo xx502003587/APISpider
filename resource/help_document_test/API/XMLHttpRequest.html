@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>XMLHttpRequest - Web APIs | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/API/XMLHttpRequest$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" >
+
+  
+    
+      <link rel="alternate" hreflang="cs" href="/cs/docs/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="de" href="/de/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="it" href="/it/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="ko" href="/ko/docs/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="nl" href="/nl/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="pl" href="/pl/docs/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+      <link rel="alternate" hreflang="zh-TW" href="/zh-TW/docs/Web/API/XMLHttpRequest" title="XMLHttpRequest">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="XMLHttpRequest">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">
+  <meta name="twitter:title" content="XMLHttpRequest">
+  
+  <meta property="og:description" content="XMLHttpRequest is an API that provides client functionality for transferring data between a client and a server. It provides an easy way to retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just a part of the page without disrupting what the user is doing.">
+  <meta name="description" content="XMLHttpRequest is an API that provides client functionality for transferring data between a client and a server. It provides an easy way to retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just a part of the page without disrupting what the user is doing.">
+  <meta name="twitter:description" content="XMLHttpRequest is an API that provides client functionality for transferring data between a client and a server. It provides an easy way to retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just a part of the page without disrupting what the user is doing.">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        ga('set', 'dimension9', 'Enabled');
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1181127');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/API/XMLHttpRequest" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': true,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FAPI%2FXMLHttpRequest" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      
+      <div class="article-meta">
+        <!-- action buttons -->
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/cs/docs/XMLHttpRequest" title="Czech">Čeština (cs)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/de/docs/Web/API/XMLHttpRequest" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/XMLHttpRequest" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/API/XMLHttpRequest" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/it/docs/Web/API/XMLHttpRequest" title="Italian">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/XMLHttpRequest" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ko/docs/XMLHttpRequest" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/nl/docs/Web/API/XMLHttpRequest" title="Dutch">Nederlands (nl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pl/docs/XMLHttpRequest" title="Polish">Polski (pl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Web/API/XMLHttpRequest" title="Portuguese (Brazilian)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Web/API/XMLHttpRequest" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/API/XMLHttpRequest" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-TW/docs/Web/API/XMLHttpRequest" title="Chinese (Traditional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/API/XMLHttpRequest$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/API/XMLHttpRequest$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Web/API/XMLHttpRequest$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/API" rel="v:url" property="v:title">Web APIs</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">XMLHttpRequest</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc submenu">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
+            <ul>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/Anade" title="View profile: Anade">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Anade" data-src="https://secure.gravatar.com/avatar/123e043b2245ac7e685cacd3a3915bf7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Anade</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/ronkorving" title="View profile: ronkorving">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ronkorving" data-src="https://secure.gravatar.com/avatar/432261f65780d1cee1582f80642ce3a7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ronkorving</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/SphinxKnight" title="View profile: SphinxKnight">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="SphinxKnight" data-src="https://secure.gravatar.com/avatar/8fb358ea9b7af22f5021a29e122ea069?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">SphinxKnight</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/rayan20112009" title="View profile: rayan20112009">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rayan20112009" data-src="https://secure.gravatar.com/avatar/5d7bebe553508bf51730a3db5e4ebc8f?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rayan20112009</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/tarunvelli" title="View profile: tarunvelli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tarunvelli" data-src="https://secure.gravatar.com/avatar/fe37cc38082233c93f2f85b66062e923?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tarunvelli</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/hakanson" title="View profile: hakanson">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="hakanson" data-src="https://secure.gravatar.com/avatar/7676aee803cc4e6cc25bbf4d9a65c424?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">hakanson</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Nasrin" title="View profile: Nasrin">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Nasrin" data-src="https://secure.gravatar.com/avatar/ecf4415040448d4728f19966dfe25449?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Nasrin</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/chrisdavidmills" title="View profile: chrisdavidmills">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills" data-src="https://secure.gravatar.com/avatar/deeea0ba82390bd5acc539703c4b0cfb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/MashKao" title="View profile: MashKao">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="MashKao" data-src="https://secure.gravatar.com/avatar/cdd1710b91dd9d3fa2f4e8c71a37f0c7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">MashKao</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/bergus" title="View profile: bergus">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="bergus" data-src="https://secure.gravatar.com/avatar/7f2c4de95e8f4f8f5a71c3aaf0ed312a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">bergus</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/cforcloud" title="View profile: cforcloud">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="cforcloud" data-src="https://secure.gravatar.com/avatar/6a6ec6bb752fed07775c0779877fb357?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">cforcloud</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/peter.kehl" title="View profile: peter.kehl">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="peter.kehl" data-src="https://secure.gravatar.com/avatar/2fb532a6f3e10545119f477374f05a51?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">peter.kehl</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Alhadis" title="View profile: Alhadis">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Alhadis" data-src="https://secure.gravatar.com/avatar/ed9bd09e90afd13633429b5d482b1135?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Alhadis</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jsx" title="View profile: jsx">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jsx" data-src="https://secure.gravatar.com/avatar/8cc61d4e2dc63e75976a334348d473bc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jsx</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/smutt" title="View profile: smutt">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="smutt" data-src="https://secure.gravatar.com/avatar/34ba45b2e9be19682467a303d36cae20?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">smutt</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Videolympian" title="View profile: Videolympian">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Videolympian" data-src="https://secure.gravatar.com/avatar/b7562bb61950ab48921d6dad14f6aa2d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Videolympian</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/phipix01" title="View profile: phipix01">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="phipix01" data-src="https://secure.gravatar.com/avatar/df7a9e91cc32c3cfdb6d64595075cd69?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">phipix01</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/rahul91" title="View profile: rahul91">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rahul91" data-src="https://secure.gravatar.com/avatar/04b8c8d2c8b1518adb8212ea439cba24?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rahul91</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/mitchcurtis" title="View profile: mitchcurtis">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mitchcurtis" data-src="https://secure.gravatar.com/avatar/55cf313c546e7c5aa1aeefae0e772c53?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mitchcurtis</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/dvincent" title="View profile: dvincent">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="dvincent" data-src="https://secure.gravatar.com/avatar/18e5eae1a2673d116db7c3bee6dc0afc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">dvincent</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/danpaz" title="View profile: danpaz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="danpaz" data-src="https://secure.gravatar.com/avatar/134a9a8f049ad28a895efcb338f5dba9?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">danpaz</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/rubyruy" title="View profile: rubyruy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rubyruy" data-src="https://secure.gravatar.com/avatar/868ed3a9c2ae27df4aecd08f9913933b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rubyruy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sebastianz" title="View profile: Sebastianz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sebastianz" data-src="https://secure.gravatar.com/avatar/337fa9c543a4f881977b6d2fbbd2dea8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sebastianz</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jwhitlock" title="View profile: jwhitlock">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jwhitlock" data-src="https://secure.gravatar.com/avatar/40c605f51b728fc5655b5de202e898e1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jwhitlock</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jonathansampson" title="View profile: jonathansampson">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jonathansampson" data-src="https://secure.gravatar.com/avatar/a84a8714fd33f6676743f9734a824feb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jonathansampson</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/nasko83" title="View profile: nasko83">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="nasko83" data-src="https://secure.gravatar.com/avatar/330427971838058d2ac7b1ef934b59bd?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">nasko83</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/sam_eaton" title="View profile: sam_eaton">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sam_eaton" data-src="https://secure.gravatar.com/avatar/f66ad955ba5bfeb21e8af6fec690bec9?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sam_eaton</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/xlc" title="View profile: xlc">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="xlc" data-src="https://secure.gravatar.com/avatar/fedc5e6b7fef29a8b539e20da8c85971?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">xlc</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/arai" title="View profile: arai">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="arai" data-src="https://secure.gravatar.com/avatar/0432a84805ea7033f4646049963e3bf1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">arai</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Ralt" title="View profile: Ralt">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ralt" data-src="https://secure.gravatar.com/avatar/138a5bfc83f7df06b2701ccd722531c3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ralt</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/philelauria" title="View profile: philelauria">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="philelauria" data-src="https://secure.gravatar.com/avatar/1da2dad456ff25714352d14921b334b5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">philelauria</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/pascalhofmann" title="View profile: pascalhofmann">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="pascalhofmann" data-src="https://secure.gravatar.com/avatar/0da29845d310fb75dc5d93c58726ab1b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">pascalhofmann</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Noitidart" title="View profile: Noitidart">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Noitidart" data-src="https://secure.gravatar.com/avatar/2c6478c7a329876d0a887c37c28db7e8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Noitidart</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Dietrich" title="View profile: Dietrich">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Dietrich" data-src="https://secure.gravatar.com/avatar/5481d2a340d45c788bb772bc65ddf954?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Dietrich</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/cpigat" title="View profile: cpigat">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="cpigat" data-src="https://secure.gravatar.com/avatar/2d0a539698665e7386871f442cd94c07?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">cpigat</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/fscholz" title="View profile: fscholz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fscholz" data-src="https://secure.gravatar.com/avatar/e24391c9174352988d819a9b9ea77c9e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fscholz</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/realityking" title="View profile: realityking">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="realityking" data-src="https://secure.gravatar.com/avatar/cab39d7e547423f2a0c72823eeec95b2?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">realityking</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/merih" title="View profile: merih">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="merih" data-src="https://secure.gravatar.com/avatar/198aacbcb9d961f9d884e2c6aebe4ef7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">merih</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/sivsivsree" title="View profile: sivsivsree">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sivsivsree" data-src="https://secure.gravatar.com/avatar/40298bf6e0bf967fd35c5cbf86647de5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sivsivsree</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/agentme" title="View profile: agentme">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="agentme" data-src="https://secure.gravatar.com/avatar/99f6e8f8f60b050dde071f420f033e61?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">agentme</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kohei.yoshino" title="View profile: kohei.yoshino">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kohei.yoshino" data-src="https://secure.gravatar.com/avatar/f84bbc6968ecda0a64ab50d1060c320e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kohei.yoshino</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Oliver" title="View profile: Oliver">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Oliver" data-src="https://secure.gravatar.com/avatar/fce5a1478e47056d8578c95c12cf066a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Oliver</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/salva" title="View profile: salva">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="salva" data-src="https://secure.gravatar.com/avatar/f53addd3f42d60391dbaf1aaaf881a49?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">salva</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/krishnachandra" title="View profile: krishnachandra">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="krishnachandra" data-src="https://secure.gravatar.com/avatar/89b4a179bdfd1e7b53c3dcfa62215747?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">krishnachandra</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/amadwiyzer" title="View profile: amadwiyzer">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="amadwiyzer" data-src="https://secure.gravatar.com/avatar/645413219a82b08adbb796a34be60c8a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">amadwiyzer</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/AlexisMetaireau" title="View profile: AlexisMetaireau">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="AlexisMetaireau" data-src="https://secure.gravatar.com/avatar/dc5be88b0d420bc00d25bb80a5ef5156?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">AlexisMetaireau</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kscarfone" title="View profile: kscarfone">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kscarfone" data-src="https://secure.gravatar.com/avatar/89c1e54a9703125168e40d22316d2b49?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kscarfone</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/cburgmer" title="View profile: cburgmer">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="cburgmer" data-src="https://secure.gravatar.com/avatar/7631565fb55b7f2ff334a2c66a5c63e7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">cburgmer</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jswisher" title="View profile: jswisher">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jswisher" data-src="https://secure.gravatar.com/avatar/38185c2812cbcae186ebbe4a82910661?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jswisher</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/GeorgF" title="View profile: GeorgF">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="GeorgF" data-src="https://secure.gravatar.com/avatar/551fcc330e6af2a5b2c7e8553bb455bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">GeorgF</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Yaffle" title="View profile: Yaffle">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Yaffle" data-src="https://secure.gravatar.com/avatar/7ca81e31b0f3122eb71b1ef9fbaaa9cc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Yaffle</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/alispivak" title="View profile: alispivak">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alispivak" data-src="https://secure.gravatar.com/avatar/401943669c4af295f5b2c99f90dd221a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alispivak</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/markg" title="View profile: markg">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="markg" data-src="https://secure.gravatar.com/avatar/a6bdd84b4732a2c3c7ecadd886b3c64a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">markg</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jkronegg" title="View profile: jkronegg">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jkronegg" data-src="https://secure.gravatar.com/avatar/20ca57662096a6ea79a466ad9efab45d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jkronegg</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Asuza" title="View profile: Asuza">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Asuza" data-src="https://secure.gravatar.com/avatar/a875a2757ecef742ee15950e21ba9441?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Asuza</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/fusionchess" title="View profile: fusionchess">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fusionchess" data-src="https://secure.gravatar.com/avatar/46d112721eef52c4c389be201c151bbf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fusionchess</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/tickyd" title="View profile: tickyd">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tickyd" data-src="https://secure.gravatar.com/avatar/81edba310fe046610483755c1bd72368?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tickyd</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/guirong" title="View profile: guirong">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="guirong" data-src="https://secure.gravatar.com/avatar/40aad65aeb769a2e781d982c002faec2?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">guirong</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Hsivonen" title="View profile: Hsivonen">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Hsivonen" data-src="https://secure.gravatar.com/avatar/a7657471c231304d1d7e0d5144ee8200?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Hsivonen</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/mattbasta" title="View profile: mattbasta">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mattbasta" data-src="https://secure.gravatar.com/avatar/3b9ee98650c2dd03c03cd3ce455d2419?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mattbasta</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/sicking" title="View profile: sicking">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sicking" data-src="https://secure.gravatar.com/avatar/12de552ffa2a81f8a03733071b70caaa?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sicking</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Simon%20Lindholm" title="View profile: Simon Lindholm">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Simon Lindholm" data-src="https://secure.gravatar.com/avatar/69abe49f3a15dd1c4e3bb11d5d703dd1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Simon Lindholm</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/natevw" title="View profile: natevw">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="natevw" data-src="https://secure.gravatar.com/avatar/d4df3d19d4f89cc9a151275748b1877b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">natevw</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/trevorh" title="View profile: trevorh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trevorh" data-src="https://secure.gravatar.com/avatar/1638bc67341673005fa05e5def8f3c4d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trevorh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kmaglione" title="View profile: kmaglione">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kmaglione" data-src="https://secure.gravatar.com/avatar/3bed1d05aaaecb772cbe11bebdca7eff?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kmaglione</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/matt.kantor" title="View profile: matt.kantor">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="matt.kantor" data-src="https://secure.gravatar.com/avatar/225d0619e0b03ecd72c026954a0987cb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">matt.kantor</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/fbender" title="View profile: fbender">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fbender" data-src="https://secure.gravatar.com/avatar/89db5ccbe71d2e916c218c85076fbd96?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fbender</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/myakura" title="View profile: myakura">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="myakura" data-src="https://secure.gravatar.com/avatar/5053cd2607234c47d43959cc9430f1a5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">myakura</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/khuey" title="View profile: khuey">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="khuey" data-src="https://secure.gravatar.com/avatar/051b4b44328266ffe5679934c2a62c57?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">khuey</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/tymofiy" title="View profile: tymofiy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tymofiy" data-src="https://secure.gravatar.com/avatar/253b410d7a41999c754970a3aa34834e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tymofiy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/mwahaha" title="View profile: mwahaha">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mwahaha" data-src="https://secure.gravatar.com/avatar/c679e141dcea9a95965ab46236d78375?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mwahaha</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Inimino" title="View profile: Inimino">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Inimino" data-src="https://secure.gravatar.com/avatar/e4e997037a6341e7881816db5ef23ba7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Inimino</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ziyunfei" title="View profile: ziyunfei">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ziyunfei" data-src="https://secure.gravatar.com/avatar/2dbf9c055c2b32d3ca45d25be0117423?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ziyunfei</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/saneyuki_s" title="View profile: saneyuki_s">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="saneyuki_s" data-src="https://secure.gravatar.com/avatar/556a5d28eaa01979e031a3250d5f2476?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">saneyuki_s</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ebidel" title="View profile: ebidel">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ebidel" data-src="https://secure.gravatar.com/avatar/e7948aac7c52b26470be80311873a398?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ebidel</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/timdream" title="View profile: timdream">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="timdream" data-src="https://secure.gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">timdream</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/darktrojan" title="View profile: darktrojan">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="darktrojan" data-src="https://secure.gravatar.com/avatar/8e9f35fc2fba2295b5f8c4a9e94a7fde?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">darktrojan</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/XP1" title="View profile: XP1">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="XP1" data-src="https://secure.gravatar.com/avatar/3f7435da4c99ff69c3fe375d19226108?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">XP1</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Nickolay" title="View profile: Nickolay">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Nickolay" data-src="https://secure.gravatar.com/avatar/ea331e778d54effc15b5fbc694bc8232?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Nickolay</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kathyw" title="View profile: kathyw">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kathyw" data-src="https://secure.gravatar.com/avatar/d5a90aa4f20e55029bb1a5f4beacb18c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kathyw</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/emk" title="View profile: emk">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="emk" data-src="https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">emk</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/grendel" title="View profile: grendel">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="grendel" data-src="https://secure.gravatar.com/avatar/7bec8ce3caba5f459b16eca80e087be7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">grendel</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/MatrixFrog" title="View profile: MatrixFrog">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="MatrixFrog" data-src="https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">MatrixFrog</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/didizingo" title="View profile: didizingo">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="didizingo" data-src="https://secure.gravatar.com/avatar/d41a7f6883d21dab92b6e6822dd95279?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">didizingo</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Mak77" title="View profile: Mak77">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mak77" data-src="https://secure.gravatar.com/avatar/b12a5a6ba955b3bb6b9af5b4c10dfa22?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mak77</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/TwelveBaud" title="View profile: TwelveBaud">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="TwelveBaud" data-src="https://secure.gravatar.com/avatar/98e3c6eb7be4602fc04a67f8fa3f37f1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">TwelveBaud</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/julienfabre" title="View profile: julienfabre">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="julienfabre" data-src="https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">julienfabre</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sevenspade" title="View profile: Sevenspade">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sevenspade" data-src="https://secure.gravatar.com/avatar/64f1bb62d82df9624a0c21b569fb34fe?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sevenspade</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Konno.Software" title="View profile: Konno.Software">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Konno.Software" data-src="https://secure.gravatar.com/avatar/64569c59452cdc2c8434235492ab9c72?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Konno.Software</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/another_sam" title="View profile: another_sam">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="another_sam" data-src="https://secure.gravatar.com/avatar/d53fdc8212adc01c07c5c194a688162f?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">another_sam</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/J%C3%BCrgen%20Jeka" title="View profile: Jürgen Jeka">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Jürgen Jeka" data-src="https://secure.gravatar.com/avatar/5769ea27a1744c986f4ff3cf44674daf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Jürgen Jeka</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Waldo" title="View profile: Waldo">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Waldo" data-src="https://secure.gravatar.com/avatar/d26a0ca7ae1134e0e1dbdddf82e28929?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Waldo</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/markrgrant" title="View profile: markrgrant">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="markrgrant" data-src="https://secure.gravatar.com/avatar/9bfb8c024f12aa36a3940d3cb51cd459?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">markrgrant</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ericjung" title="View profile: ericjung">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ericjung" data-src="https://secure.gravatar.com/avatar/83917d19137fd6bd1d4ea877482f484e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ericjung</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Cfinke" title="View profile: Cfinke">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Cfinke" data-src="https://secure.gravatar.com/avatar/357b3dde1d3e7e3267d23f605a078d62?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Cfinke</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/psdmca" title="View profile: psdmca">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="psdmca" data-src="https://secure.gravatar.com/avatar/da93216f11dd5c66e1eef02d37215c09?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">psdmca</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Mossop" title="View profile: Mossop">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mossop" data-src="https://secure.gravatar.com/avatar/362f7fbd402cbbcc24cc12580712aa62?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mossop</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Lev.novikov" title="View profile: Lev.novikov">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Lev.novikov" data-src="https://secure.gravatar.com/avatar/7cf4234e10c20737c072a808e51e8bff?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Lev.novikov</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Brettz9" title="View profile: Brettz9">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Brettz9" data-src="https://secure.gravatar.com/avatar/4c750582e23fcf068bdde51cc50416d1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Brettz9</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/LukSoft" title="View profile: LukSoft">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="LukSoft" data-src="https://secure.gravatar.com/avatar/020fe33c2171e2da428e3c091696dfa1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">LukSoft</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Bzbarsky" title="View profile: Bzbarsky">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Bzbarsky" data-src="https://secure.gravatar.com/avatar/8b86a9efd50a1c38bc4d3a0e47cd5979?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Bzbarsky</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Cipherzero" title="View profile: Cipherzero">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Cipherzero" data-src="https://secure.gravatar.com/avatar/a4a6eff04ba16dfd1f0616b5cd525119?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Cipherzero</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/MarkFinkle" title="View profile: MarkFinkle">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="MarkFinkle" data-src="https://secure.gravatar.com/avatar/390a2d7c539a05a1bf9d3d1b2ccb2e5a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">MarkFinkle</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Vesicles" title="View profile: Vesicles">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Vesicles" data-src="https://secure.gravatar.com/avatar/1d3508ce888c0c71f2665851e6c5cec7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Vesicles</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/dbs" title="View profile: dbs">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="dbs" data-src="https://secure.gravatar.com/avatar/bb90709be0297214309fe0e8b19d653b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">dbs</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Riboribo" title="View profile: Riboribo">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Riboribo" data-src="https://secure.gravatar.com/avatar/77c257f371fcf26fa7fbac907a16ab09?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Riboribo</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Carrie%20zhxj" title="View profile: Carrie zhxj">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Carrie zhxj" data-src="https://secure.gravatar.com/avatar/81b5e9c116f976672bac78ef7f108029?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Carrie zhxj</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Prahal" title="View profile: Prahal">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Prahal" data-src="https://secure.gravatar.com/avatar/6f5feca7d22ab14b9ae0827f901ea325?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Prahal</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Alaa.moustafa" title="View profile: Alaa.moustafa">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Alaa.moustafa" data-src="https://secure.gravatar.com/avatar/baf93ec79fdd4821f6d99317cc4e64dd?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Alaa.moustafa</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Ted_Mielczarek" title="View profile: Ted_Mielczarek">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ted_Mielczarek" data-src="https://secure.gravatar.com/avatar/30fa9f928422bef2f98dd5f564def686?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ted_Mielczarek</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/B0at" title="View profile: B0at">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="B0at" data-src="https://secure.gravatar.com/avatar/70f3b02d8c8e2831af7a15b0bbab5a65?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">B0at</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/CN" title="View profile: CN">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="CN" data-src="https://secure.gravatar.com/avatar/3852b39451be67d0004a768ed42c4cce?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">CN</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Bruceboughton" title="View profile: Bruceboughton">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Bruceboughton" data-src="https://secure.gravatar.com/avatar/de0e4cfa28b61a3bf68569bf17aa655e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Bruceboughton</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Chbok" title="View profile: Chbok">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Chbok" data-src="https://secure.gravatar.com/avatar/6ab46950e13e13bb152bdfafacf42bb6?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Chbok</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Np" title="View profile: Np">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Np" data-src="https://secure.gravatar.com/avatar/9385da4a3618cdc385bd49fe3d951b78?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Np</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/sdwilsh" title="View profile: sdwilsh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="sdwilsh" data-src="https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">sdwilsh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Mgjbot" title="View profile: Mgjbot">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mgjbot" data-src="https://secure.gravatar.com/avatar/cde356a1ca3e38301f29fda3dbd5de53?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mgjbot</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Okome" title="View profile: Okome">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Okome" data-src="https://secure.gravatar.com/avatar/5a7e9c2b4c1c55c2d38f9b8c8dc9c61c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Okome</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Federico" title="View profile: Federico">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Federico" data-src="https://secure.gravatar.com/avatar/06fb7e7f8217ef0e572a8334567b7559?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Federico</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Dria" title="View profile: Dria">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Dria" data-src="https://secure.gravatar.com/avatar/c6c044311a2c98b383718e00964cda72?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Dria</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/gandalf" title="View profile: gandalf">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="gandalf" data-src="https://secure.gravatar.com/avatar/22f7ca133c774dadb6d73f38fb2f05ed?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">gandalf</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/LeeHyeok" title="View profile: LeeHyeok">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="LeeHyeok" data-src="https://secure.gravatar.com/avatar/edcbda38eb99898cffbc655179026d51?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">LeeHyeok</noscript></a>
+                </li>
+            
+            </ul>
+        </div>
+        
+
+        <h1>XMLHttpRequest</h1>
+
+      </div>
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Constructor" rel="internal">Constructor</a><li><a href="#Properties" rel="internal">Properties</a><ol><li><a href="#Non-standard_properties" rel="internal">Non-standard properties</a><li><a href="#Event_handlers" rel="internal">Event handlers</a></ol></li><li><a href="#Methods" rel="internal">Methods</a><ol><li><a href="#Non-standard_methods" rel="internal">Non-standard methods</a></ol></li><li><a href="#Specifications" rel="internal">Specifications</a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#See_also" rel="internal">See also</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                
+                  <div class="warning warning-review">
+                    <p>
+                      This article needs an editorial review. <a href="/docs/MDN/Contribute/Howto/Do_an_editorial_review">How you can help.</a>
+                    </p>
+                  </div>
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div><section class="Quick_links" id="Quick_Links"><!-- --></section></div>
+
+<p><span class="seoSummary"><code>XMLHttpRequest</code> is an API that provides client functionality for transferring data between a client and a server. It provides an easy way to retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just a part of the page without disrupting what the user is doing.</span>  <code>XMLHttpRequest</code> is used heavily in <a href="/en-US/docs/AJAX">AJAX</a> programming.</p>
+
+<p>XMLHttpRequest was originally designed by Microsoft and adopted by Mozilla, Apple, and Google. It's now being <a href="https://xhr.spec.whatwg.org/" class="external">standardized at the <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr></a>. Despite its name, <code>XMLHttpRequest</code> can be used to retrieve any type of data, not just XML, and it supports protocols other than <a href="/en-US/docs/Web/HTTP">HTTP</a> (including <code>file</code> and <code>ftp</code>).</p>
+
+<h2 id="Constructor">Constructor</h2>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest" title="For details about how to use XMLHttpRequest, see Using XMLHttpRequest."><code>XMLHttpRequest()</code></a></dt>
+ <dd>The constructor initializes an XMLHttpRequest. It must be called before any other method calls.</dd>
+</dl>
+
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties of <a href="/en-US/docs/Web/API/XMLHttpRequestEventTarget" title="XMLHttpRequestEventTarget is the interface that describes the event handlers you can implement in an object that will handle events for an XMLHttpRequest."><code>XMLHttpRequestEventTarget</code></a> and of <a href="/en-US/docs/Web/API/EventTarget" title="EventTarget is an interface implemented by objects that can receive events and may have listeners for them."><code>EventTarget</code></a>.</em></p>
+
+<dl>
+ <dt id="xmlhttprequest-onreadystatechange"><a href="/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange" title="An EventHandler that is called whenever the readyState attribute changes. The callback is called from the user interface thread. The XMLHttpRequest.onreadystatechange property contains the event handler to be called when the readystatechange event is fired, that is every time the readyState property of the XMLHttpRequest changes."><code>XMLHttpRequest.onreadystatechange</code></a></dt>
+ <dd>An <a href="/en-US/docs/Web/API/EventHandler" title="A possible way to get notified of Events of a particular type (such as click) for a given object is to specify an event handler using:"><code>EventHandler</code></a> that is called whenever the <code>readyState</code> attribute changes.</dd>
+ <dt id="xmlhttprequest-readystate"><a href="/en-US/docs/Web/API/XMLHttpRequest/readyState" title="The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:"><code>XMLHttpRequest.readyState</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns an <code>unsigned short</code>, the state of the request.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/response" title="The XMLHttpRequest.response property returns the response's body. It can be of the type ArrayBuffer, Blob, Document, JavaScript object, or a DOMString, depending of the value of XMLHttpRequest.responseType property. Value of response is null if the request is not complete or was not successful. However, if the value of responseType was set to &quot;text&quot; or the empty string, response can contain the partial text response while the request is still in the loading state."><code>XMLHttpRequest.response</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns an <a href="/en-US/docs/Web/API/ArrayBuffer" title="The documentation about this has not yet been written; please consider contributing!"><code>ArrayBuffer</code></a>, <a href="/en-US/docs/Web/API/Blob" title="A Blob object represents a file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system."><code>Blob</code></a>, <a href="/en-US/docs/Web/API/Document" title="The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM tree includes elements such as &lt;body> and &lt;table>, among many others. It provides functionality global to the document, like how to obtain the page's URL and create new elements in the document."><code>Document</code></a>, JavaScript object, or a <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a>, depending on the value of <a href="/en-US/docs/Web/API/XMLHttpRequest/responseType" title='The XMLHttpRequest.responseType property is an enumerated value that returns the type of the response. It also lets the author change the response type to one "arraybuffer", "blob", "document", "json", or "text". If an empty string is set as the value of responseType, it is assumed as type "text".'><code>XMLHttpRequest.responseType</code></a>. that contains the response entity body.</dd>
+ <dt id="xmlhttprequest-responsetext"><a href="/en-US/docs/Web/API/XMLHttpRequest/responseText" title='The XMLHttpRequest.responseText property returns a DOMString that contains the response to the request as text, or null if the request was unsuccessful or has not yet been sent. The responseText property will have the partial response as it arrives even before the request is complete. If responseType is set to anything other than the empty string or "text", accessing responseText will throw InvalidStateError exception.'><code>XMLHttpRequest.responseText</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns a <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> that contains the response to the request as text, or <code>null</code> if the request was unsuccessful or has not yet been sent.</dd>
+ <dt id="xmlhttprequest-responsetype"><a href="/en-US/docs/Web/API/XMLHttpRequest/responseType" title='The XMLHttpRequest.responseType property is an enumerated value that returns the type of the response. It also lets the author change the response type to one "arraybuffer", "blob", "document", "json", or "text". If an empty string is set as the value of responseType, it is assumed as type "text".'><code>XMLHttpRequest.responseType</code></a></dt>
+ <dd>Is an enumerated value that defines the response type.</dd>
+ <dt id="xmlhttprequest-responsexml"><a href="/en-US/docs/Web/API/XMLHttpRequest/responseURL" title="The XMLHttpRequest.responseURL property returns the serialized URL of the response or the empty string if the URL is null. If the URL is returned, URL fragment if present in the URL will be stripped away. The value of responseURL will be the final URL obtained after any redirects."><code>XMLHttpRequest.responseURL</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns the serialized URL of the response or the empty string if the URL is null.</dd>
+ <dt id="xmlhttprequest-responsexml"><a href="/en-US/docs/Web/API/XMLHttpRequest/responseXML" title="The XMLHttpRequest.responseXML property is a read-only value which returns a Document containing the HTML or XML retrieved by the request, or null if the request was unsuccessful, has not yet been sent, or if the retrieved data can't be correctly parsed as XML or HTML. The response is parsed as if it were a &quot;text/xml&quot; stream. When the responseType is set to &quot;document&quot; and the request has been made asynchronously, the response is parsed as a &quot;text/html&quot; stream. responseXML is null for any other types of data, as well as for data: URLs."><code>XMLHttpRequest.responseXML</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span> <span class="inlineIndicator unimplemented unimplementedInline" title="This feature cannot be used to Web Workers.">Not available to workers </span></dt>
+ <dd>Returns a <a href="/en-US/docs/Web/API/Document" title="The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM tree includes elements such as &lt;body> and &lt;table>, among many others. It provides functionality global to the document, like how to obtain the page's URL and create new elements in the document."><code>Document</code></a> containing the response to the request, or <code>null</code> if the request was unsuccessful, has not yet been sent, or cannot be parsed as XML or HTML.</dd>
+ <dt id="xmlhttprequest-status"><a href="/en-US/docs/Web/API/XMLHttpRequest/status" title="The XMLHttpRequest.status property returns the numerical status code of the response of the XMLHttpRequest. status will be an unsigned short. Before the request is complete, the value of status will be 0. It is worth noting that browsers report a status of 0 in case of XMLHttpRequest errors too."><code>XMLHttpRequest.status</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns an <code>unsigned short</code> with the status of the response of the request.</dd>
+ <dt id="xmlhttprequest-statustext"><a href="/en-US/docs/Web/API/XMLHttpRequest/statusText" title="The XMLHttpRequest.statusText property returns a DOMString containing the response's status message as returned by the HTTP server. Unlike XMLHTTPRequest.status which indicates a numerical status code, this property contains the text of the response status, such as &quot;OK&quot; or &quot;Not Found&quot;. If the request's readyState is in UNSENT or OPENED state, the value of statusText will be an empty string."><code>XMLHttpRequest.statusText</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Returns a <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> containing the response string returned by the HTTP server. Unlike <a href="/en-US/docs/Web/API/XMLHTTPRequest/status" title="The XMLHttpRequest.status property returns the numerical status code of the response of the XMLHttpRequest. status will be an unsigned short. Before the request is complete, the value of status will be 0. It is worth noting that browsers report a status of 0 in case of XMLHttpRequest errors too."><code>XMLHTTPRequest.status</code></a>, this includes the entire text of the response message ("<code>200 OK</code>", for example).</dd>
+</dl>
+
+<div class="note">
+<p>Per HTTP/2 specification (<a href="https://http2.github.io/http2-spec/#rfc.section.8.1.2.4" class="external">8.1.2.4</a> <a href="https://http2.github.io/http2-spec/#HttpResponse" class="external">Response Pseudo-Header Fields</a>), HTTP/2 does not define a way to carry the version or reason phrase that is included in an HTTP/1.1 status line.</p>
+</div>
+
+<dl>
+ <dt id="xmlhttprequest-timeout"><a href="/en-US/docs/Web/API/XMLHttpRequest/timeout" title="The XMLHttpRequest.timeout property is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. The default value is 0, which means there is no timeout. Timeout shouldn't be used for synchronous XMLHttpRequests requests used in a document environment or it will throw an InvalidAccessError exception. When a timeout happens, a timeout event is fired."><code>XMLHttpRequest.timeout</code></a></dt>
+ <dd>Is an <code>unsigned long</code> representing the number of milliseconds a request can take before automatically being terminated.</dd>
+ <dt id="xmlhttprequesteventtarget-ontimeout"><a href="/en-US/docs/Web/API/XMLHttpRequestEventTarget/ontimeout" class="new" title="The documentation about this has not yet been written; please consider contributing!"><code>XMLHttpRequestEventTarget.ontimeout</code></a></dt>
+ <dd>Is an <a href="/en-US/docs/Web/API/EventHandler" title="A possible way to get notified of Events of a particular type (such as click) for a given object is to specify an event handler using:"><code>EventHandler</code></a> that is called whenever the request times out. </dd>
+ <dt id="xmlhttprequest-upload"><a href="/en-US/docs/Web/API/XMLHttpRequest/upload" title="The XMLHttpRequest.upload property returns an XMLHttpRequestUpload object, representing the upload process. It is an opaque object, but being an XMLHttpRequestEventTarget, event listeners can be set on it to track its process."><code>XMLHttpRequest.upload</code></a> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Is an <a href="/en-US/docs/Web/API/XMLHttpRequestUpload" class="new" title="The documentation about this has not yet been written; please consider contributing!"><code>XMLHttpRequestUpload</code></a>, representing the upload process.</dd>
+ <dt id="xmlhttprequest-withcredentials"><a href="/en-US/docs/Web/API/XMLHttpRequest/withCredentials" title="The XMLHttpRequest.withCredentials property is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. Setting withCredentials has no effect on same-site requests."><code>XMLHttpRequest.withCredentials</code></a></dt>
+ <dd>Is a <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="The Boolean object is an object wrapper for a boolean value."><code>Boolean</code></a> that indicates whether or not cross-site <code>Access-Control</code> requests should be made using credentials such as cookies or authorization headers.</dd>
+</dl>
+
+<h3 id="Non-standard_properties">Non-standard properties</h3>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/channel" title="Technical review completed. Editorial review completed."><code>XMLHttpRequest.channel</code></a><span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Is a <code><a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIChannel" title="">nsIChannel</a></code>. The channel used by the object when performing the request.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/mozAnon" title="XMLHttpRequest.mozAnon is a boolean. If true, the request will be sent without cookie and authentication headers."><code>XMLHttpRequest.mozAnon</code></a><span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Is a boolean. If true, the request will be sent without cookie and authentication headers.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/mozSystem" title="XMLHttpRequest is a boolean. If true, the same origin policy will not be enforced on the request."><code>XMLHttpRequest.mozSystem</code></a><span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Is a boolean. If true, the same origin policy will not be enforced on the request.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/mozBackgroundRequest" title="XMLHttpRequest.mozBackgroundRequest is a boolean. Indicates whether or not the object represents a background service request. If true, no load group is associated with the request, and security dialogs are prevented from being shown to the user."><code>XMLHttpRequest.mozBackgroundRequest</code></a></dt>
+ <dd>Is a boolean. It indicates whether or not the object represents a background service request.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/mozResponseArrayBuffer" title="Is an ArrayBuffer. The response to the request, as a JavaScript typed array. This is NULL if the request was not successful, or if it hasn't been sent yet."><code>XMLHttpRequest.mozResponseArrayBuffer</code></a> <span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 6 / Thunderbird 6 / SeaMonkey 2.3)">Obsolete since Gecko 6</span> <span class="inlineIndicator readOnly readOnlyInline" title="This value may not be changed.">Read only </span></dt>
+ <dd>Is an <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a>. The response to the request, as a JavaScript typed array.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/multipart" title="Is a boolean. This Gecko-only feature was removed in Firefox/Gecko 22. Please use Server-Sent Events, Web Sockets, or responseText from progress events instead."><code>XMLHttpRequest.multipart</code></a><span class="inlineIndicator obsolete obsoleteInline" title="(Firefox 22 / Thunderbird 22 / SeaMonkey 2.19)">Obsolete since Gecko 22</span></dt>
+ <dd><strong>This Gecko-only feature, a boolean, was removed in Firefox/Gecko 22.</strong> Please use <a href="/en-US/docs/Web/API/Server-sent_events">Server-Sent Events</a>, <a href="/en-US/docs/Web/API/WebSockets_API">Web Sockets</a>, or <code>responseText</code> from progress events instead.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<p><code>onreadystatechange</code> as a property of the <code>XMLHttpRequest</code> instance is supported in all browsers.</p>
+
+<p>Since then, a number of additional event handlers were implemented in various browsers (<code>onload</code>, <code>onerror</code>, <code>onprogress</code>, etc.). These are supported in Firefox. In particular, see <code><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequestEventTarget" title="">nsIXMLHttpRequestEventTarget</a></code> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">Using XMLHttpRequest</a>.</p>
+
+<p>More recent browsers, including Firefox, also support listening to the <code>XMLHttpRequest</code> events via standard <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">addEventListener</a></code> APIs in addition to setting <code>on*</code> properties to a handler function.</p>
+
+<dl>
+</dl>
+
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/abort" title="The XMLHttpRequest.abort() method aborts the request if it has already been sent. When a request is aborted, its readyState is set to 0 (UNSENT), but the readystatechange event is not fired."><code>XMLHttpRequest.abort()</code></a></dt>
+ <dd>Aborts the request if it has already been sent.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/getAllResponseHeaders" title="The XMLHttpRequest.getAllResponseHeaders() method returns all the response headers, separated by CRLF, as a string, or null if no response has been received. If a network error happened, an empty string is returned. "><code>XMLHttpRequest.getAllResponseHeaders()</code></a></dt>
+ <dd>Returns all the response headers, separated by <a href="https://developer.mozilla.org/en-US/docs/Glossary/CRLF">CRLF</a>, as a string, or <code>null</code> if no response has been received.<strong> </strong></dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/getResponseHeader" title="The XMLHttpRequest.getResponseHeader() method returns the string containing the text of the specified header. If there are multiple response headers with the same name, then their values are returned as a single concatenated string, where each value is separated from the previous one by a pair of comma and space. The getResponseHeader() method returns the value as a UTF byte sequence. The search for the header name is case-insensitive."><code>XMLHttpRequest.getResponseHeader()</code></a></dt>
+ <dd>Returns the string containing the text of the specified header, or <code>null</code> if either the response has not yet been received or the header doesn't exist in the response.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/open" title="The XMLHttpRequest.open() method initializes a request. This method is to be used from JavaScript code; to initialize a request from native code, use openRequest() instead."><code>XMLHttpRequest.open()</code></a></dt>
+ <dd>Initializes a request. This method is to be used from JavaScript code; to initialize a request from native code, use <a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequest#openRequest()" class="internal"><code>openRequest()</code></a> instead.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/overrideMimeType" title="The XMLHttpRequest.overrideMimeType() method overrides the MIME type returned by the server. This may be used, for example, to force a stream to be treated and parsed as text/xml, even if the server does not report it as such. This method must be called before send()."><code>XMLHttpRequest.overrideMimeType()</code></a></dt>
+ <dd>Overrides the MIME type returned by the server.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/send" title="The XMLHttpRequest.send() method sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent. If the request is synchronous, this method doesn't return until the response has arrived. send() accepts an optional argument for the request body. If the request method is GET or HEAD, the argument is ignored and request body is set to null."><code>XMLHttpRequest.send()</code></a><span style="display: none;"> </span></dt>
+ <dd>Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader" title="The XMLHttpRequest.setRequestHeader() method sets the value of an HTTP request header. You must call setRequestHeader()after open(), but before send(). If this method is called several times with the same header, the values are merged into one single request header."><code>XMLHttpRequest.setRequestHeader()</code></a></dt>
+ <dd>Sets the value of an HTTP request header. You must call <code>setRequestHeader()</code>after <a href="#open"><code>open()</code></a>, but before <code>send()</code>.</dd>
+</dl>
+
+<h3 id="Non-standard_methods">Non-standard methods</h3>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/init" title="Initializes the object for use from C++ code."><code>XMLHttpRequest.init()</code></a></dt>
+ <dd>Initializes the object for use from C++ code.</dd>
+</dl>
+
+<div class="warning"><strong>Warning:</strong> This method must <em>not</em> be called from JavaScript.</div>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/openRequest" title="Initializes a request. This method is to be used from native code; to initialize a request from JavaScript code, use open()instead. See the documentation for open()."><code>XMLHttpRequest.openRequest()</code></a></dt>
+ <dd>Initializes a request. This method is to be used from native code; to initialize a request from JavaScript code, use <a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequest#open()" class="internal"><code>open()</code></a> instead. See the documentation for <code>open()</code>.</dd>
+ <dt><a href="/en-US/docs/Web/API/XMLHttpRequest/sendAsBinary" title="The XMLHttpRequest.sendAsBinary() method is a variant of the send() method that sends binary data."><code>XMLHttpRequest.sendAsBinary()</code></a><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></dt>
+ <dd>A variant of the <code>send()</code> method that sends binary data.</dd>
+</dl>
+
+<h2 id="Specifications">Specifications</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a href="https://xhr.spec.whatwg.org" class="external" lang="en" hreflang="en" title="The 'XMLHttpRequest' specification">XMLHttpRequest</a></td>
+   <td><span class="spec-Living">Living Standard</span></td>
+   <td>Live standard, latest version</td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+
+<p></p><div class="htab">
+    <a name="AutoCompatibilityTable" id="AutoCompatibilityTable"></a>
+    <ul>
+        <li class="selected"><a>Desktop</a></li>
+        <li><a>Mobile</a></li>
+    </ul>
+</div><p></p>
+
+<div id="compat-desktop">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support (XHR1)</td>
+   <td>1</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>7</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td>1.2</td>
+  </tr>
+  <tr>
+   <td><code>send(ArrayBuffer)</code></td>
+   <td>9</td>
+   <td><a href="/en-US/Firefox/Releases/9" title="Released on 2011-12-20.">9.0</a> (9.0)</td>
+   <td>10</td>
+   <td>11.60</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(ArrayBufferView)</code></td>
+   <td>22</td>
+   <td><a href="/en-US/Firefox/Releases/20" title="Released on 2013-04-02.">20.0</a> (20.0)</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(Blob)</code></td>
+   <td>7</td>
+   <td><a href="/en-US/Firefox/Releases/3.6" title="Released on 2010-01-21.">3.6</a> (1.9.2)</td>
+   <td>10</td>
+   <td>12</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(FormData)</code></td>
+   <td>6</td>
+   <td><a href="/en-US/Firefox/Releases/4" title="Released on 2011-03-22.">4.0</a> (2.0)</td>
+   <td>10</td>
+   <td>12</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>sendAsBinary(DOMString)</code> <span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span> <span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></td>
+   <td><span style="color: #f00;">No support</span><sup>[1]</sup></td>
+   <td><a href="/en-US/Firefox/Releases/2" title="Released on 2006-10-24.">2.0</a> (1.8.1)</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+  </tr>
+  <tr>
+   <td><code>response</code></td>
+   <td>10</td>
+   <td><a href="/en-US/Firefox/Releases/6" title="Released on 2011-08-16.">6.0</a> (6.0)</td>
+   <td>10</td>
+   <td>11.60</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'arraybuffer'</td>
+   <td>10</td>
+   <td><a href="/en-US/Firefox/Releases/6" title="Released on 2011-08-16.">6.0</a> (6.0)</td>
+   <td>10</td>
+   <td>11.60</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'blob'</td>
+   <td>19</td>
+   <td><a href="/en-US/Firefox/Releases/6" title="Released on 2011-08-16.">6.0</a> (6.0)</td>
+   <td>10</td>
+   <td>12</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'document'</td>
+   <td>18</td>
+   <td><a href="/en-US/Firefox/Releases/11" title="Released on 2012-03-13.">11.0</a> (11.0)</td>
+   <td>10</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td>6.1</td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'json'</td>
+   <td>31</td>
+   <td><a href="/en-US/Firefox/Releases/10" title="Released on 2012-01-31.">10.0</a> (10.0)</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td>12<sup>[2]</sup><br>
+    <span style="color: #f00;">No support</span> 16<br>
+    17</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td>Progress Events</td>
+   <td>7</td>
+   <td><a href="/en-US/Firefox/Releases/3.5" title="Released on 2009-06-30.">3.5</a> (1.9.1)</td>
+   <td>10</td>
+   <td>12</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code>withCredentials</code></td>
+   <td>3</td>
+   <td><a href="/en-US/Firefox/Releases/3.5" title="Released on 2009-06-30.">3.5</a> (1.9.1)</td>
+   <td>10</td>
+   <td>12</td>
+   <td>4</td>
+  </tr>
+  <tr>
+   <td><code>timeout</code></td>
+   <td>29.0</td>
+   <td><a href="/en-US/Firefox/Releases/12" title="Released on 2012-04-24.">12.0</a> (12.0)</td>
+   <td>8</td>
+   <td>12<br>
+    16</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'moz-blob'</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><a href="/en-US/Firefox/Releases/12" title="Released on 2012-04-24.">12.0</a> (12.0)</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div id="compat-mobile">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Chrome for Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td>1.0</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(ArrayBuffer)</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(ArrayBufferView)</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(Blob)</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>send(FormData)</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>sendAsBinary(DOMString)</code> <span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span> <span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>response</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'arraybuffer'</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'blob'</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'document'</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'json'</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td>Progress Events</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>withCredentials</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>timeout</code></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>responseType</code> = 'moz-blob'</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] There is a <a href="#sendAsBinary%28%29_polyfill">polyfill</a> available to support <code>sendAsBinary()</code>.</p>
+
+<p>[2] Before switching to Blink/Chromium, Opera supported <code>responseType=json</code> between Opera 12 and Opera 15. Support was added again in Opera 17.</p>
+
+<h2 id="See_also">See also</h2>
+
+<ul>
+ <li>MDN tutorials covering XMLHttpRequest:
+  <ul>
+   <li><a href="/en-US/docs/AJAX/Getting_Started">AJAX — Getting Started</a></li>
+   <li><a href="/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">Using XMLHttpRequest</a></li>
+   <li><a href="/en-US/docs/Web/API/XMLHttpRequest/HTML_in_XMLHttpRequest">HTML in XMLHttpRequest</a></li>
+   <li><a href="/en-US/docs/Web/API/FormData"><code>FormData</code></a></li>
+  </ul>
+ </li>
+ <li><a href="http://www.html5rocks.com/en/tutorials/file/xhr2/" class="external">HTML5 Rocks — New Tricks in XMLHttpRequest2</a></li>
+ <li><code>Chrome scope availability</code> — how to access XMLHttpRequest from JSM modules etc., which do not have access to DOM
+  <ul>
+   <li><a href="/en-US/docs/Mozilla/Tech/XPCOM/Language_Bindings/Components.utils.importGlobalProperties">Components.utils.importGlobalProperties</a></li>
+   <li><a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequest">nsIXMLHttpRequest</a></li>
+  </ul>
+ </li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/AJAX" rel="nofollow, noindex">AJAX</a></li>
+      
+        <li><a href="/en-US/docs/tag/API" rel="nofollow, noindex">API</a></li>
+      
+        <li><a href="/en-US/docs/tag/HTTP" rel="nofollow, noindex">HTTP</a></li>
+      
+        <li><a href="/en-US/docs/tag/Interface" rel="nofollow, noindex">Interface</a></li>
+      
+        <li><a href="/en-US/docs/tag/Reference" rel="nofollow, noindex">Reference</a></li>
+      
+        <li><a href="/en-US/docs/tag/Web" rel="nofollow, noindex">Web</a></li>
+      
+        <li><a href="/en-US/docs/tag/XHR" rel="nofollow, noindex">XHR</a></li>
+      
+    </ul>
+  </div>
+
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/Anade">Anade</a>, 
+    
+        <a href="/en-US/profiles/ronkorving">ronkorving</a>, 
+    
+        <a href="/en-US/profiles/SphinxKnight">SphinxKnight</a>, 
+    
+        <a href="/en-US/profiles/rayan20112009">rayan20112009</a>, 
+    
+        <a href="/en-US/profiles/tarunvelli">tarunvelli</a>, 
+    
+        <a href="/en-US/profiles/hakanson">hakanson</a>, 
+    
+        <a href="/en-US/profiles/Nasrin">Nasrin</a>, 
+    
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/MashKao">MashKao</a>, 
+    
+        <a href="/en-US/profiles/bergus">bergus</a>, 
+    
+        <a href="/en-US/profiles/cforcloud">cforcloud</a>, 
+    
+        <a href="/en-US/profiles/peter.kehl">peter.kehl</a>, 
+    
+        <a href="/en-US/profiles/Alhadis">Alhadis</a>, 
+    
+        <a href="/en-US/profiles/jsx">jsx</a>, 
+    
+        <a href="/en-US/profiles/smutt">smutt</a>, 
+    
+        <a href="/en-US/profiles/Videolympian">Videolympian</a>, 
+    
+        <a href="/en-US/profiles/phipix01">phipix01</a>, 
+    
+        <a href="/en-US/profiles/rahul91">rahul91</a>, 
+    
+        <a href="/en-US/profiles/mitchcurtis">mitchcurtis</a>, 
+    
+        <a href="/en-US/profiles/dvincent">dvincent</a>, 
+    
+        <a href="/en-US/profiles/danpaz">danpaz</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/rubyruy">rubyruy</a>, 
+    
+        <a href="/en-US/profiles/Sebastianz">Sebastianz</a>, 
+    
+        <a href="/en-US/profiles/jwhitlock">jwhitlock</a>, 
+    
+        <a href="/en-US/profiles/jonathansampson">jonathansampson</a>, 
+    
+        <a href="/en-US/profiles/nasko83">nasko83</a>, 
+    
+        <a href="/en-US/profiles/sam_eaton">sam_eaton</a>, 
+    
+        <a href="/en-US/profiles/xlc">xlc</a>, 
+    
+        <a href="/en-US/profiles/arai">arai</a>, 
+    
+        <a href="/en-US/profiles/Ralt">Ralt</a>, 
+    
+        <a href="/en-US/profiles/philelauria">philelauria</a>, 
+    
+        <a href="/en-US/profiles/pascalhofmann">pascalhofmann</a>, 
+    
+        <a href="/en-US/profiles/Noitidart">Noitidart</a>, 
+    
+        <a href="/en-US/profiles/Dietrich">Dietrich</a>, 
+    
+        <a href="/en-US/profiles/cpigat">cpigat</a>, 
+    
+        <a href="/en-US/profiles/fscholz">fscholz</a>, 
+    
+        <a href="/en-US/profiles/realityking">realityking</a>, 
+    
+        <a href="/en-US/profiles/merih">merih</a>, 
+    
+        <a href="/en-US/profiles/sivsivsree">sivsivsree</a>, 
+    
+        <a href="/en-US/profiles/agentme">agentme</a>, 
+    
+        <a href="/en-US/profiles/kohei.yoshino">kohei.yoshino</a>, 
+    
+        <a href="/en-US/profiles/Oliver">Oliver</a>, 
+    
+        <a href="/en-US/profiles/salva">salva</a>, 
+    
+        <a href="/en-US/profiles/krishnachandra">krishnachandra</a>, 
+    
+        <a href="/en-US/profiles/amadwiyzer">amadwiyzer</a>, 
+    
+        <a href="/en-US/profiles/AlexisMetaireau">AlexisMetaireau</a>, 
+    
+        <a href="/en-US/profiles/kscarfone">kscarfone</a>, 
+    
+        <a href="/en-US/profiles/cburgmer">cburgmer</a>, 
+    
+        <a href="/en-US/profiles/jswisher">jswisher</a>, 
+    
+        <a href="/en-US/profiles/GeorgF">GeorgF</a>, 
+    
+        <a href="/en-US/profiles/Yaffle">Yaffle</a>, 
+    
+        <a href="/en-US/profiles/alispivak">alispivak</a>, 
+    
+        <a href="/en-US/profiles/markg">markg</a>, 
+    
+        <a href="/en-US/profiles/jkronegg">jkronegg</a>, 
+    
+        <a href="/en-US/profiles/Asuza">Asuza</a>, 
+    
+        <a href="/en-US/profiles/fusionchess">fusionchess</a>, 
+    
+        <a href="/en-US/profiles/tickyd">tickyd</a>, 
+    
+        <a href="/en-US/profiles/guirong">guirong</a>, 
+    
+        <a href="/en-US/profiles/Hsivonen">Hsivonen</a>, 
+    
+        <a href="/en-US/profiles/mattbasta">mattbasta</a>, 
+    
+        <a href="/en-US/profiles/sicking">sicking</a>, 
+    
+        <a href="/en-US/profiles/Simon%20Lindholm">Simon Lindholm</a>, 
+    
+        <a href="/en-US/profiles/natevw">natevw</a>, 
+    
+        <a href="/en-US/profiles/trevorh">trevorh</a>, 
+    
+        <a href="/en-US/profiles/kmaglione">kmaglione</a>, 
+    
+        <a href="/en-US/profiles/matt.kantor">matt.kantor</a>, 
+    
+        <a href="/en-US/profiles/fbender">fbender</a>, 
+    
+        <a href="/en-US/profiles/myakura">myakura</a>, 
+    
+        <a href="/en-US/profiles/khuey">khuey</a>, 
+    
+        <a href="/en-US/profiles/tymofiy">tymofiy</a>, 
+    
+        <a href="/en-US/profiles/mwahaha">mwahaha</a>, 
+    
+        <a href="/en-US/profiles/Inimino">Inimino</a>, 
+    
+        <a href="/en-US/profiles/ziyunfei">ziyunfei</a>, 
+    
+        <a href="/en-US/profiles/saneyuki_s">saneyuki_s</a>, 
+    
+        <a href="/en-US/profiles/ebidel">ebidel</a>, 
+    
+        <a href="/en-US/profiles/timdream">timdream</a>, 
+    
+        <a href="/en-US/profiles/darktrojan">darktrojan</a>, 
+    
+        <a href="/en-US/profiles/XP1">XP1</a>, 
+    
+        <a href="/en-US/profiles/Nickolay">Nickolay</a>, 
+    
+        <a href="/en-US/profiles/kathyw">kathyw</a>, 
+    
+        <a href="/en-US/profiles/emk">emk</a>, 
+    
+        <a href="/en-US/profiles/grendel">grendel</a>, 
+    
+        <a href="/en-US/profiles/MatrixFrog">MatrixFrog</a>, 
+    
+        <a href="/en-US/profiles/didizingo">didizingo</a>, 
+    
+        <a href="/en-US/profiles/Mak77">Mak77</a>, 
+    
+        <a href="/en-US/profiles/TwelveBaud">TwelveBaud</a>, 
+    
+        <a href="/en-US/profiles/julienfabre">julienfabre</a>, 
+    
+        <a href="/en-US/profiles/Sevenspade">Sevenspade</a>, 
+    
+        <a href="/en-US/profiles/Konno.Software">Konno.Software</a>, 
+    
+        <a href="/en-US/profiles/another_sam">another_sam</a>, 
+    
+        <a href="/en-US/profiles/J%C3%BCrgen%20Jeka">Jürgen Jeka</a>, 
+    
+        <a href="/en-US/profiles/Waldo">Waldo</a>, 
+    
+        <a href="/en-US/profiles/markrgrant">markrgrant</a>, 
+    
+        <a href="/en-US/profiles/ericjung">ericjung</a>, 
+    
+        <a href="/en-US/profiles/Cfinke">Cfinke</a>, 
+    
+        <a href="/en-US/profiles/psdmca">psdmca</a>, 
+    
+        <a href="/en-US/profiles/Mossop">Mossop</a>, 
+    
+        <a href="/en-US/profiles/Lev.novikov">Lev.novikov</a>, 
+    
+        <a href="/en-US/profiles/Brettz9">Brettz9</a>, 
+    
+        <a href="/en-US/profiles/LukSoft">LukSoft</a>, 
+    
+        <a href="/en-US/profiles/Bzbarsky">Bzbarsky</a>, 
+    
+        <a href="/en-US/profiles/Cipherzero">Cipherzero</a>, 
+    
+        <a href="/en-US/profiles/MarkFinkle">MarkFinkle</a>, 
+    
+        <a href="/en-US/profiles/Vesicles">Vesicles</a>, 
+    
+        <a href="/en-US/profiles/dbs">dbs</a>, 
+    
+        <a href="/en-US/profiles/Riboribo">Riboribo</a>, 
+    
+        <a href="/en-US/profiles/Carrie%20zhxj">Carrie zhxj</a>, 
+    
+        <a href="/en-US/profiles/Prahal">Prahal</a>, 
+    
+        <a href="/en-US/profiles/Alaa.moustafa">Alaa.moustafa</a>, 
+    
+        <a href="/en-US/profiles/Ted_Mielczarek">Ted_Mielczarek</a>, 
+    
+        <a href="/en-US/profiles/B0at">B0at</a>, 
+    
+        <a href="/en-US/profiles/CN">CN</a>, 
+    
+        <a href="/en-US/profiles/Bruceboughton">Bruceboughton</a>, 
+    
+        <a href="/en-US/profiles/Chbok">Chbok</a>, 
+    
+        <a href="/en-US/profiles/Np">Np</a>, 
+    
+        <a href="/en-US/profiles/sdwilsh">sdwilsh</a>, 
+    
+        <a href="/en-US/profiles/Mgjbot">Mgjbot</a>, 
+    
+        <a href="/en-US/profiles/Okome">Okome</a>, 
+    
+        <a href="/en-US/profiles/Federico">Federico</a>, 
+    
+        <a href="/en-US/profiles/Dria">Dria</a>, 
+    
+        <a href="/en-US/profiles/gandalf">gandalf</a>, 
+    
+        <a href="/en-US/profiles/LeeHyeok">LeeHyeok</a>
+    
+                    </div>
+                  
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/Anade">Anade</a>,
+                      <time datetime="2017-02-01T04:00:15.998646-08:00">Feb 1, 2017, 4:00:15 AM</time>
+                    </div>
+                  
+                </div>
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+    <ol><li><strong><a href="/en-US/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a></strong></li><li data-default-state="open"><a href="#"><strong>Properties</strong></a><ol><li><a href="/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange" title="An EventHandler that is called whenever the readyState attribute changes. The callback is called from the user interface thread. The XMLHttpRequest.onreadystatechange property contains the event handler to be called when the readystatechange event is fired, that is every time the readyState property of the XMLHttpRequest changes."><code>onreadystatechange</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/readyState" title="The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:"><code>readyState</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/responseXML" title="The XMLHttpRequest.responseXML property is a read-only value which returns a Document containing the HTML or XML retrieved by the request, or null if the request was unsuccessful, has not yet been sent, or if the retrieved data can't be correctly parsed as XML or HTML. The response is parsed as if it were a &quot;text/xml&quot; stream. When the responseType is set to &quot;document&quot; and the request has been made asynchronously, the response is parsed as a &quot;text/html&quot; stream. responseXML is null for any other types of data, as well as for data: URLs."><code>responseXML</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/timeout" title="The XMLHttpRequest.timeout property is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. The default value is 0, which means there is no timeout. Timeout shouldn't be used for synchronous XMLHttpRequests requests used in a document environment or it will throw an InvalidAccessError exception. When a timeout happens, a timeout event is fired."><code>timeout</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/upload" title="The XMLHttpRequest.upload property returns an XMLHttpRequestUpload object, representing the upload process. It is an opaque object, but being an XMLHttpRequestEventTarget, event listeners can be set on it to track its process."><code>upload</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/withCredentials" title="The XMLHttpRequest.withCredentials property is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. Setting withCredentials has no effect on same-site requests."><code>withCredentials</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Methods</strong></a><ol><li><a href="/en-US/docs/Web/API/XMLHttpRequest/abort" title="The XMLHttpRequest.abort() method aborts the request if it has already been sent. When a request is aborted, its readyState is set to 0 (UNSENT), but the readystatechange event is not fired."><code>abort()</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequest/getResponseHeader" title="The XMLHttpRequest.getResponseHeader() method returns the string containing the text of the specified header. If there are multiple response headers with the same name, then their values are returned as a single concatenated string, where each value is separated from the previous one by a pair of comma and space. The getResponseHeader() method returns the value as a UTF byte sequence. The search for the header name is case-insensitive."><code>getResponseHeader()</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Inheritance:</strong></a><ol><li><a href="/en-US/docs/Web/API/XMLHttpRequestEventTarget"><code>XMLHttpRequestEventTarget</code></a></li><li><a href="/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Events</strong></a><ol><li><a href="/en-US/docs/Web/Events/loadstart"><code>loadstart</code></a></li><li><a href="/en-US/docs/Web/Events/progress"><code>progress</code></a></li><li><a href="/en-US/docs/Web/Events/abort"><code>abort</code></a></li><li><a href="/en-US/docs/Web/Events/error"><code>error</code></a></li><li><a href="/en-US/docs/Web/Events/load"><code>load</code></a></li><li><a href="/en-US/docs/Web/Events/timeout"><code>timeout</code></a></li><li><a href="/en-US/docs/Web/Events/loadend"><code>loadend</code></a></li><li><a href="/en-US/docs/Web/Events/readystatechange"><code>readystatechange</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Related pages for XMLHttpRequest</strong></a><ol><li><a href="/en-US/docs/Web/API/FormData"><code>FormData</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequestEventTarget"><code>XMLHttpRequestEventTarget</code></a></li><li><a href="/en-US/docs/Web/API/XMLHttpRequestUpload"><code>XMLHttpRequestUpload</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/API/XMLHttpRequest$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/API/XMLHttpRequest$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/API/XMLHttpRequest" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="Czech" value="/cs/docs/XMLHttpRequest">
+            Čeština (cs)
+          </option>
+          <option title="German" value="/de/docs/Web/API/XMLHttpRequest">
+            Deutsch (de)
+          </option>
+          <option title="Spanish" value="/es/docs/XMLHttpRequest">
+            Español (es)
+          </option>
+          <option title="French" value="/fr/docs/Web/API/XMLHttpRequest">
+            Français (fr)
+          </option>
+          <option title="Italian" value="/it/docs/Web/API/XMLHttpRequest">
+            Italiano (it)
+          </option>
+          <option title="Japanese" value="/ja/docs/XMLHttpRequest">
+            日本語 (ja)
+          </option>
+          <option title="Korean" value="/ko/docs/XMLHttpRequest">
+            한국어 (ko)
+          </option>
+          <option title="Dutch" value="/nl/docs/Web/API/XMLHttpRequest">
+            Nederlands (nl)
+          </option>
+          <option title="Polish" value="/pl/docs/XMLHttpRequest">
+            Polski (pl)
+          </option>
+          <option title="Portuguese (Brazilian)" value="/pt-BR/docs/Web/API/XMLHttpRequest">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Russian" value="/ru/docs/Web/API/XMLHttpRequest">
+            Русский (ru)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Web/API/XMLHttpRequest">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chinese (Traditional)" value="/zh-TW/docs/Web/API/XMLHttpRequest">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+    <script type="text/javascript">
+        (function($) {
+            $('#wikiArticle').children('h2[id]').each(function() {
+                var id = $(this).attr('id');
+                var href = '/en-US/docs/Web/API/XMLHttpRequest$edit#' + id;
+
+                $('<a>').attr({
+                    href: href,
+                    'class': 'button section-edit only-icon',
+                    'rel': 'nofollow, noindex'
+                })
+                .append($('<i aria-hidden="true" class="icon-pencil"></i>'))
+                .append($('<span>'))
+                .find('span')
+                .text(gettext('Edit'))
+                .end()
+                .on('click', function(e) {
+                    e.preventDefault();
+
+                    mdn.analytics.trackEvent({
+                        category: 'Section Edit',
+                        action: id
+                    }, function() {
+                        window.location = href;
+                    });
+                })
+                .appendTo(this);
+            });
+        })(jQuery);
+    </script>
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>

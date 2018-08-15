@@ -1,0 +1,22 @@
+/* Sets the zone header colour for both landing page and article subpages */
+/* .zone .zone-landing-header, .zone #main-header, .zone .zone-article-header { background-color: rgb(0, 149, 221) } */
+/*
+.redesign body {
+  background-color: rgb(0, 149, 221);
+}
+*/
+ 
+/* Sets the image for landing and article subpages.  You may want to use different images so separate the selectors as needed */
+.zone-landing-header .zone-image, .zone-article-header .zone-image {
+  background: url(https://mdn.mozillademos.org/files/12792/owg-logo-lightened.svg) 70% -50px no-repeat; 
+  background-size: 350px;
+}
+
+.text-content table {
+  border: 0;
+}
+
+.text-content td {
+  border: 0;
+  vertical-align: middle;
+}

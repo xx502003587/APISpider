@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="redesign no-js" data-ffo-opensans="false" data-ffo-opensanslight="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Response - Web APIs | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/en-US/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+    <link href="css/mdn.07c1cb24024c.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="css/wiki.34fbb8f41f76.css" rel="stylesheet" type="text/css" />
+
+    
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.cdn.mozilla.net/static/img/favicon144.a6e4162070f4.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.cdn.mozilla.net/static/img/favicon114.0e9fabd44f85.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.cdn.mozilla.net/static/img/favicon72.8ff9d87c82a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/font-check.77286577b47f.js" charset="utf-8"></script>
+
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/API/Response$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/API/Response" >
+
+  
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Web/API/Response" title="Response">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/API/Response" title="Response">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Response">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/Response">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/API/Response">
+  <meta name="twitter:title" content="Response">
+  
+  <meta property="og:description" content="The Response interface of the Fetch API represents the response to a request.">
+  <meta name="description" content="The Response interface of the Fetch API represents the response to a request.">
+  <meta name="twitter:description" content="The Response interface of the Fetch API represents the response to a request.">
+  
+
+  
+  <script type="text/javascript">
+    
+      var document_saved = 0;
+    
+  </script>
+
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        ga('set', 'dimension9', 'Enabled');
+    
+        // dimension12 == 'Page Revision"
+        ga('set', 'dimension12', '1159600');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/API/Response" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': true,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.cdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.f2a4147c2c28.css',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.6bcbd7e219b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.66bd4038bff3.js',],
+                'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+    })(this);
+</script>
+
+  
+
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
+    <li><a id="skip-language" href="#language">Select language</a></li>
+    <li><a href="#q" id="skip-search">Skip to search</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+
+    <div id="tabzilla">
+        <a href="//www.mozilla.org/" class="no-track">mozilla</a>
+    </div>
+
+    <div class="clear header-clear"></div>
+
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
+    <div id="nav-sec">
+        
+                  <ul>
+                  <li><div class="login">
+    
+      
+       <a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FAPI%2FResponse" class="login-link js-login-link" data-service="GitHub">
+        Sign in
+        <i class="icon-github" aria-hidden="true"></i>
+      </a>
+    
+</div></li>
+                </ul>
+        
+    </div>
+
+    <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Technologies<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu submenu-cols-2 js-submenu" id="nav-platform-submenu">
+          <div class="submenu-column">
+            <div class="title">Technologies</div>
+            <ul>
+              <li><a href="/en-US/docs/Web/HTML">HTML</a></li>
+              <li><a href="/en-US/docs/Web/CSS">CSS</a></li>
+              <li><a href="/en-US/docs/Web/JavaScript">JavaScript</a></li>
+              <li><a href="/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+              <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+              <li><a href="/en-US/docs/Web/API">APIs / DOM</a></li>
+              <li><a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a></li>
+              <li><a href="/en-US/docs/Web/MathML">MathML</a></li>
+            </ul>
+          </div><div class="submenu-column last">
+            <div class="title">References & Guides</div>
+            <ul>
+              <li><a href="/en-US/docs/Learn">Learn web development</a></li>
+              <li><a href="/en-US/docs/Web/Tutorials">Tutorials</a></li>
+              <li><a href="/en-US/docs/Web/Reference">References</a></li>
+              <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
+              <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
+              <li><a href="/en-US/docs/Games">Game development</a></li>
+              <li><a href="/en-US/docs/Web">...more docs</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Zones">Mozilla Docs<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-zones-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+                <li><a href="https://support.mozilla.org/">Get Firefox help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+                <li><a href="http://stackoverflow.com/">Get web development help<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/en-US/docs/MDN/Community">Join the MDN community</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/API/Response">Report a content problem<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+      </li><li class="nav-search-link"><a href="/en-US/search" title="Search"><i aria-hidden="true" class="icon-search"></i></a></li><li class="main-nav-search"><form action="/en-US/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Search</label>
+          <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>&nbsp;
+          <button type="submit" class="offscreen">Search</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header>
+
+  <!-- Content will go here -->
+  <main id="content"><div class="center clear">
+  
+
+   <!-- end is_zone -->
+
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      
+      <div class="article-meta">
+        <!-- action buttons -->
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons" data-sticky="false">
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Web/API/Response" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/API/Response" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/API/Response$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/API/Response$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="/en-US/docs/Web/API/Response$history" rel="nofollow, noindex">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+    <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/API" rel="v:url" property="v:title">Web APIs</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Response</li>
+  </ol></nav>
+      </div>
+
+      <!-- heading -->
+      <div id="wiki-document-head" class="document-head">
+          <span class="from-search-previous-box">
+            <a class="button from-search-previous only-icon disabled" title="Previous Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-left"></i></a>
+          </span>
+          <span class="from-search-navigate-wrap">
+            <a href="#" class="from-search-navigate"><span class="from-search-navigate-up"><i aria-hidden="true" class="icon-double-angle-up"></i></span><span class="from-search-navigate-down"><i aria-hidden="true" class="icon-double-angle-down"></i></span></a>
+          </span>
+          <div class="from-search-toc submenu">
+            <span class="title">Your Search Results</span>
+            <ol></ol>
+          </div>
+          <span class="from-search-next-box">
+            <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
+          </span>
+
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
+            <ul>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/abbycar" title="View profile: abbycar">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="abbycar" data-src="https://secure.gravatar.com/avatar/93b6b45e6e3caac8af268caa523dfc90?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">abbycar</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/isonic" title="View profile: isonic">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="isonic" data-src="https://secure.gravatar.com/avatar/377fe483830aca6cad7e9d95442f5090?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">isonic</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/jpmedley" title="View profile: jpmedley">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jpmedley" data-src="https://secure.gravatar.com/avatar/fde784135f738cc182672e703dea9a4b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jpmedley</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/Sebastianz" title="View profile: Sebastianz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sebastianz" data-src="https://secure.gravatar.com/avatar/337fa9c543a4f881977b6d2fbbd2dea8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sebastianz</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/chrisdavidmills" title="View profile: chrisdavidmills">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="chrisdavidmills" data-src="https://secure.gravatar.com/avatar/deeea0ba82390bd5acc539703c4b0cfb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">chrisdavidmills</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/kscarfone" title="View profile: kscarfone">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="kscarfone" data-src="https://secure.gravatar.com/avatar/89c1e54a9703125168e40d22316d2b49?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">kscarfone</noscript></a>
+                </li>
+            
+            </ul>
+        </div>
+        
+
+        <h1>Response</h1>
+
+      </div>
+      
+
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">In This Article<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#Constructor" rel="internal">Constructor</a><li><a href="#Properties" rel="internal">Properties</a><li><a href="#Methods" rel="internal">Methods</a><li><a href="#Examples" rel="internal">Examples</a><li><a href="#Specifications" rel="internal">Specifications</a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#See_also" rel="internal">See also</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+            
+            
+              
+            
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+
+              
+                
+                
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div><section class="Quick_links" id="Quick_Links"><!-- --></section><div class="notice experimental"> 
+    <p><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> 
+</div></div>
+
+<p>The <strong><code>Response</code></strong> interface of the <a href="/en-US/docs/Web/API/Fetch_API">Fetch API</a> represents the response to a request.</p>
+
+<p>You can create a new <code>Response</code> object using the <a title="The Response() constructor creates a new Response object." href="/en-US/docs/Web/API/Response/Response"><code>Response.Response()</code></a> constructor, but you are more likely to encounter a Response object being returned as the result of another API operation, for example a service worker <a title="The respondWith() method of the FetchEvent interface is intended for containing code that generates custom responses to the requests coming from the controlled page. This code will resolve by returning a Response or network error to Fetch." href="/en-US/docs/Web/API/Fetchevent/respondWith"><code>Fetchevent.respondWith</code></a>, or a simple <a title="The fetch() method of the GlobalFetch mixin starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request." href="/en-US/docs/Web/API/GlobalFetch/fetch"><code>GlobalFetch.fetch()</code></a>.</p>
+
+<h2 id="Constructor">Constructor</h2>
+
+<dl>
+ <dt><a title="The Response() constructor creates a new Response object." href="/en-US/docs/Web/API/Response/Response"><code>Response()</code></a></dt>
+ <dd>Creates a new <code>Response</code> object.</dd>
+</dl>
+
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt><a title="The headers read-only property of the Response interface contains the Headers object associated with the response." href="/en-US/docs/Web/API/Response/headers"><code>Response.headers</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains the <a title="The Headers interface of the Fetch API allows you to perform various actions on HTTP request and response headers. These actions include retrieving, setting, adding to, and removing. A Headers object has an associated header list, which is initially empty and consists of zero or more name and value pairs.  You can add to this using methods like append() (see Examples.) In all methods of this interface, header names are matched by case-insensitive byte sequence." href="/en-US/docs/Web/API/Headers"><code>Headers</code></a> object associated with the response.</dd>
+ <dt><a title="The ok read-only property of the Response interface contains a boolean stating whether the response was successful (status in the range 200-299) or not." href="/en-US/docs/Web/API/Response/ok"><code>Response.ok</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains a boolean stating whether the response was successful (status in the range 200-299) or not.</dd>
+ <dt><a title="The read-only redirected property of the Response interface indicates whether or not the response is the result of a request you made which was redirected." href="/en-US/docs/Web/API/Response/redirected"><code>Response.redirected</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Indicates whether or not the response is the result of a redirect; that is, its URL list has more than one entry.</dd>
+ <dt><a title="The status read-only property of the Response interface contains the status code of the response (e.g., 200 for a success)." href="/en-US/docs/Web/API/Response/status"><code>Response.status</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains the status code of the response (e.g., <code>200</code> for a success).</dd>
+ <dt><a title="The statusText read-only property of the Response interface contains the status message corresponding to the status code (e.g., OK for 200)." href="/en-US/docs/Web/API/Response/statusText"><code>Response.statusText</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains the status message corresponding to the status code (e.g., <code>OK</code> for <code>200</code>).</dd>
+ <dt><a title="The type read-only property of the Response interface contains the type of the response. It can be one of the following:" href="/en-US/docs/Web/API/Response/type"><code>Response.type</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains the type of the response (e.g., <code>basic</code>, <code>cors</code>).</dd>
+ <dt><a title="The url read-only property of the Response interface contains the URL of the response." href="/en-US/docs/Web/API/Response/url"><code>Response.url</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Contains the URL of the response.</dd>
+ <dt><a title="The useFinalURL property of the Response interface contains a boolean stating whether this is the final URL of the response." href="/en-US/docs/Web/API/Response/useFinalURL"><code>Response.useFinalURL</code></a></dt>
+ <dd>Contains a boolean stating whether this is the final URL of the response.</dd>
+</dl>
+
+<p><code>Response</code> implements <a title="The Body mixin of the Fetch API represents the body of the response/request, allowing you to declare what its content type is and how it should be handled." href="/en-US/docs/Web/API/Body"><code>Body</code></a>, so it also has the following property available to it:</p>
+
+<dl>
+ <dt><a title="The bodyUsed read-only property of the Body mixin contains a Boolean that indicates whether the body has been read yet." href="/en-US/docs/Web/API/Body/bodyUsed"><code>Body.bodyUsed</code></a> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span></dt>
+ <dd>Stores a <a title="The Boolean object is an object wrapper for a boolean value." href="/en-US/docs/Web/API/Boolean"><code>Boolean</code></a> that declares whether the body has been used in a response yet.</dd>
+</dl>
+
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt><a title="The clone() method of the Response interface creates a clone of a response object, identical in every way, but stored in a different variable." href="/en-US/docs/Web/API/Response/clone"><code>Response.clone()</code></a></dt>
+ <dd>Creates a clone of a <code>Response</code> object.</dd>
+ <dt><a title="The error() method of the Response interface returns a new Response object associated with a network error." href="/en-US/docs/Web/API/Response/error"><code>Response.error()</code></a></dt>
+ <dd>Returns a new <code>Response</code> object associated with a network error.</dd>
+ <dt><a title="The redirect() method of the Response interface returns a Response resulting in a redirect to the specified URL." href="/en-US/docs/Web/API/Response/redirect"><code>Response.redirect()</code></a></dt>
+ <dd>Creates a new response with a different URL.</dd>
+</dl>
+
+<p><code>Response</code> implements <a title="The Body mixin of the Fetch API represents the body of the response/request, allowing you to declare what its content type is and how it should be handled." href="/en-US/docs/Web/API/Body"><code>Body</code></a>, so it also has the following methods available to it:</p>
+
+<dl>
+ <dt><a title="The arrayBuffer() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer." href="/en-US/docs/Web/API/Body/arrayBuffer"><code>Body.arrayBuffer()</code></a></dt>
+ <dd>Takes a <a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> stream and reads it to completion. It returns a promise that resolves with an <a title="The documentation about this has not yet been written; please consider contributing!" href="/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a>.</dd>
+ <dt><a title="The blob() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob." href="/en-US/docs/Web/API/Body/blob"><code>Body.blob()</code></a></dt>
+ <dd>Takes a <a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> stream and reads it to completion. It returns a promise that resolves with a <a title="A Blob object represents a file-like object of immutable, raw data. Blobs represent data that isn't necessarily in a JavaScript-native format. The File interface is based on Blob, inheriting blob functionality and expanding it to support files on the user's system." href="/en-US/docs/Web/API/Blob"><code>Blob</code></a>.</dd>
+ <dt><a title="The formData() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object." href="/en-US/docs/Web/API/Body/formData"><code>Body.formData()</code></a></dt>
+ <dd>Takes a <a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> stream and reads it to completion. It returns a promise that resolves with a <a title='The FormData interface provides a way to easily construct a set of key/value pairs representing form fields and their values, which can then be easily sent using the XMLHttpRequest.send() method. It uses the same format a form would use if the encoding type were set to "multipart/form-data".' href="/en-US/docs/Web/API/FormData"><code>FormData</code></a> object.</dd>
+ <dt><a title="The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an object literal containing the JSON data." href="/en-US/docs/Web/API/Body/json"><code>Body.json()</code></a></dt>
+ <dd>Takes a <a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> stream and reads it to completion. It returns a promise that resolves with a <a title="The JSON object contains methods for parsing JavaScript Object Notation (JSON) and converting values to JSON. It can't be called or constructed, and aside from its two method properties it has no interesting functionality of its own." href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON"><code>JSON</code></a> object.</dd>
+ <dt><a title="The text() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString object (text)." href="/en-US/docs/Web/API/Body/text"><code>Body.text()</code></a></dt>
+ <dd>Takes a <a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> stream and reads it to completion. It returns a promise that resolves with a <a title="USVString corresponds to the set of all possible sequences of unicode scalar values. USVString maps to a String when returned in JavaScript; it's generally only used for APIs that perform text processing and need a string of unicode scalar values to operate on." href="/en-US/docs/Web/API/USVString"><code>USVString</code></a> (text).</dd>
+</dl>
+
+<h2 id="Examples">Examples</h2>
+
+<p>In our <a href="https://github.com/mdn/fetch-examples/tree/gh-pages/basic-fetch" class="external">basic fetch example</a> (<a href="http://mdn.github.io/fetch-examples/basic-fetch/" class="external">run example live</a>) we use a simple <code>fetch()</code> call to grab an image and display it in an <a title="The HTML &lt;img> element represents an image in the document." href="/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> tag. The <code>fetch()</code> call returns a promise, which resolves with the <code>Response</code> object associated with the resource fetch operation. You'll notice that since we are requesting an image, we need to run <a title="The blob() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob." href="/en-US/docs/Web/API/Body/blob"><code>Body.blob</code></a> (<a title="The Response interface of the Fetch API represents the response to a request." href="/en-US/docs/Web/API/Response"><code>Response</code></a> implements body) to give the response its correct MIME type.</p>
+
+<pre class="brush: js">var myImage = document.querySelector('.my-image');
+fetch('flowers.jpg').then(function(response) {
+  return response.blob();
+}).then(function(blob) {
+  var objectURL = URL.createObjectURL(blob);
+  myImage.src = objectURL;
+});</pre>
+
+<p>You can also use the <a title="The Response() constructor creates a new Response object." href="/en-US/docs/Web/API/Response/Response"><code>Response.Response()</code></a> constructor to create your own custom <code>Response</code> object:</p>
+
+<pre class="brush: js">var myResponse = new Response();</pre>
+
+<h2 id="Specifications">Specifications</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+  <tr>
+   <td><a lang="en" hreflang="en" href="https://fetch.spec.whatwg.org/#response-class" class="external">Fetch<br><small lang="en-US">The definition of 'Response' in that specification.</small></a></td>
+   <td><span class="spec-Living">Living Standard</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+
+<p></p><div class="htab"> 
+    <a name="AutoCompatibilityTable" id="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li class="selected"><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div id="compat-desktop">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Edge</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>41<sup>[1]</sup><br>
+    42</td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td><a title="Released on 2014-12-01." href="/en-US/Firefox/Releases/34">34</a> (34) <sup>[1]</sup><br>
+    <a title="Released on 2015-06-30." href="/en-US/Firefox/Releases/39">39</a> (39)</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td>28<sup>[1]</sup><br>
+    29</td>
+   <td><span style="color: #f00;">No support</span></td>
+  </tr>
+  <tr>
+   <td><code>redirected</code> attribute</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><a title="Released on 2016-09-13." href="/en-US/Firefox/Releases/49">49</a> (49)</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div id="compat-mobile">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Edge</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>Firefox OS (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+   <th>Chrome for Android</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td>
+   <td>34.0 (34) <sup>[1]</sup><br>
+    39.0 (39)</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+  <tr>
+   <td><code>redirected</code> attribute</td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td>49.0 (49)</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] This was implemented behind a preference until Firefox 39.</p>
+
+<h2 id="See_also">See also</h2>
+
+<ul>
+ <li><a href="/en-US/docs/Web/API/ServiceWorker_API">ServiceWorker API</a></li>
+ <li><a href="/en-US/docs/Web/HTTP/Access_control_CORS">HTTP access control (CORS)</a></li>
+ <li><a href="/en-US/docs/Web/HTTP">HTTP</a></li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>Was this article helpful?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Yes</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">Thank you!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              
+
+                <!-- contributors -->
+                <div class="wiki-block contributors">
+                  <h2 class="offscreen">Document Tags and Contributors</h2>
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="/en-US/docs/tag/API" rel="nofollow, noindex">API</a></li>
+      
+        <li><a href="/en-US/docs/tag/Experimental" rel="nofollow, noindex">Experimental</a></li>
+      
+        <li><a href="/en-US/docs/tag/Fetch" rel="nofollow, noindex">Fetch</a></li>
+      
+        <li><a href="/en-US/docs/tag/Fetch%20API" rel="nofollow, noindex">Fetch API</a></li>
+      
+        <li><a href="/en-US/docs/tag/Interface" rel="nofollow, noindex">Interface</a></li>
+      
+        <li><a href="/en-US/docs/tag/Reference" rel="nofollow, noindex">Reference</a></li>
+      
+        <li><a href="/en-US/docs/tag/Response" rel="nofollow, noindex">Response</a></li>
+      
+    </ul>
+  </div>
+
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/abbycar">abbycar</a>, 
+    
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/isonic">isonic</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/jpmedley">jpmedley</a>, 
+    
+        <a href="/en-US/profiles/Sebastianz">Sebastianz</a>, 
+    
+        <a href="/en-US/profiles/chrisdavidmills">chrisdavidmills</a>, 
+    
+        <a href="/en-US/profiles/kscarfone">kscarfone</a>
+    
+                    </div>
+                  
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                      <a href="/en-US/profiles/abbycar">abbycar</a>,
+                      <time datetime="2016-12-22T14:16:10.551314-08:00">Dec 22, 2016, 2:16:10 PM</time>
+                    </div>
+                  
+                </div>
+              
+
+              
+                  <div class="newsletter-box">
+                    <div class="newsletter">
+    <form id="newsletterForm" name="newsletter-form" class="nodisable" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <h2 class="newsletter-teaser">Learn the best of web development</h2>
+        <p class="newsletter-description">Sign up for our newsletter:</p>
+        <input type="hidden" id="fmt" name="fmt" value="H">
+        <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+
+        <div id="newsletterErrors" class="newsletter-errors"></div>
+
+        <div id="newsletterEmail" class="form-group">
+            <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+            <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+        </div>
+
+        <div id="newsletterPrivacy" class="form-group form-group-agree hidden">
+            <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+            <label for="newsletterPrivacyInput">
+            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletterSubmit">
+            <button id="newsletter-submit" type="submit" class="button positive">Sign up now</button>
+        </div>
+        
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+                  </div>
+              
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+              
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">See also</div>
+    <ol><li><strong><a href="/en-US/docs/Web/API/Response"><code>Response</code></a></strong></li><li data-default-state="open"><a href="#"><strong>Constructor</strong></a><ol><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The Response() constructor creates a new Response object." href="/en-US/docs/Web/API/Response/Response"><code>Response()</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Properties</strong></a><ol><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The bodyUsed read-only property of the Body mixin contains a Boolean that indicates whether the body has been read yet." href="/en-US/docs/Web/API/Body/bodyUsed"><code>bodyUsed</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The headers read-only property of the Response interface contains the Headers object associated with the response." href="/en-US/docs/Web/API/Response/headers"><code>headers</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The ok read-only property of the Response interface contains a boolean stating whether the response was successful (status in the range 200-299) or not." href="/en-US/docs/Web/API/Response/ok"><code>ok</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The read-only redirected property of the Response interface indicates whether or not the response is the result of a request you made which was redirected." href="/en-US/docs/Web/API/Response/redirected"><code>redirected</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The status read-only property of the Response interface contains the status code of the response (e.g., 200 for a success)." href="/en-US/docs/Web/API/Response/status"><code>status</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The statusText read-only property of the Response interface contains the status message corresponding to the status code (e.g., OK for 200)." href="/en-US/docs/Web/API/Response/statusText"><code>statusText</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The type read-only property of the Response interface contains the type of the response. It can be one of the following:" href="/en-US/docs/Web/API/Response/type"><code>type</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The url read-only property of the Response interface contains the URL of the response." href="/en-US/docs/Web/API/Response/url"><code>url</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a title="The useFinalURL property of the Response interface contains a boolean stating whether this is the final URL of the response." href="/en-US/docs/Web/API/Response/useFinalURL"><code>useFinalURL</code></a></s></li></ol></li><li data-default-state="open"><a href="#"><strong>Methods</strong></a><ol><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The arrayBuffer() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer." href="/en-US/docs/Web/API/Body/arrayBuffer"><code>arrayBuffer()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The blob() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob." href="/en-US/docs/Web/API/Body/blob"><code>blob()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The clone() method of the Response interface creates a clone of a response object, identical in every way, but stored in a different variable." href="/en-US/docs/Web/API/Response/clone"><code>clone()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The error() method of the Response interface returns a new Response object associated with a network error." href="/en-US/docs/Web/API/Response/error"><code>error()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The formData() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a FormData object." href="/en-US/docs/Web/API/Body/formData"><code>formData()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an object literal containing the JSON data." href="/en-US/docs/Web/API/Body/json"><code>json()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The redirect() method of the Response interface returns a Response resulting in a redirect to the specified URL." href="/en-US/docs/Web/API/Response/redirect"><code>redirect()</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a title="The text() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString object (text)." href="/en-US/docs/Web/API/Body/text"><code>text()</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/API/Response$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/API/Response$history" label="View page history"></menuitem>
+  </menu>
+
+  </div></main>
+
+  <!-- Footer -->
+  <footer id="main-footer"><div class="center">
+    <div class="column-container">
+      <div class="column-main">
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2017 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
+            <li><a href="/docs/MDN/About">About MDN</a></li>
+            <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
+            <li><a href="//www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="column-strip">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" value="/en-US/docs/Web/API/Response" selected>
+          English (US) (en-US)
+        </option>
+        
+          <option title="Japanese" value="/ja/docs/Web/API/Response">
+            日本語 (ja)
+          </option>
+          <option title="Chinese (Simplified)" value="/zh-CN/docs/Web/API/Response">
+            中文 (简体) (zh-CN)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+        
+      </div>
+    </div>
+  </div></footer>
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.660aa2a4bc00.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.b28203373cc1.js"></script>
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.7114338e4daa.js" charset="utf-8"></script>
+
+
+  
+
+  
+    <script type="text/javascript">
+        (function($) {
+            $('#wikiArticle').children('h2[id]').each(function() {
+                var id = $(this).attr('id');
+                var href = '/en-US/docs/Web/API/Response$edit#' + id;
+
+                $('<a>').attr({
+                    href: href,
+                    'class': 'button section-edit only-icon',
+                    'rel': 'nofollow, noindex'
+                })
+                .append($('<i aria-hidden="true" class="icon-pencil"></i>'))
+                .append($('<span>'))
+                .find('span')
+                .text(gettext('Edit'))
+                .end()
+                .on('click', function(e) {
+                    e.preventDefault();
+
+                    mdn.analytics.trackEvent({
+                        category: 'Section Edit',
+                        action: id
+                    }, function() {
+                        window.location = href;
+                    });
+                })
+                .appendTo(this);
+            });
+        })(jQuery);
+    </script>
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>
